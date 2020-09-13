@@ -1,0 +1,38 @@
+<ion-header >
+  <ion-navbar> 
+       
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="margin-top:0px; background-image:url('assets/images/loginScreen_BG.png');">
+  <!-- <div class="circleImg" style="background-image: url('assets/images/oval_2.svg');">
+    <p class="line1">ENTER CODE</p>
+    <form [formGroup]="inviteForm">   
+      <ion-item >    
+        <ion-input  type="password" placeholder="enter your invite code" [(ngModel)]="inviteCode" min="3" formControlName="code" [class.invalid]="!inviteForm.controls.code.valid && (inviteForm.controls.code.dirty || submitAttempt)"></ion-input>
+        <button clear  item-right style="background-color: transparent;" (click)="next()">
+          <img src="assets/images/arrowForward.svg" >
+        </button>
+      </ion-item>
+      <p *ngIf="!inviteForm.controls.code.valid  && (inviteForm.controls.code.dirty || submitAttempt) || (!inviteCode && submitAttempt)" style="color:red;margin-top:10px;text-align:center"> Please enter a valid invite code.</p>
+    </form>
+    <p class="line2" (click)="getInviteCode()">DON'T HAVE INVITE CODE?</p>
+  </div>   -->
+  <ion-row style="margin:0px;">
+    <ion-col col-12 style="width:365px;height:330px;" >
+      <div style=" background-image: url('assets/images/oval_2.svg'); background-repeat: no-repeat;background-size: 100% 100%;height: 100%;width: 100%;
+      position: absolute; top:0;left:0;"></div>
+        <p class="line1">ENTER CODE</p>
+        <form [formGroup]="inviteForm">   
+          <ion-item >    
+            <ion-input  type="password" placeholder="enter your invite code" [(ngModel)]="inviteCode" min="3" formControlName="code" [class.invalid]="!inviteForm.controls.code.valid && (inviteForm.controls.code.dirty || submitAttempt)"></ion-input>
+            <button clear  item-right style="background-color: transparent;" (click)="next()">
+              <img src="assets/images/arrowForward.svg" >
+            </button>
+          </ion-item>
+          <p *ngIf="!inviteForm.controls.code.valid  && (inviteForm.controls.code.dirty || submitAttempt) || (!inviteCode && submitAttempt)" style="color:red;margin-top:10px;text-align:center"> Please enter a valid invite code.</p>
+        </form>
+        <p class="line2" (click)="getInviteCode()">DON'T HAVE INVITE CODE?</p>
+    </ion-col>
+  </ion-row>
+</ion-content>

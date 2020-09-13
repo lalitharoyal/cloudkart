@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="113" height="113" viewBox="0 0 113 113">
+    <defs>
+        <rect id="a" width="113" height="113" rx="10"/>
+    </defs>
+    <use fill="#CDCFD0" fill-rule="evenodd" xlink:href="#a"/>
+</svg>

@@ -1,0 +1,29 @@
+<ion-content>
+	
+  <p class="text1">+ #TAGS</p>
+  <!-- <p class="hashstyle1">(To describe your interests, identity, profession, etc. Eg #funk, #metoo, #single, #marketing)</p> -->
+  <ion-input type="text" (keyup.enter)="enterTag(hashtagInput)" placeholder="use space/comma/enter to add tags" (ionChange)="changeHashTag(hashtagInput)" [(ngModel)]="hashtagInput" class="hashtagInput hashText hashtag"></ion-input>
+              <ion-list class="hashtagsList" *ngIf="tags && tags.length > 0">
+                <ion-item *ngFor="let tag of tags;" no-lines (click)="selectHashTag(tag)" placeholder="hint - #single mom">
+                  #{{tag}}  
+                </ion-item>
+              </ion-list> 
+              <div style="padding:0 10px;text-align: center;">
+                <button class="hashTagBtn" style="box-shadow: none;padding: 3px 3px 5px 4px;margin: 5px 10px 5px 6px;" *ngFor="let tag of selectedHashTags;let i = index;">       
+                  <ion-row>
+                    <ion-col (click)="editHashTag(tag, i)" style="font-size: 1.2rem;">
+                      #{{tag}}
+                    </ion-col>
+                    <ion-col (click)="deleteHashTag(tag, i)" style="padding:1px 0 0 5px;">
+                      <ion-icon name="close-circle" style="font-size:1.8em;"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                </button>
+              </div>
+              <button *ngIf="selectedHashTags.length > 0" (click)="next()" item-right style="background-color: transparent;margin:8px 14px;float: right;">
+                <img src="assets/images/circle_icon_done.svg">
+              </button>
+              <button *ngIf="selectedHashTags.length == 0" item-right style="background-color: transparent;margin:8px 14px;float: right;">
+                <img src="assets/images/circle_icon_done_disable.svg">
+              </button>
+  </ion-content>

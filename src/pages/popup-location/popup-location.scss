@@ -1,0 +1,79 @@
+page-popup-location {
+
+  @keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: .5;}
+    100%{opacity: 1;}
+    }
+  .searchbar.searchbar-left-aligned .searchbar-search-icon {
+    margin-left: 8px;
+  }
+  .searchbar-input {
+    margin-left: 8px;
+  }
+  .searchbar-input-container {
+    width:92%;
+  }
+  .searchbar-md .searchbar-input {
+    border-radius: 16px;
+  }
+  .button-ios{
+    height: 2.4em;
+    font-size: 1.4rem;
+  }
+  .searchbar {
+    border-radius: 15px;
+  }
+  .list {
+    max-height: 170px;
+    overflow-y: auto;
+    margin-bottom: 0px;
+  } 
+  .list > .item-block:first-child {
+    border-top:0px,
+  }
+  .selectedChoice {
+    background-color: #bd2472;
+    color:#fff;
+    box-shadow: 0 0.5px 0.1px 0 rgba(0,0,0,0.8);    
+    padding: 0px 10px;    
+    border-radius: 15px;
+    font-size: 1.35rem !important;
+    height: 3.0rem !important;
+  }
+  .unselectedChoice {
+    background-color: #fff;
+    color:#bd2472;
+    box-shadow: 0 0.5px 0.1px 0 rgba(0,0,0,0.8);    
+    padding: 0px 10px;   
+    border-radius: 15px;
+    font-size: 1.35rem !important;
+    height: 3.0rem !important;
+  }
+  .popover-content{
+    background-color: #E4E4E4;
+    top:10%;
+  }
+  .item {
+    height: 35px;
+    min-height: 10px;
+  }
+  .label {
+    margin: 0px 8px 0px 0;
+    padding: 0px;
+  }
+  .currentBtn .button-inner {
+    overflow:hidden;
+    justify-content:left;
+  }
+  .getLocationBtn .button-inner {
+    //overflow:hidden;
+    justify-content:center;
+  }
+  .animationCss {
+    animation: blink 1s linear infinite;
+  }
+  .animationCss_none {
+   
+  }
+}  

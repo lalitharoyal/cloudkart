@@ -1,0 +1,70 @@
+<ion-header >
+  <ion-navbar> 
+    <ion-title align="left"><span style="color:#fff;font-size:1.7rem;padding-left:20px;">&nbsp;&nbsp;INVITE MEMBERS</span>
+    </ion-title>      
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <div class="cssDiv">    
+    <!--  <ion-item style="width:100%;border-radius:10px;background-color:#fff;height:40px;margin-bottom:10px">    
+      <ion-input  type="text"  [(ngModel)]="this.search" 
+      (ngModelChange)="myMethod($event)"  placeholder="INVITE from forEva / via Email"></ion-input>
+   </ion-item> -->
+
+    <ion-searchbar style="margin: 0px 0px 10px 8px;width: 95%;"
+      [(ngModel)]="search" 
+      [showCancelButton]="false" 
+      (ionInput)="getItems($event)" 
+      (ionCancel)="dismiss()" placeholder="Search and INVITE from forEva">          
+    </ion-searchbar>
+    <!-- <div style="text-align: center;">
+      <button ion-button class="inviteBtn" (click)="inviteViaEmail()">
+          or INVITE via EMAIL
+      </button>
+    </div> -->
+    <ion-scroll scrollX="true" style="width:100%;height:85px;background-color:#fff;" *ngIf="(this.sg['selectedMembers'] && this.sg['selectedMembers'].length > 0) ||(emailList && emailList.length>0)"> 
+    <ion-row style="padding:10px 20px;display:inline;" >
+      <ion-col col-2 style="padding:0px;display: inline-block;" *ngFor="let member of this.sg['selectedMembers']; let idx = index" (click)="unselectInvitedMember(idx, member)">
+        <img src="assets/images/close.svg" style="width:25%;position:absolute;z-index:1;right:25%;top:-5%">
+        <img class="cssthumb" *ngIf="member.profile_image && member.profile_image.url" [src]="member.profile_image.url" style="width:34px;height:34px;border-radius:50%" onError ="this.src='assets/images/placeholder_user1.png'">
+        <img class="cssthumb"  *ngIf="(!member.profile_image || !member.profile_image.url)" item-left src="assets/images/placeholder_user1.png" style="width:34px;height:34px;border-radius: 50%;">  
+        <p style="color:#000;font-size:1rem;text-align:center;margin:0px;width:80%;overflow: hidden;text-overflow: ellipsis;">{{member.name}}</p>        
+      </ion-col>  
+      <ion-col (click)="unselectEmail(idx)"  *ngFor="let email of emailList; let idx = index">         
+         <button round ion-button style="background-color: #D7D7D7;color:black;font-size:1.6rem; height: 2.8rem;padding: 12px;text-transform: lowercase;"><span style="margin-right: 15px;">{{email.substr(0, 11)}}</span><span *ngIf="email.length > 11" style=" margin-right: 26px;">...</span> <img src="assets/images/close.svg" style="width: 15px;height:16px;   
+             position: absolute; right: 8px;"> </button>
+      </ion-col>   
+      <!-- <ion-col col-5 style="padding:0px">
+        <button round ion-button style="height:25px;text-transform:none;margin:8px 2px;color:#000;background-color:#d8d8d8;font-weight:normal">
+          <img src="assets/images/close.svg" style="width:22%;">
+        </button>
+      </ion-col> -->
+   </ion-row> 
+   </ion-scroll>
+   <ion-item class="itemHt" no-lines *ngFor="let user of this.sg['users']; let idx = index" (click)="selectUserToInvite(user, idx)">   
+    <img class="cssthumb" *ngIf="user.profile_image && user.profile_image.url" item-left src="{{user.profile_image.url}}" style="width:40px;height:40px;border-radius:50%" onError ="this.src='assets/images/placeholder_user1.png'">
+    <img class="cssthumb" *ngIf="(!user || !user.profile_image || !user.profile_image.url)" item-left src="assets/images/placeholder_user1.png" style="width:40px;height:40px;border-radius:50%">  
+    
+    <p style="color:#010101;font-size:1.6rem;text-transform: capitalize; font-family: 'Roboto', sans-serif;"> {{ user.name }} </p>
+    <p style="color:#a5a5a5;font-size:1.1rem;text-transform: capitalize; font-family: 'Roboto', sans-serif;">{{user.age}},&nbsp;{{user.city}},&nbsp;{{user.country}}</p>   
+    <img  *ngIf="this.sg['selectedMembers'] && this.sg['selectedMembers'].length > 0" item-right [ngClass]="{'selected': !this.sg['userStatus'][user.id]}" src="assets/images/done_copy.svg" style="width:20px;height:20px">
+  </ion-item>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="row">
+    <div class="col text-center">
+      <button *ngIf="this.sg['selectedMembers'] && this.sg['selectedMembers'].length > 0" (click)="inviteUsers()" style="background-color: transparent;margin:8px 14px;">
+        <img src="assets/images/circle_icon_done.svg">
+      </button>
+      <button  *ngIf="this.sg['selectedMembers'] && this.sg['selectedMembers'].length < 1" style="background-color: transparent;margin:8px 14px;">
+        <img src="assets/images/circle_icon_done_disable.svg">
+      </button>
+    </div>    
+  </div> 
+</ion-footer>

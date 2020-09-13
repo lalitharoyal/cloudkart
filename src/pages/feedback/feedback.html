@@ -1,0 +1,51 @@
+<ion-header >
+  <ion-navbar>
+    <ion-title align="left">
+       <span style="color:#fff;font-size:1.7rem;font-weight:normal;"> FeedBack</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+      <div ion-fixed>
+      <p style=" margin-top: 30px; text-align: center;font-size: 1.8rem;color: #444444;font-family: 'Lato', sans-serif;font-weight:500;"> Your Opinion matters</p>
+          <ion-card style="width:95%;border-radius:15px;">
+          <form [formGroup]="feedbackForm">
+            <ion-list no-lines>  
+                <ion-item style="margin: 40px 0px 0px 16px;padding-left:6px;background: #f1f1f1;">
+                  <ion-label>Select Feature </ion-label>
+                    <ion-select  multiple="false" type="radio" formControlName="feature" 
+                      [class.invalid]="!feedbackForm.controls.feature.valid && (feedbackForm.controls.feature.dirty )">
+                      <ion-option value="overall">Overall</ion-option>
+                      <ion-option value="login">Login</ion-option>
+                      <ion-option value="home">Home feed</ion-option>
+                      <ion-option value="cards">Cards</ion-option>
+                      <ion-option value="profile">Profile</ion-option>
+                      <ion-option value="tags">Tags</ion-option>
+                      <ion-option value="zones">Zones</ion-option>
+                      <ion-option value="invites">Invites</ion-option>
+                      <ion-option value="notifications">Notifications</ion-option>
+                      <ion-option value="other">Other</ion-option>
+                    </ion-select>
+                </ion-item>
+                <div style="color:red;text-align:center" *ngIf="!feedbackForm.controls.feature.valid && (feedbackForm.controls.feature.dirty )" >
+                  * Please select the feature!
+                </div> 
+            </ion-list>            
+                <ion-textarea   rows="10" style=" margin: 20px 11px 10px 16px;background-color: #f1f1f1; width: 90%;padding: 10px;font-size: 1.3rem;" placeholder=" Provide Feedback"  type="text" formControlName="feedback" 
+                    [class.invalid]="!feedbackForm.controls.feedback.valid && (feedbackForm.controls.feedback.dirty )">      
+                </ion-textarea>
+                <div style="color:red;text-align:center" *ngIf="!feedbackForm.controls.feedback.valid && (feedbackForm.controls.feedback.dirty )" >
+                    * Please give your feedback!
+                </div> 
+          </form>
+          <p *ngIf="submitAttempt && !feedbackForm.valid" style="color:red;text-align:center">* Please fill out all details accurately!
+          </p>
+          <ion-row style="margin-top:25px;margin-bottom: 25px;"><ion-col style="text-align: center;">
+            <button ion-button (click)="submit()" style="height:2.5rem;font-family: 'Roboto', sans-serif;background: linear-gradient(to right,#D42453,#C92462,#B82575,#A32590,#9025A5);text-align: center;width: 35%;border-radius: 12px">SUBMIT</button>
+          </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+</ion-content>
+

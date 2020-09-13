@@ -1,0 +1,168 @@
+page-people {
+
+       
+       .item ion-thumbnail[item-left], .item ion-avatar[item-start], .item ion-thumbnail[item-start] {
+         margin:0px;
+      
+      }
+      .item [item-left], .item [item-right], .item [item-start], .item [item-end] {
+        margin:0px;
+      }
+      .item.item-block.item {
+        height:30px;
+        margin:0px;
+        }
+        .item {
+          background-color:transparent;
+          margin:0px;
+          padding-left:0px;
+        }
+        .item ion-thumbnail {
+           min-width: 0px; 
+           min-height: 0px; 
+           border-radius:10px;
+      }
+      ion-searchbar {
+        width: 80%;
+        padding:8px 0px 8px 8px;
+      }
+       .searchbar-ios{
+          width: 80% !important;
+        }
+          .searchbar-ios{
+        padding-left: 0px;
+      }
+       .item ion-thumbnail[item-left], .item ion-avatar[item-start], .item ion-thumbnail[item-start] {
+         margin:0px;
+      }
+      .item [item-left], .item [item-right], .item [item-start], .item [item-end] {
+        margin:0px;
+      }
+      .loader{
+        margin: 0 0 2em;
+        height: 100px;
+        width: 20%;
+        text-align: center;
+        padding: 1em;
+        margin: 0 auto 1em;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .item.item-block.item {
+        height:30px;
+        margin:0px;
+        }
+        .item {
+          background-color:transparent;
+          margin:0px;
+          padding-left:0px;
+        }
+        .selected-item {
+        border : 1px solid #f5a623;
+      }
+      .toolbar-title {
+        padding:0px;
+            margin-left: -10px; font-weight:400;
+      }
+      .searchbar .searchbar-input {
+        border-radius: 4px;
+        height:3.2rem;
+        box-shadow : none;
+    background: #f1f1f1;
+        }
+        .item ion-thumbnail {
+           min-width: 0px; 
+           min-height: 0px; 
+           border-radius:10px;
+      }
+      .toggle.toggle-checked .toggle-icon {
+        background-color: #4990e2;
+      }
+       .searchbar .searchbar-input::-moz-placeholder {
+        color: #878787;
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+      }
+      .searchbar .searchbar-input:-ms-input-placeholder {
+        color: #878787;
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+      }
+      .searchbar .searchbar-input::-webkit-input-placeholder {
+        text-indent: 0;
+        color: #878787;
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+      }
+      .searchbar-md .searchbar-search-icon {
+        //background-image:none !important;
+      }
+      .searchbar-ios .searchbar-search-icon {
+        //background-image:none !important;
+      }
+      .searchbar-ios .searchbar-search-icon {
+        top:10px !important ;
+      } 
+      .searchbar-md .searchbar-search-icon {
+       top:6px !important ;
+     }
+      .searchbar .searchbar-clear-icon {
+        
+        background-image: url('/assets/images/clear.svg');
+      }
+     
+      .toolbar .searchbar-ios .searchbar-input{
+        background-color: #FFF;
+        //padding-left: 8px;
+        width: 84%;
+      }
+     
+      .searchbar-ios {
+        background-color:transparent;
+        border-bottom: none;
+        padding:8px;
+    }
+        ion-scroll{
+          white-space: nowrap;
+          position: relative;
+        }
+        .horizontal_scroll{
+          display: inline-block;       
+      }
+      .item.item-block .item-inner{
+        border-bottom: none !important;
+      }
+     
+      .row {
+        padding-top:0px;
+        padding-right:0px;
+        padding-left:0px;
+        margin:0px;
+      }
+     ion-grid .row:before {
+      width: 0px; 
+     }
+     
+     .row:before {
+      width: 0px; 
+     }
+
+     .card-badge1 {
+      position: absolute;
+      top: 0;
+      vertical-align: middle;
+      font-size: 9px;
+      z-index:1;
+      border-radius:20px;
+      background-color:#FF0000;
+      left: 34%;
+    } 
+    .searchbar-ios .searchbar-input{
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    } 
+
+    .bar-button-menutoggle-md{
+      margin-left: 0px;
+    }
+    
+}

@@ -1,0 +1,43 @@
+<ion-header >
+ <ion-navbar >
+  <button ion-button menuToggle>
+     <ion-icon name="menu"></ion-icon>
+   </button>
+     <ion-title align="left"><span style="color:#fff;font-size:1.6rem;font-weight:normal;">Notifications</span>
+     </ion-title> 
+    <ion-buttons end>
+     <!-- <button ion-button style="margin-top:5px;text-transform: capitalize;">
+      Clear All
+     </button> -->
+    </ion-buttons>
+     </ion-navbar>
+</ion-header>
+<ion-content>
+  <p *ngIf="notificationLength == 0" style="margin:10px;color:#444;text-align: center;">No notifications currently</p>
+  <ion-row *ngIf="showLoader">
+    <ion-col col-12 style="text-align: center;">
+      <button ion-button style="background:transparent">
+        <img class="loader" style="width:60px;height:60px;margin-top: 12px;" src="assets/images/loader.svg" />
+      </button>
+    </ion-col>
+  </ion-row>
+  <ion-item style="background-color:transparent;border-bottom:2px solid #e9e9e9;padding-left:12px;" *ngFor="let notification of notifications; let idx=index;">
+    <ion-avatar item-left (click)="profileUser(notification)">
+      <img style="width:52px;height:52px;border-radius: 50%" class="cssthumb" src="{{notification.icon}}" onError="this.src='assets/images/placeholder_user1.png'">
+      <img *ngIf="notification.unread" style="width:5%;bottom: 54%;position: absolute;left: 4%;" src="assets/images/circle.svg">
+    </ion-avatar>
+    <div (click)="expand(idx,notification)">
+      <p style="color:#444444; font-size:1.4rem;font-weight:normal;margin:0px;font-family: 'Roboto', sans-serif;">
+          {{notification.message[0]}} </p>
+      <p  style="color:#757575;font-size: 1.2rem;font-weight:normal;margin:0px;font-family: 'Roboto', sans-serif;"> 
+        {{notification.message[1]}} 
+      </p>
+      <p style="color:#757575; font-size:1.4rem;font-weight:500;margin:0px;overflow: hidden;
+        text-overflow: ellipsis;display: inline-block;width: 210px;font-family: 'Roboto', sans-serif;">  {{notification.message[2]}}  </p>
+      <p style="float:right;color:#BD2572;font-weight:normal; font-size:1.2rem;margin-right: 10px;font-family: 'Roboto', sans-serif;
+        margin-top: 3px;">{{getDateFormat(notification.created_at)}} 
+      </p>
+    </div>
+    
+  </ion-item>
+</ion-content>

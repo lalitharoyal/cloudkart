@@ -1,0 +1,55 @@
+page-onboarding-01 {
+      .test1{
+        text-align: center; 
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 3.4rem;
+        color: #fff;
+        font-weight: 400;
+        text-transform: uppercase;  
+        position: relative;
+         z-index: 100;                 
+      }
+      .cssText{
+        font-family: 'Open Sans Condensed', sans-serif;
+        text-align: center;
+        color: #fff;
+        font-weight: 400;
+        text-transform: none;
+        font-size: 3.1rem;
+        position: relative;
+        z-index: 100;           
+      }
+     .line {
+        font-family: 'Open Sans Condensed', sans-serif;
+        text-align: center;
+        font-size: 2.3rem;
+        color: #fff;
+        font-weight: 400;
+        line-height: 0.8;
+      }
+      .line1 {
+        font-family: 'Open Sans Condensed', sans-serif;
+        text-align: center;
+        font-size: 2.0rem;
+        color: #fff;
+        font-weight: 400;
+        line-height: 0.8;
+      }
+      .col{
+        text-align: center;  
+      }
+      .blend{
+        background-image: url('assets/images/oval_gradient_new.svg'); background-repeat: no-repeat;background-size: 100% 100%;height: 100%;width: 100%;
+        position: absolute; top:0;left:0;
+      }
+      .footer-md::before{
+        background-image:none;
+      }
+      ion-content { 
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      } 
+      .content.content {
+        margin-top:0px;
+      }
+}

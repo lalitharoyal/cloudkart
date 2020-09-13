@@ -1,0 +1,25 @@
+<ion-content >
+        <form [formGroup]="inviteForm"> 
+    <ion-row style="margin-bottom: 18px;">
+        <ion-col col-12 style="color:#B941A1;text-align: center;">Enter invite code to Join zone</ion-col>
+            <ion-col col-10>
+                <ion-input class="cssInput" type="password"  placeholder="Enter zone invite code..."  formControlName="code"
+                 [class.invalid]="!inviteForm.controls.code.valid && (inviteForm.controls.code.dirty || submitAttempt)"
+                [(ngModel)]="inviteCode">
+            </ion-input>
+        </ion-col>
+        <ion-col col-2>
+                <button *ngIf = "inviteCode" (click)="joinZone()" item-right clear style="background-color: transparent;margin: 0px 0px 6px -12px;;position: absolute;bottom: 0;padding: 0px">
+                        <img src="assets/images/circle_icon_done.svg">
+                      </button>
+                <button *ngIf = "!inviteCode" (click)="createDiscover()" item-right clear style="background-color: transparent;margin: 0px 0px 6px -12px;;position: absolute;bottom: 0;padding: 0px">
+                    <img src="assets/images/circle_icon_done_disable.svg">
+                </button>
+        </ion-col>
+        <!-- <p>Invalid invite code</p >   src="assets/images/circle_icon_forward_disable.svg" -->
+    <ion-col col-10 *ngIf="errorMessage || !inviteForm.controls.code.valid  && (inviteForm.controls.code.dirty || submitAttempt) || (!inviteCode && submitAttempt)" style="color:red;margin-top:10px;text-align:center;"> {{errorMessage}}</ion-col>
+
+    </ion-row> 
+    </form> 
+    
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header >
+  <ion-navbar >
+   <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title align="left"><span style="color:#fff;font-size:1.7rem;font-weight:normal;"> MESSAGES</span></ion-title>    
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>         	  
+    <ion-row  style="margin-left:0px;margin-right:0px;">
+      <ion-searchbar (ionInput)="getItems($event)" placeholder="Search Messages" style="border-top-left-radius: 10px;padding:2px 5px;">
+      </ion-searchbar>
+      <ion-item *ngIf="selectedCount > 0" style="background-color:#F5A623;margin:14px -10px 0 -10px;position:fixed;z-index:2;padding-left:0px">
+        <p item-left style="color:#ffffff;font-size: 1.6rem;font-weight: 400;">{{selectedCount}}&nbsp;messages selected</p> 
+        <div (click)="deleteChat()">       
+          <img item-right src="assets/images/delete.svg" style="height:20px;display:inline-block;width:20px"> 
+          <span item-right style="color:#ffffff;font-weight:500;font-size: 1.6rem;">Delete</span> 
+        </div>   
+      </ion-item>
+    </ion-row>
+    <p *ngIf="msgLength == 0" class="errMsg">No messages yet</p>
+    <ion-row *ngIf="showLoader">
+      <ion-col col-12 style="text-align: center;">
+        <button ion-button style="background:transparent">
+          <img class="loader" style="width:60px;height:60px;margin-top: 12px;" src="assets/images/loader.svg" />
+        </button>
+      </ion-col>              
+    </ion-row> 
+    <ion-list>
+              
+      <div *ngIf="users && users.length > 0">
+        <ion-item (press)="onLongPress(user)" (tap)="viewChat(user, idx)" *ngFor="let user of users;let idx=index;" [ngClass]="[userMsgStatuses[user.chat.id] == true ? 'delChat':'undelChat']" 
+         style="min-height:1px;height:50px;margin-bottom:5px;">
+          <ion-avatar item-left>
+            <img class="cssthumb" src="{{getProfileImg(user.chat.users)}}" onError="this.src='assets/images/placeholder_user1.png'">
+            <img *ngIf="user.user.unread" style="width:5%;bottom: 48%;position: absolute;left: 5%;" src="assets/images/circle.svg">
+            <!-- <img *ngIf ="!user.chat.last_message.from.profile_image || !user.chat.last_message.from.profile_image.url" src="assets/images/placeholder_user1.png" > -->
+          </ion-avatar>
+          <p [style.font-weight]="user.user.unread ? 'bold' : 'normal'" style="font-size:1.5rem;color:#000;text-transform: capitalize;font-family: 'Lato', sans-serif;">{{getUserName(user.chat.users)}}
+            <span style="float:right;color:#010101;font-weight:normal; font-size:1.1rem;">{{getDateFormat(user.chat.last_message.sent_at)}}</span>
+          </p>
+          <p *ngIf ="user.chat.last_message.from" [style.font-weight]="user.user.unread ? 'bold' : 'normal'" style="font-size:1.3rem;color:#010101;font-family: 'Lato', sans-serif;"> {{user.chat.last_message.message}} </p>
+        </ion-item>
+      </div>  
+    </ion-list>    
+  </ion-card> 
+</ion-content>

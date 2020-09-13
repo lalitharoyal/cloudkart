@@ -1,0 +1,76 @@
+<!-- 
+
+<ion-content style="padding: 15px;">
+
+   <p> Once you tell StreetBuzz what you are looking for ( be crisp, you'll get better responses ), two things will happen:</p>
+   <p><b> LIVE</b> You'll get connected with the right people for your topic from beyond your circles. As they respond, you'll get instant updates. </p>
+   <p><b> ONLINE</b> You will see a collection of online blogs, reviews and discussions in your feed around similar topics, for you to explore.</p>
+   <p> Between these live and online inputs, you should get what you're looking for.</p>
+   <p> Go ahead, try it out!</p>
+
+<button  style="color:#65A0E6;float:right;background-color: transparent;" (click)="close()">OK</button>
+</ion-content> -->
+
+    <ion-item no-lines style="background-color: transparent;;padding-left:14px;">
+        <img style="width:22px;margin-top: -3px;" item-left src="assets/images/ic_people.png">
+        <p item-left *ngIf="crowd_reach_count > 0" style="font-size:1.4rem;font-weight:500;margin-right: 0px;color:#8e9093;margin-top: 0px;;">You will reach</p>
+    </ion-item>    
+    <p *ngIf="crowd_reach_count == 0" style="color:#8e9093;font-size:1.5rem;text-align: center;margin: -10px 0px 0px 0px;">SORRY</p>
+    <p *ngIf="crowd_reach_count == 0" style="color:#8e9093;font-size:1.4rem;text-align: center;margin: -4px 0px 4px 0px;">at this time there are</p>                    
+    <p style="color:#4a4a4a;font-size:3.0rem;text-align: center;margin: -12px 0px 0px 0px;font-weight: 500;">{{crowd_reach_count}}</p>
+    <p style="color:#4a4a4a;font-size:1.3rem;text-align: center;margin: -4px 0px 4px 0px;">
+        Matched members
+    </p>    
+    <p *ngIf="selectedHashTags && selectedHashTags.length > 0 && !targetMethod" style="color:#4a4a4a;font-size:1.6rem;text-align:center;margin: 0px 0px 5px 0px;font-weight:normal;">(<span *ngFor="let tag of selectedHashTags;let i=index;">{{tag}}<span *ngIf="i != selectedHashTags.length-1">,&nbsp;</span></span>)</p>
+    <p *ngIf="targetMethod == 'age_range' && specific_age != 'myAge'" style="color:#4a4a4a;font-size:1.6rem;text-align: center;margin: 0px 0px 5px 0px;font-weight: normal;">({{min_age}} - {{max_age}}
+        <span>years
+            <span *ngIf="selectedHashTags && selectedHashTags.length > 0">,&nbsp;
+                <span *ngFor="let tag of selectedHashTags;let i=index;">{{tag}}<span *ngIf="i != selectedHashTags.length-1">,&nbsp;</span></span>
+            </span>
+        </span>)
+    </p>
+    <p *ngIf="targetMethod == 'age_range' && specific_age == 'myAge'" style="color:#4a4a4a;font-size:1.6rem;text-align: center;margin: 0px 0px 5px 0px;font-weight: normal;">({{age_range}}
+        <span>years
+            <span *ngIf="selectedHashTags && selectedHashTags.length > 0">,&nbsp;
+                <span *ngFor="let tag of selectedHashTags;let i=index;">{{tag}}<span *ngIf="i != selectedHashTags.length-1">,&nbsp;</span></span>
+            </span>
+        </span>)
+    </p>
+    <p *ngIf="targetMethod == 'category'" style="color:#4a4a4a;font-size:1.6rem;text-align: center;margin: 0px 0px 5px 0px;font-weight: normal;">({{ categoryName}}
+        <span *ngIf="selectedHashTags && selectedHashTags.length > 0">,&nbsp;
+            <span *ngFor="let tag of selectedHashTags;let i=index;">{{tag}}<span *ngIf="i != selectedHashTags.length-1">,&nbsp;</span></span>
+        </span>)
+    </p>
+    <div *ngIf="targetMethod == 'gender'">
+        <p *ngIf="targetValue == 'male'" style="color:#4a4a4a;font-size:1.6rem;text-align: center;margin: 0px 0px 5px 0px;font-weight: normal;">( Men
+        <span *ngIf="selectedHashTags && selectedHashTags.length > 0">,&nbsp;
+            <span *ngFor="let tag of selectedHashTags;let i=index;">{{tag}}<span *ngIf="i != selectedHashTags.length-1">,&nbsp;</span></span>
+        </span>)</p>
+        <p *ngIf="targetValue == 'female'" style="color:#4a4a4a;font-size:1.6rem;text-align: center;margin: 0px 0px 5px 0px;font-weight: normal;">( Women
+        <span *ngIf="selectedHashTags && selectedHashTags.length > 0">,&nbsp;
+            <span *ngFor="let tag of selectedHashTags;let i=index;">{{tag}}<span *ngIf="i != selectedHashTags.length-1">,&nbsp;</span></span>
+        </span>)</p>
+        <p *ngIf="targetValue == 'other'" style="color:#4a4a4a;font-size:1.6rem;text-align: center;margin: 0px 0px 5px 0px;font-weight: normal;">( Other
+        <span *ngIf="selectedHashTags && selectedHashTags.length > 0">,&nbsp;
+            <span *ngFor="let tag of selectedHashTags;let i=index;">{{tag}}<span *ngIf="i != selectedHashTags.length-1">,&nbsp;</span></span>
+        </span>)</p>
+    </div>
+    <div *ngIf="targetMethod == 'location'">
+        <p *ngIf="locationStatus == 'specific'" style="color:#4a4a4a;font-size:1.6rem;text-align: center;margin: 0px 0px 5px 0px;font-weight: normal;">( {{specificLoc}}
+        <span *ngIf="selectedHashTags && selectedHashTags.length > 0">,&nbsp;
+            <span *ngFor="let tag of selectedHashTags;let i=index;">{{tag}}<span *ngIf="i != selectedHashTags.length-1">,&nbsp;</span></span>
+        </span>)</p>
+        <p *ngIf="locationStatus == 'current'" style="color:#4a4a4a;font-size:1.6rem;text-align: center;margin: 0px 0px 5px 0px;font-weight: normal;">( {{nearMe}}
+        <span *ngIf="selectedHashTags && selectedHashTags.length > 0">,&nbsp;
+            <span *ngFor="let tag of selectedHashTags;let i=index;">{{tag}}<span *ngIf="i != selectedHashTags.length-1">,&nbsp;</span></span>
+        </span>)</p>
+    </div>            
+    <!-- <p style="color:#4a4a4a;font-size:1.3rem;text-align: center;margin: -4px 0px 15px 0px;">and who match your hashtags</p> -->
+    <!-- <div class="crowdLabelFloater">
+        <p class="crowdLabelFloater1">map with locations of matching users pulsing</p>
+    </div>  -->
+    <ion-item no-lines style="padding:3% 10%;">
+        <p (click)="chooseAgain()" item-left style="color:#4a90e2;font-weight: 500;font-size:1.4rem;">Choose Again</p>
+        <p (click)="publishCard()" item-right style="color:#4a90e2;font-weight: 500;font-size:1.4rem;">Publish</p>
+        <!-- <p *ngIf="crowd_reach_count == 0" item-right style="color:#9b9b9b;font-weight: 500;font-size:1.4rem;">Publish</p> -->
+    </ion-item>              

@@ -1,0 +1,212 @@
+
+<ion-header >
+  <ion-navbar >
+    <ion-title text-left>
+      <span *ngIf="selectedCount < 1" style="color:#fff;font-size:1.7rem;font-weight:normal;">Conversation with <span style="text-transform: capitalize;">{{name}}</span></span>
+    </ion-title>
+    <ion-buttons start  *ngIf="selectedCount > 0">
+        <button ion-button>
+            <p *ngIf="selectedCount > 0" style="color:#fff;font-size:1.7rem;font-weight:normal;margin-bottom:0px;">{{selectedCount}}&nbsp;</p>
+        </button>
+        <button ion-button  (click)="deleteMsgs()">
+          <div>       
+              <img src="assets/images/delete.svg"> 
+              <!-- <span style="color:#ffffff;font-weight:500;font-size: 1.6rem;">Delete</span> -->
+          </div>
+        </button>
+        <button ion-button>
+            <span style="color:#ffffff;font-weight:500;font-size: 1.6rem;">Delete</span>
+        </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button  style="text-transform:none">
+        <img src="assets/images/more.svg">
+      </button>
+    </ion-buttons>    
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-item *ngIf="selectedCount > 0" style="background-color:#F5A623;position: absolute;z-index:2">
+    <p item-left style="color:#ffffff;font-size: 1.6rem;font-weight: 400;">{{selectedCount}}&nbsp;messages selected</p> 
+    <div (click)="deleteMsgs()">       
+      <img item-right src="assets/images/delete.svg" style="height:20px;display:inline-block;width:20px"> 
+      <span item-right style="color:#ffffff;font-weight:500;font-size: 1.6rem;">Delete</span> 
+    </div>   
+  </ion-item>   -->
+  <ion-card style="width: 100%;margin: auto;background: #fff;">        
+    <ion-row *ngIf="showLoader">
+      <ion-col col-12 style="text-align: center;">
+        <button ion-button style="background:transparent">
+          <img class="loader" style="width:60px;height:60px;margin-top: 12px;" src="assets/images/loader.svg" />
+        </button>
+      </ion-col>              
+    </ion-row> 
+                                                                                                                                        
+
+    <div (press)="onLongPress(chat, chats.length-idx-1)" (tap)="viewChat(chat, chats.length-idx-1)" [style.background]="messages[chats.length-idx-1] == true ? '#C9D6E9':'transparent'" *ngFor="let chat of chats;let idx = index;" >
+      <p style="text-align:center;color:#969696;font-size:1.1rem;margin:0px;">{{displaySentDate(chats[chats.length-idx-1].sent_at, idx)}}</p>
+      <ion-item class="previewCss" style="margin: 0 10px 3px 10px;width:100%;background: transparent" *ngIf="chats[chats.length-idx-1].link_preview" (click)="goToLink(chats[chats.length-idx-1].link_preview.url)"> 
+        <img class="cssthumb" item-left *ngIf="chats[chats.length-idx-1].from.profile_image != null && chats[chats.length-idx-1].from.id != profileId" [src]="chats[chats.length-idx-1].from.profile_image.url" onError="this.src='assets/images/placeholder_user1.png'" style="height: 30px; border-radius: 50%;margin:1px 6px 4px 0;width: 30px;">              
+        <ion-card item-left style="background: transparent;margin:0px;" [style.background]="(chats[chats.length-idx-1].from.id != profileId) ? '#f1f1f1' : '#E480B8'">
+          
+          <ion-item style="background-color:transparent; padding-left:0px;">
+            <ion-thumbnail item-left style="margin-left:8px;">
+              <img class="cssthumb" *ngIf="chats[chats.length-idx-1].link_preview.image && chats[chats.length-idx-1].link_preview.image.url" [src]="chats[chats.length-idx-1].link_preview.image.url" style="border-radius:10px;margin:1px 6px 4px 0" onError ="this.src='assets/images/add_pic.svg'">         
+            </ion-thumbnail>            
+            <ion-label style="white-space:normal;margin:0px;">
+              <p item-right class="line-clamp" style="font-size: 1.4rem;font-weight: 500;color: #444444;margin-bottom: 13px; ">{{chats[chats.length-idx-1].link_preview.title}}</p>
+              <p item-right class="line-clamp" style="font-size:1.1rem;font-weight:normal;color:#444444;text-align: left;">{{chats[chats.length-idx-1].link_preview.description}}</p>
+            </ion-label>
+          </ion-item>  
+          <div class="chat-message1">
+            <div class="left-bubble1">
+              <p  text-wrap class="line-clamp" style="color:#65A0e6;">{{chats[chats.length-idx-1].link_preview.url}}</p><span class="msg-date1">{{displaySentTime(chats[chats.length-idx-1].sent_at, idx)}}</span>    
+            </div>
+          </div>
+          <!-- <p item-right class="line-clamp" style="font-size:1.2rem;font-weight:normal;color:#65A0e6;text-align: left;text-decoration: underline;padding:4px 12px;">{{chats[chats.length-idx-1].link_preview.url}}</p>     -->
+        </ion-card>        
+      </ion-item> 
+
+      <ion-item style="min-height:30px;padding-left: 10px;background: transparent" *ngIf="!chats[chats.length-idx-1].link_preview && chats[chats.length-idx-1].message && (chats[chats.length-idx-1].attachments && chats[chats.length-idx-1].attachments.length < 1)">  
+        <div item-left *ngIf="chats[chats.length-idx-1].from.id != profileId" style="margin:0px 6px 2px 0;">
+          <img class="cssthumb" *ngIf="chats[chats.length-idx-1].from.profile_image" [src]="chats[chats.length-idx-1].from.profile_image.url" onError="this.src='assets/images/placeholder_user1.png'" style="height: 30px;border-radius: 50%;width:30px;">
+          <img class="cssthumb" *ngIf="!chats[chats.length-idx-1].from.profile_image || !chats[chats.length-idx-1].from.profile_image.url" src="assets/images/placeholder_user1.png" onError="this.src='assets/images/placeholder_user1.png'" style="height: 30px;border-radius: 50%;width:30px;">
+        </div>  
+        <div item-left style="background: transparent;margin:0px;width:100%;">
+          <ion-item style="background-color:transparent; padding-left:0px;min-height:30px;margin-bottom: 4px;">
+            <p  item-left class="textdec" *ngIf="chats[chats.length-idx-1].from.id != profileId"><span>
+            <p  item-left class="csstext" *ngIf="chats[chats.length-idx-1].from.id != profileId" >{{chats[chats.length-idx-1].message}}&nbsp;&nbsp;
+            </p> <span item-right *ngIf="chats[chats.length-idx-1].from.id != profileId" style="float:right;margin:-5px 0px -3px 30px;color:#969696;font-size:1.0rem;">{{displaySentTime(chats[chats.length-idx-1].sent_at, idx)}}</span> </span> 
+            </p>     
+            <!-- <ion-label  *ngIf="chats[chats.length-idx-1].from.id != profileId" style="padding:0px;">
+              <div class="chat-message">
+                  <div class="left-bubble">
+                   
+                <p item-left text-wrap class="textdec" *ngIf="chats[chats.length-idx-1].from.id != profileId" >{{chats[chats.length-idx-1].message}}</p> <span class="msg-date">{{displaySentTime(chats[chats.length-idx-1].sent_at, idx)}}</span> 
+                      </div>
+                </div>
+          </ion-label> -->
+            <!-- <p text-wrap *ngIf="chats[chats.length-idx-1].from.id != profileId">{{chats[chats.length-idx-1].message}}</p> <span class="msg-date">{{displaySentTime(chats[chats.length-idx-1].sent_at, idx)}}</span> -->
+            <p  item-right class="textdec1" *ngIf="chats[chats.length-idx-1].from.id == profileId"><span>
+              <p  class="csstext1"  *ngIf="chats[chats.length-idx-1].from.id == profileId"  item-right>{{chats[chats.length-idx-1].message}}&nbsp;&nbsp;
+            </p> <span item-right *ngIf="chats[chats.length-idx-1].from.id == profileId" style="float:right;margin:-5px 0px -3px 30px;color:#fff;font-size:1.0rem;">{{displaySentTime(chats[chats.length-idx-1].sent_at, idx)}}</span> </span>
+          </p>
+          </ion-item>
+        </div>
+      </ion-item>
+
+      <!-- <ion-item style="background-color:transparent;min-height:32px;padding-left: 10px;" *ngIf="!chats[chats.length-idx-1].link_preview && chats[chats.length-idx-1].message && (chats[chats.length-idx-1].attachments && chats[chats.length-idx-1].attachments.length < 1)">        
+        <img class="cssthumb" item-left *ngIf="chats[chats.length-idx-1].from.profile_image != null && chats[chats.length-idx-1].from.id != profileId" [src]="chats[chats.length-idx-1].from.profile_image.url" onError="this.src='assets/images/placeholder_user1.png'" style="height: 30px;border-radius: 10px;margin-right: 6px;width: 30px;margin:3px 6px 3px 0">
+        <p item-left style="margin: 0px;" *ngIf="chats[chats.length-idx-1].from.id != profileId" class="textdec">{{chats[chats.length-idx-1].message}}&nbsp;&nbsp;
+          <span style="text-align:center;color:#fff;font-size:1.1rem;
+          bottom: 4%;">{{displaySentTime(chats[chats.length-idx-1].sent_at, idx)}}</span> 
+        </p>        
+        <p *ngIf="chats[chats.length-idx-1].from.id == profileId" class="textdec" style="background-color:#E480B8;margin:0px 6px 4px 0px;" item-right>{{chats[chats.length-idx-1].message}}&nbsp;&nbsp;
+          <span style="text-align:center;color:#444;font-size:1.1rem;
+          bottom: 4%;">{{displaySentTime(chats[chats.length-idx-1].sent_at, idx)}}</span> 
+        </p>          
+      </ion-item> -->
+
+      <div *ngIf="(chats[chats.length-idx-1].attachments && chats[chats.length-idx-1].attachments.length > 0) && !chats[chats.length-idx-1].message">
+        <ion-item style="margin-bottom:-7px;background: transparent" *ngFor="let attachment of chats[chats.length-idx-1].attachments; let imgIdx = index;">
+          <ion-card item-right class="cardCss" *ngIf="chats[chats.length-idx-1].from.id == profileId" style="background: #E480B8;margin:0 8px 12px 0px;">
+            <img class="imgCss1" [src]="attachment.url" onError="this.src='assets/images/add_pic.svg'"> 
+            <p class="msg-date2" style="font-size: 1.0rem;color: #fff;">{{displaySentTime(chats[chats.length-idx-1].sent_at, idx)}}</p>        
+          </ion-card>
+          <ion-card item-left class="cardCss" *ngIf="chats[chats.length-idx-1].from.id != profileId" style="background:#f1f1f1;">
+            <img class="imgCss1" [src]="attachment.url" onError="this.src='assets/images/add_pic.svg'">
+            <p class="msg-date2" style="font-size: 1.0rem;color: #fff;">{{displaySentTime(chats[chats.length-idx-1].sent_at, idx)}}</p>          
+          </ion-card> 
+        </ion-item> 
+      </div>
+
+      <div *ngIf="chats[chats.length-idx-1].message && (chats[chats.length-idx-1].attachments && chats[chats.length-idx-1].attachments.length > 0)">
+        <ion-item style="margin-bottom: 0px;background: transparent">        
+          <img class="cssthumb" item-left *ngIf="chats[chats.length-idx-1].from.profile_image != null && chats[chats.length-idx-1].from.id != profileId" [src]="chats[chats.length-idx-1].from.profile_image.url" onError="this.src='assets/images/placeholder_user1.png'" style="height: 30px; border-radius:50%;margin:1px 6px 4px 0;width: 30px;">
+          <ion-label *ngIf="chats[chats.length-idx-1].from.id != profileId"  style="padding:0px;">
+            <div  class="chat-message" style="width: 60%;">
+              <div class="left-bubble">
+          <ion-card  class="cardCss1" style="margin:0 4px 4px 0;background: #f1f1f1" *ngIf="chats[chats.length-idx-1].from.id != profileId">
+            <img class="imgCss1" *ngIf="chats[chats.length-idx-1].attachments[0].url" [src]="chats[chats.length-idx-1].attachments[0].url" onError="this.src='assets/images/add_pic.svg'">
+            <img class="imgCss1" *ngIf="!chats[chats.length-idx-1].attachments[0].url" src="assets/images/add_pic.svg">
+            <!-- <p class="textdec" style="background: transparent;margin:0px 6px 4px 0px;">{{chats[chats.length-idx-1].message}}
+              &nbsp;&nbsp;
+              <span style="text-align:center;color:#fff;font-size:1.1rem;
+              bottom: 4%;">{{displaySentTime(chats[chats.length-idx-1].sent_at, idx)}}</span></p> -->
+              <p text-wrap >{{chats[chats.length-idx-1].message}} </p> <span class="msg-date">{{displaySentTime(chats[chats.length-idx-1].sent_at, idx)}}</span>
+          </ion-card>
+           </div>
+          </div>
+        </ion-label>
+          <ion-label item-right *ngIf="chats[chats.length-idx-1].from.id == profileId"  style="padding:0px;margin-left:48%">
+            <div class="chat-message" style="width:100%;">
+              <div class="right-bubble">
+          <ion-card  class="cardCss1" style="margin:0 4px 6px 0;" *ngIf="chats[chats.length-idx-1].from.id == profileId">
+            <img class="imgCss1" *ngIf="chats[chats.length-idx-1].attachments[0].url" [src]="chats[chats.length-idx-1].attachments[0].url" onError="this.src='assets/images/add_pic.svg'">
+            <img class="imgCss1" *ngIf="!chats[chats.length-idx-1].attachments[0].url" src="assets/images/add_pic.svg">
+            <!-- <p class="textdec" style="background: transparent;margin:0px 6px 4px 0px;">{{chats[chats.length-idx-1].message}}
+              &nbsp;&nbsp;
+              <span style="text-align:center;color:#fff;font-size:1.1rem;
+              bottom: 4%;">{{displaySentTime(chats[chats.length-idx-1].sent_at, idx)}}</span></p> -->
+          </ion-card> 
+          <p text-wrap >{{chats[chats.length-idx-1].message}} </p> <span class="msg-date">{{displaySentTime(chats[chats.length-idx-1].sent_at, idx)}}</span>
+        </div> 
+      </div> 
+    </ion-label>
+
+        </ion-item>
+      </div>  
+    </div>
+  </ion-card>  
+</ion-content>
+
+<ion-footer no-lines style="margin: 10px 3px 8px 10px;background: transparent;border-radius: 10px;">
+  <ion-row *ngIf="imagePreview" style="padding:5px 0px;">   
+    <ion-col col-10>
+      <img  src="assets/images/close.svg" (click)="close()" style="width:8%;position:absolute;z-index:1;right:1%;top: -2%">
+      <img  class="cssthumb" [src]="imagePreview"  style="border-radius:10px;height:200px;width:300px">        
+    </ion-col>
+    <ion-col col-2></ion-col>       
+  </ion-row>
+  <!-- preview starts-->
+  <ion-row *ngIf="preview && isValid">
+      <ion-col col-12 (click)="goToLink(preview.url)">
+        <ion-card style="background-color:#EDEDED;border-radius: 50%;padding: 5px 10px;margin: 8px 3px;">
+          <p class="text1" style="font-weight:normal">
+            {{textInput}}          
+          </p>
+          <ion-item style="background-color:transparent; padding-left:0px;">
+            <ion-thumbnail item-left style="margin-left:8px;position: absolute;">
+              <img class="cssthumb" [src]="preview.image" style="border-radius:10px" onError ="this.src='assets/images/review.jpg'">         
+            </ion-thumbnail>            
+            <ion-label style="white-space:normal;margin-left: 90px;">
+              <p item-right class="line-clamp" style="font-size: 1.1rem;font-weight: 500;color: #444444;margin-bottom: 13px; ">{{preview.title}}</p>
+              <p item-right class="line-clamp" style="font-size:1.1rem;font-weight:normal;color:#444444;text-align: left;">{{preview.description}}</p>
+            </ion-label>
+          </ion-item>      
+        </ion-card>        
+      </ion-col>
+    </ion-row> 
+  <!-- preview ends  --> 
+    <ion-row>
+      <ion-col col-10>
+        <ion-textarea #sendButton rows="1" [style.height]="myHeight" style="line-height: 1.2;border:1px solid #e1e1e1;border-radius: 10px;width: 100%;margin-left: 0px;" [ngClass]="{ 'activePadding' :  (activatePadding ==  true), 'inactivePadding' :  (activatePadding ==  false)}"
+          type="text" id="messageTextBox" (input)="change()" autocomplete="on" autocorrect="on" [(ngModel)]="messageText" (ionChange)="myMethod($event,messageText)"  placeholder=" Write message … ">
+        </ion-textarea> 
+        <input #fileInput (change)="fileUpload($event)" value="" (click)="fileInput.value = null" type="file" src="assets/images/cam.PNG" name="pic" accept="image/*" style="display: none;">  
+        <img [ngClass] =" [ messageText ? 'attachPosition' :  'dispatchPosition']" item-right (click)="gallery_run(fileInput)" src="assets/images/attachment.png" style="width:20px;position: absolute;bottom:0;top:20px;">
+        <img [ngClass] =" [ messageText ? 'attachPosition' :  'dispatchPosition']" *ngIf="!messageText" (click)="fileUploadCamera()" item-right src="assets/images/cam.svg" style="width:18px;height:30px;position: absolute;bottom:0;right:8%;
+        top: 10px;">
+      </ion-col>      
+      <ion-col col-2 style="padding-left: 0px;">
+        <button *ngIf="messageText || imagePreview" item-right ion-button (click)="submitMessage(sendButton)" clear style="width:66px;margin-right: 0px;background-color: transparent;position: absolute;bottom:0;">
+            <img type="submit" class="cssImage" style="margin-right: 30px;" src="assets/images/circle_icon_done.svg">
+        </button>
+        <button *ngIf="!messageText && !imagePreview" item-right ion-button clear style="width:66px;margin-right: 0px;background-color: transparent;position: absolute;bottom:0;">
+            <img type="submit" class="cssImage" style="margin-right: 30px;" src="assets/images/circle_icon_done_disable.svg">
+        </button>
+      </ion-col>
+    </ion-row>
+  
+</ion-footer>

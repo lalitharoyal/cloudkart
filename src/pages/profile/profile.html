@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title align="left">
+        <span style="color:#fff;font-size:1.7rem;font-weight:normal;font-family: 'Roboto', sans-serif;">Edit your interests</span>
+      </ion-title>
+      <ion-buttons end (click)="next('interest_Overlay', 'interest')">
+          <button ion-button style="font-family: 'Roboto', sans-serif;" >
+          Done
+          </button>
+          <button ion-button class="cssBtn">
+            <img src="assets/images/tick.svg" />
+            </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>  
+<ion-content style="text-align: center;padding: 10px 6px;">
+  <p class="csstitle">#BeUnique</p>
+  <p class="csstags" style="font-size:1.6rem;">Define who you are: #Tag your own passions, causes, problems,<br> 
+      identities. Get fewer, but more deeply relevant conversations<br>
+      in your feed, soon as they are posted. </p>
+    <ion-input type="text" (keyup.enter)="enterTag(hashtagInput)" placeholder="Enter #tags, separate by commas, or space" (ionChange)="changeHashTag(hashtagInput)" [(ngModel)]="hashtagInput" class="hashtagInput hashText hashtag"></ion-input>
+    <ion-list class="hashtagsList" *ngIf="tags && tags.length > 0">
+      <p class="csstitle" style="font-size: 1.5rem;text-align: left; margin: 12px 0px 0px 25px;">Existing tags:</p>
+      <ion-item *ngFor="let tag of tags;" no-lines (click)="selectHashTag(tag)">
+        #{{tag}}
+      </ion-item>
+    </ion-list> 
+    <div style="padding: 0 10px 20px 10px;text-align: center;">
+      <button class="hashTagBtn" style="box-shadow: 0 1px 0.4px 0 rgba(0,0,0,0.5);padding:3px 5px 3px 5px;margin: 0px 3px 0px 3px;" *ngFor="let tag of selectedHashTags;let i = index;">       
+        <ion-row>
+          <ion-col (click)="editHashTag(tag, i)" style="font-size: 1.2rem;">
+            #{{tag}}
+          </ion-col>
+          <ion-col style="padding-right: 0px;"><img style="width: 16px;height: 16px;margin-top: -10px;" src="assets/images/lock.svg"></ion-col>
+          <ion-col (click)="deleteHashTag(tag, i)" style="padding:1px 0 0 5px;">
+            <ion-icon name="close-circle" style="font-size:1.8em;"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </button>
+    </div>
+    <p class="csstitle">#GetVariety</p>
+		<p class="csstags" style="font-size:1.6rem;">Pick more interests, to get a wider variety<br>of relevant posts in your feed.</p>
+    <div style="margin: 0 10px;">
+      <button *ngFor="let interest of interests;let i = index;" (click)="categorySelection(interest, i)" [ngClass]="{'selectedChoice':(interests[i].set == true), 'unselectedChoice':(interests[i].set == false)}" ion-button round 
+      style="box-shadow: 0 1px 0.4px 0 rgba(0,0,0,0.5);padding: 0px 10px;font-size: 1.2rem;text-align: center;">#{{interest.category.name}}
+      <span style="margin-left:10px;"><img style="width: 16px;height: 16px;margin-top: -8px;" src="assets/images/internet.svg"></span></button>
+    </div>   
+</ion-content>
+ 

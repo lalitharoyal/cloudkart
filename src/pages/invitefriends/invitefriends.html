@@ -1,0 +1,47 @@
+<ion-header >
+  <ion-navbar >
+   <button ion-button menuToggle>
+       <img src="assets/images/menu.svg" style="height:20px;width:20px">
+    </button>
+      
+  
+   <ion-title align="left">
+       <span style="color:#fff;font-size:1.7rem;font-weight:normal;margin-left: 20px;"> Invite Friends -  remaining</span>
+    </ion-title>
+
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding style="margin-top:0px;">
+   <ion-card style="background-color: #FFE4F9;margin-top:10px;">
+    <ion-card style="background-color: #f9f9f9;margin:0px;width:100%;">
+      <p style="text-align: center;font-weight: normal;font-size: 1.9rem;margin-top: 28px;color:#444;  font-family: 'Roboto', sans-serif; line-height: 1.1;">Invite your people in.</p>
+      <p style="text-align: center;font-weight: normal;font-size: 1.6rem;
+        margin-bottom: 30px;color:#444;  font-family: 'Roboto', sans-serif;">Remember, without your invite no one can get in.</p> 
+      <!-- <form [formGroup]="inviteForm">               -->
+        <!-- <ion-item style="padding-left: 6px;" no-lines *ngFor="let input of inputs; let i=index;">
+          <ion-input type="text" [(ngModel)]="invites[i]" [placeholder]="input.placeholder" formControlName="email" [class.invalid]="!inviteForm.controls.email.valid && (inviteForm.controls.email.dirty && submitAttempt)"></ion-input>
+        </ion-item> -->
+        <div >
+        <ion-item  *ngFor="let input of inputs; let i=index" no-lines  style="background-color:#fff;  margin: 20px 0px 0px 17px;width:90%; border-radius: 10px;">
+          <ion-input autocomplete="on" autocorrect="on" type="text" [(ngModel)]="invites[i]"  (ionChange)="inputWatch(invites,i)" placeholder="{{input.placeholder}}" ></ion-input>         
+        </ion-item>
+        <p [hidden]="status" style="color:red;text-align: center;margin:5px;">* Please enter a valid email</p>
+
+        </div>
+
+      <!-- </form>   -->
+      <!-- <p style="text-align: center;margin:25px 48px 15px 48px;color:#444;  font-family: 'Roboto', sans-serif;">If you liked forEva, please invite others who may enjoy it.</p> -->
+      <p style="text-align: center;margin: 20px 0px 30px 0px;color:#444;  font-family: 'Roboto', sans-serif;padding: 10px;">The more friends you get in here, the more Karma you earn.
+      </p>
+    </ion-card>  
+    <button (click)="invite()" item-right style="background-color:transparent;float:right;margin: 10px 12px;">
+      <img src="assets/images/circle_icon_done.svg">
+    </button>
+   <!--  <button *ngIf="emails.length < 1" item-right style="background-color:transparent;float:right;
+    margin:10px 12px;">
+      <img src="assets/images/circle_icon_done_disable.svg">
+    </button>    -->         
+  </ion-card>
+</ion-content>

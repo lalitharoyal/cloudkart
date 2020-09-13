@@ -1,0 +1,73 @@
+page-popup-tags {
+    .hashstyle {
+        margin-top: 16px;
+        color: #444;
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+      .hashtagInput {
+        background-color: rgb(255, 255, 255);
+        margin:0px 10px;
+        border-radius: 6px;
+        width: 92%;
+        max-height: 34px;
+        border: 1px solid #ccc;
+      }
+      .hashstyle1 {
+        color: #444;
+        margin: 0 10px;
+        font-size: 1.2rem;
+        font-weight: normal;
+      }
+      .hashText .text-input {
+        margin: 8px 0px;
+        padding: 0px 10px;
+      }
+      .hashTagBtn {
+      
+        background: linear-gradient(to right,#f89d4d 0%, #ee4648 100%);
+        color:#fff;
+        text-transform: capitalize;
+        font-size: 1.3rem;
+        border-radius: 13px; 
+        height: 3.0rem !important;
+        padding: 0px 5px 0px 10px;
+        margin: 0 0.4rem;
+        font-family: 'Roboto', sans-serif;
+      }
+      .hashtagsList {
+        margin: 0px 10px 10px 10px;
+        background: white;
+        height: 100px;
+        overflow: auto;
+        border-radius: 0 0 6px 6px;
+      }
+      .item-block{
+          width:104%;
+      }
+      .label{
+          margin:0px;
+      }
+      .item{
+        min-height: 30px;
+      }
+      .text1{
+        margin-left: 11px;
+        margin-top: 10px;
+      }
+      :host ::ng-deep .popover-content{
+          padding:0px !important;
+      }
+      .row {
+        padding-top:0px;
+        padding-right:0px;
+        padding-left:0px;
+        margin:0px;
+      }  
+      ion-grid .row:before {
+        width: 0px; 
+      }  
+      .row:before {
+        width: 0px; 
+      }
+}

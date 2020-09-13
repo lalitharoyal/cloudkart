@@ -1,0 +1,62 @@
+
+<ion-header >
+  <ion-navbar> 
+    <ion-title align="left">
+      <span *ngIf="isAdmin() || isLeader()" style="color:#fff;font-size:1.7rem;padding-left:20px;">Edit/Remove Zone Members</span>
+      <span *ngIf="!isAdmin() && !isLeader()" style="color:#fff;font-size:1.7rem;padding-left:20px;">Zone Members</span>
+    </ion-title>      
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="margin-top:0px;" >
+  <div class="cssDiv">
+    <ion-searchbar style="margin: 0px 0px 10px 8px;width: 95%; padding: 0px;"
+      [(ngModel)]="search" 
+      [showCancelButton]="false" 
+      (ionInput)="getItems($event)" 
+      (ionCancel)="dismiss()" placeholder="Search members">          
+    </ion-searchbar>    
+    <ion-row style="margin:0px;height:44px;" *ngFor="let user of users; let idx = index">
+      <ion-col col-1 *ngIf="(isAdmin() || isLeader())">
+          <ion-checkbox [checked]="selectedUsers[user.user.id]" (ionChange)="selectUser(user.user.id, idx)" style="margin: 12px 0px 0px 6px;"  color="dark" ></ion-checkbox>
+      </ion-col>
+      <ion-col col-1 *ngIf="!isAdmin() && !isLeader()">
+
+      </ion-col>
+      <ion-col col-8 (click)="viewProfile(user.user.id)">
+        <ion-item  class="itemHt" no-lines>
+          <img  class="cssthumb" *ngIf="!user.user || !user.user.profile_image || !user.user.profile_image.url" item-left src="assets/images/placeholder_user1.png" style="width:40px;height:40px;border-radius:50%">   
+          <img  class="cssthumb" *ngIf="user.user && user.user.profile_image && user.user.profile_image.url" item-left src="{{user.user.profile_image.url}}" style="width:40px;height:40px;border-radius:50%" onError ="this.src='assets/images/placeholder_user1.png'">
+          <p style="color:#010101;font-size:1.6rem;text-transform: capitalize;font-family: 'Roboto', sans-serif;"> {{ user.user.name }} </p>
+          <p style="color:#a5a5a5;font-size:1.1rem;text-transform: capitalize; font-family: 'Roboto', sans-serif;">{{user.user.age}},&nbsp;{{user.user.city}},&nbsp;{{user.user.country}}</p>     
+        </ion-item>
+      </ion-col>      
+      <ion-col col-3 >
+        <p *ngIf="!isAdmin() && !isLeader()" style="font-size: 1.0rem;margin-top: 20px;">{{user.role}}</p>
+        <ion-item class="itemHt" *ngIf="(isAdmin() || isLeader())" no-lines  style="padding-left: 0px; margin-top: -8px;">
+            <ion-label style="margin: 0px;padding: 0px;font-size:1.4rem; height: 0px;">Select Role </ion-label>
+            <ion-select style="max-width: 100%;padding: 0px;margin: 0px 5px 0px 0px;font-size: 1.4rem;" placeholder="select" multiple="false" [(ngModel)]="user.role" (ionChange)="selectRole($event, user.user.id, idx)">
+                <ion-option value="FOUNDER">Founder</ion-option>
+                <ion-option value="LEADER">Leader</ion-option>
+                <ion-option value="MEMBER">Member</ion-option>
+              </ion-select>
+        </ion-item>
+      </ion-col>      
+    </ion-row>
+  </div>
+</ion-content>
+
+<ion-footer *ngIf="(isAdmin() || isLeader())" style="background: white;">
+  <ion-row>
+    <ion-col col-12 style="text-align: center">
+        <p style="margin-bottom: 2px;">Remove members <span>
+          <button *ngIf="userIds.length > 0" (click)="removeMembers()" item-right style="background-color: transparent;margin-right:10px;">
+            <img src="assets/images/circle_icon_done.svg">
+          </button>
+          <button item-right *ngIf="userIds.length < 1"  style="background-color: transparent;margin-right:10px;">
+            <img src="assets/images/circle_icon_done_disable.svg">
+          </button>
+      </span></p>
+    </ion-col>
+  </ion-row> 
+</ion-footer>

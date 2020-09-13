@@ -1,0 +1,453 @@
+
+.ios{
+
+  .scroll, .scroll-x, .scroll-y {
+    -webkit-overflow-scrolling: auto;
+    }
+    page-timeline, page-zones, page-tags, page-discover, page-people {
+      .super{
+        position: fixed;
+        width: 16px;
+        top: -15px;
+        left: -5px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: lighter;
+      }
+    } 
+    
+    page-profile_user{      
+      .membershipCss {
+        right:-10%;
+      }
+    }
+    page-your_profile{      
+      .membershipCss {
+        right:-8%;
+      }
+      .cssCam{
+        margin-right: 0px !important;
+        width:20px;
+        margin-top: 0px;
+      }
+    }      
+    page-interests {
+      .itemwidth{
+        width:99%;
+      }
+    }
+    page-messages{
+      .cssImage{
+        margin-top:6px;
+      }
+    }
+    page-popup-crowdInfo {
+      .custom-popover1 .popover{ 
+        border-radius:0px !important;  
+      }
+    }  
+  page-timeline {
+    .divbox{
+      height: 89px;
+      overflow: hidden;
+      margin-top: -95px; 
+      width:88%;
+      max-width:88%;
+      position: absolute;
+      margin-left: 10px;
+      padding: 32px 0px 0px 0px;
+    }
+  }
+  page-timeline{
+    .moreHoriz{
+      width:25px;
+      position: absolute;
+      bottom:0px;
+      right: 38px;
+      top: 32px;
+    }
+  }
+  page-timeline{
+    .moreHoriz1{
+      width:25px;
+      position: absolute;
+      bottom:0px;
+      right: 30px;
+      top: 32px;
+    }
+  }
+  page-comment {
+    .doneimage {
+      margin-top:-2px;
+    }
+  }
+  page-timeline {
+    .headerMargin{
+      margin-top:72px;
+    }    
+  }
+  
+  page-test{
+    .csslogo{
+      margin-top: 112% !important;
+    }
+  }
+ }
+ 
+ .md{
+  page-test{
+    .csslogo{
+      margin-top: 108% !important;
+    }
+  }
+
+  
+  page-timeline, page-zones, page-tags, page-discover, page-people {
+    .super{
+      position: absolute;
+      width: 16px;
+      top: -15px;
+      left: -5px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: lighter;            
+    }
+  } 
+   
+  page-profile_user{      
+    .membershipCss {
+      right:-13%;
+    }
+  } 
+  page-your_profile{      
+    .membershipCss {
+      right:-13%;
+    }
+    .cssCam{
+      width:20px;
+      margin-top: 0px;
+    }
+  }
+   
+  page-timeline, page-zones, page-tags, page-discover, page-people {
+      .logoFix{
+        margin-right:2px
+      }
+    }  
+  page-interests {
+    .itemwidth{
+      width:100%;
+    }
+  }
+  page-timeline {
+    .divbox{
+      height: 89px;
+      overflow: hidden;
+      margin-top: -95px; 
+      width:89%;
+      max-width:89%;
+      position: absolute;
+      margin-left: 11px;
+      padding: 32px 0px 0px 0px;
+    }
+  }
+  page-timeline{
+    .moreHoriz{
+      width:25px;
+      position: absolute;
+      bottom:0px;
+      right:34px;
+      top: 32px;
+    }
+  }
+   page-timeline {
+    .moreHoriz1{
+      width:25px;
+      position: absolute;
+      bottom:0px;
+      right: 24px;
+      top: 32px;
+    }
+  }
+  page-timeline {
+    .headerMargin{
+      margin-top:48px;
+    }    
+  }
+}
+.grad{
+  background: linear-gradient(to top, #010101, transparent);
+  opacity:1;
+  color:#fff;
+  font-size:1.7rem;
+  width: 100%;
+  padding: 42px 10px 10px 10px;
+  white-space: normal;   
+  height: 100px;
+  position: absolute;
+  z-index: 1;
+  margin: -100px 10px 0px 0px;  
+}
+.scroll-content {	
+	overflow-y:auto !important;
+  overflow-x:auto !important;
+  //padding:0px; 
+}
+ion-navbar.toolbar-md {
+  min-height: 5px;
+  height:38px;  
+}
+ion-header {
+  position:fixed !important;
+  top : 0px !important;
+}
+.toolbar-title {  
+  padding:0px;  
+}    
+.toolbar-title.toolbar-title {
+  color:#fff;
+}
+ion-content { 
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.label.label {
+  color:rgba(84, 81, 81, 0.76);
+  font-size:1.6rem;
+  text-align:left;
+  font-weight:normal
+}
+
+.toolbar-background{
+  background: linear-gradient(to right,#D42453,#C92462,#B82575,#A32590,#9025A5);
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.content.content{
+  background-color:#fff;
+  margin-top: 5px;
+}
+.bar-button-default, .bar-button-clear-default, .bar-button-default{
+  color:#fff;
+}
+::-webkit-scrollbar {
+  //  display: none;
+}
+.card{
+  border-radius:20px;
+  box-shadow:none;
+}
+.button{  
+  box-shadow:none;
+  text-transform : uppercase;
+}
+.range-ios .range-knob {
+  left: 15px;
+  top: 13px;  
+  width: 15px;
+  height: 15px;
+  box-shadow: 
+  0 1px 1px rgba(0, 0, 0, 0.1), 
+  0 2px 4px rgba(0, 0, 0, 0.2),
+  0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+.range-ios .range-bar {
+  height : 2px;
+}
+.range-ios .range-knob-min.range-knob-min .range-knob {
+  border: 0px;
+}
+.popover {
+  background:rgba(0,0,0,0.7);
+}
+.popup-container {
+  background-color: transparent !important;
+}
+.backdrop{
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+ion-backdrop {
+  opacity : 0.7 !important;
+}
+.modal {
+  text-align: center;
+  padding: 0!important;
+  display:block;
+}  
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+ // overflow: auto;
+}    
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.custom-popover .popover-content { 
+  top: 20px !important;  
+}
+.custom-popoverAvatar .popover-content { 
+  //top: 10px !important;
+  left: 10px !important;
+  //bottom: 0 !important;
+  width:94% !important;  
+}
+ion-header {
+  z-index:2;
+}
+.alert-ios .alert-checkbox-group {
+  border-top:0px !important;
+}
+.alert-ios .alert-checkbox-label {
+  text-overflow: initial !important;
+  white-space: initial !important;
+}
+.alert-md .alert-checkbox-group {
+  border-top:0px !important;
+}
+.alert-md .alert-checkbox-label {
+  text-overflow: initial !important;
+  white-space: initial !important;
+} 
+.custom-popover2 .popover-content{
+  top:5px !important;
+  border-radius: 0px;
+  right: 5px !important;
+  left: 138px !important;
+  width:58%
+}
+.custom-popover3 .popover-content{
+  width: 97% !important;
+  min-width: 0;
+  left: 0px !important;
+  color: #000;
+  bottom: 5px !important;
+  background: #fff !important;
+  margin-left: 4px;
+  border-radius:0px !important;
+  top:262px !important;
+} 
+.custom-popover3 .popover-content .ion-backdrop {
+  opacity: 0.8;
+  background-color: #AEAEAE;
+}
+.customToast.toast-ios .toast-message {
+  text-align:left;   
+  background: #f0f0f0;
+  color: #444444;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;    
+  line-height: 30px; 
+  padding: 13px 15px 15px 15px; 
+}
+.customToast.toast-ios .toast-wrapper {
+  left: 0px;
+  right: 0px;
+  top:22px;  
+  border-radius: 16px;  
+  max-width: 100%;  
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), 2px 3px 1px -2px rgba(0, 0, 0, 0.4), 2px 1px 5px 0 rgba(0, 0, 0, 0.4);
+}
+.customToast.toast-md .toast-wrapper {
+  left: 0px;
+  right: 0px;
+  top:10px;  
+  border-radius: 16px;  
+  max-width: 100%;  
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4), 2px 3px 1px -2px rgba(0, 0, 0, 0.4), 2px 1px 5px 0 rgba(0, 0, 0, 0.4);
+}
+.customToast.toast-md .toast-message {
+  text-align:left;   
+  background: #f0f0f0;
+  color: #444444;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;    
+  line-height: 30px; 
+  padding: 13px 15px 15px 15px;   
+}
+.toast-container{
+  text-align: center !important;
+  border-radius: 16px;
+}
+.customscss .toast .toast-wrapper {
+  left:30px !important;
+} 
+.cssthumb{
+  object-fit: cover; 
+}
+ion-toast {    
+  width: 86%;  
+  margin: auto 7%;  
+}
+.back-button-icon-ios{
+  font-size: 2.4rem !important;
+}
+.my-modal-class .gallery-modal{
+  margin-top: 0px;
+}
+.custom-alert.alert-md .alert-button-group {
+  justify-content: center;
+}
+.custom-alert.alert-md .alert-message {  
+  font-size: 12px;
+  text-align: center;
+  white-space: pre-line;
+}
+.custom-alert.alert-md .alert-title {
+  font-size: 18px;
+}
+.custom-alert.alert-md .alert-head {  
+  text-align: center;
+  padding: 14px 14px 10px 14px;
+  color: #4a90e2;
+}
+.custom-alert.alert-ios .alert-button-group {
+  justify-content: center;
+}
+.custom-alert.alert-ios .alert-message {  
+  font-size: 12px;
+  text-align: center;
+  white-space: pre-line;
+}
+.custom-alert.alert-ios .alert-title {
+  font-size: 18px;
+}
+.custom-alert.alert-ios .alert-head {  
+  text-align: center;
+  padding: 14px 14px 10px 14px;
+  color: #4a90e2;
+}
+.custom-popover4 .popover-content{
+  width: 94% !important;
+  top: 48px !important;
+  left: 10px !important;
+  border-radius:4px !important;
+  text-align: center !important;
+}

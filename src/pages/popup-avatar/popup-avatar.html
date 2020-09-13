@@ -1,0 +1,31 @@
+
+      
+      <ion-item no-lines >
+            <ion-input type="text" class="mask" style="text-align: right;
+            background: #e8e8e8;
+            border-radius: 6px;
+            width: 80%;
+            margin: auto;
+            font-size: 1.3rem;
+            padding: 6px;" [(ngModel)]="streetName" (ionChange)="street_name(streetName)" placeholder="Pick your masked name"></ion-input>                              
+            <button  item-right *ngIf="selected_image && streetName" (click)="next('avatarOverlay', selected_image)" style="background-color: transparent;margin-right: 8px;margin-bottom:8px;">
+                  <img src="assets/images/circle_icon_done.svg">
+            </button>
+            <button  item-right *ngIf="!selected_image || !streetName"  style="background-color: transparent;margin-right: 8px;margin-bottom:8px;">
+                  <img src="assets/images/circle_icon_done_disable.svg">
+            </button>
+      </ion-item> 
+      <p style="border-bottom: none;margin: 10px;font-size: 1.4rem;font-weight: 500;text-align: center;color:#000000; font-family: 'Lato', sans-serif;">
+            Pick your mask
+      </p>     
+      <ion-row *ngFor="let row of avatarGrid">
+            <ion-col  col-4 style="padding:1px;text-align: center;" *ngFor="let col of row;let i = index;" (click)="chooseMask(col, i)">
+                  <img [src]="col" style="width:90px;height:90px;border-radius:50%;">
+                  <img [ngClass]="{'unselected-image': !(selected_image === col)}" style="position: absolute;top: -5%;right: 5px;
+                  width: 30px;" src="assets/images/circle_icon_done_green.svg">
+            </ion-col>
+      </ion-row>
+    										
+         
+                                    
+                                    

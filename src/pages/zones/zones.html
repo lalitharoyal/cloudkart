@@ -1,0 +1,69 @@
+<ion-header >
+        <ion-navbar >
+          <button ion-button menuToggle class="logoFix">
+            <img src="assets/images/menu.svg" >
+          </button>   
+          <ion-buttons left>
+            <img style="width: 75px;margin-top:-5px;"  src="assets/images/for_eva_logo_white.svg">
+          </ion-buttons>  
+          <ion-buttons left>
+            <sup *ngIf="end_url == 'https://n0xc2jthna.execute-api.us-east-1.amazonaws.com/dev'" class="super"><img src="assets/images/Beta.png"></sup>    
+          </ion-buttons>   
+          <ion-buttons end>
+            <button ion-button (click)="searchItems()" style="padding:0 8px;width: 39px;">
+              <img src="assets/images/search.svg" style="width: 18px;">
+            </button>      
+            <button ion-button (click)="notifications(this.sg['myProfileData'].new_notification_count)" style="padding:0 8px;width: 39px;">
+              <img src="assets/images/notifications.png" style="height: 18px;width:15px;margin-right:6px;">        
+            </button>
+            <ion-badge *ngIf="this.sg['myProfileData'] && this.sg['myProfileData'].new_notification_count > 0" class="card-badge1" style="margin-right:52%;width: 30px;height: 18px;border-radius: 20px;padding: 4px 2px 0px 2px;font-size: 1.0rem;font-weight: bold;">
+              <span *ngIf="this.sg['myProfileData'].new_notification_count < 100" style="font-weight:bold;">{{this.sg['myProfileData'].new_notification_count}}</span>
+              <span *ngIf="this.sg['myProfileData'].new_notification_count > 99" style="font-weight:bold;">99</span>
+              <span *ngIf="this.sg['myProfileData'].new_notification_count > 99" style="font-weight:bold;">+</span>
+            </ion-badge>
+            <button ion-button (click)="chatList()" style="padding:0 8px;width: 39px;">
+                <img src="assets/images/question_answer.svg">
+            </button>
+            <button ion-button (click)="addMember()" style="padding:0 8px;width: 39px;">
+                <img src="assets/images/ic_person_add.png">
+            </button>
+          </ion-buttons>
+        </ion-navbar>
+      </ion-header>
+
+<ion-content (ionScroll)="onScroll($event)">
+  <ion-item style="width: 100%;">
+    <ion-searchbar item-left (search)="onSearch($event)" (ionInput)="searchForItems($event)" (ionCancel)="onCancel($event)" [showCancelButton]="showSearchCancelButton" [(ngModel)]="searchInput" 
+        placeholder="Search for zones"  style="border-radius: 10px;color:#aeaeae;padding: 8px 0px 8px 8px;margin-right: 5px;" >
+    </ion-searchbar>
+    <button class="joinBtn" item-right ion-button (click)="joinZone()">
+      Join Zone 
+    </button>
+    <button class="createBtn" item-right ion-button (click)="createZone()">
+      Create Zone 
+    </button>
+  </ion-item>
+  <ion-row *ngIf="showLoader">
+    <ion-col col-12 style="text-align: center;">
+        <button ion-button style="background:transparent">
+            <img class="loader" style="width:60px;height:60px;margin-top: 12px;" src="assets/images/loader.svg" />
+        </button>
+    </ion-col>              
+  </ion-row>
+  <p *ngIf="zonesLength < 1 && !showLoader" style="text-align: center;color: #adadad;font-size: 1.8rem;margin:10px 0">You're not a part of any Zone yet</p>
+  <ion-row style="padding: 10px 10px 0px 14px;">
+      <ion-col col-4  (click)="zoneSelection(zone)" *ngFor="let zone of zones">
+          <img  *ngIf="!zone || !zone.image || !zone.image.url" src="assets/images/placeholder_user1.png" class="cssthumb" style="width: 100px;height: 90px;border-radius: 4px;">
+          <img *ngIf="zone && zone.image && zone.image.url" [src]="zone.image.url" onError ="this.src='assets/images/placeholder_user1.png'"  class="cssthumb" style="width: 100px;height: 90px;border-radius: 4px;"> 
+          <ion-badge  class="card-badge6" >{{zone.member_count}}</ion-badge>
+          <!-- <img *ngIf="isMyZone(zone)" src="assets/images/ic_lock.svg" style="position: absolute; right: 0;  top: 0;"> -->
+          <p class="image_text"> {{zone.name}}</p>
+      </ion-col>                                        
+  </ion-row>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-fab *ngIf="topUpStatus == true" right bottom style="bottom:3%;position:absolute" (click)="scrollToTop()">
+      <img src="assets/images/fabIcon.svg">
+  </ion-fab> 
+</ion-content>

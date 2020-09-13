@@ -1,0 +1,256 @@
+page-comment {
+
+.doneimage-md{
+  width: 66px;
+  background-color:transparent;
+  padding:0px;
+  margin: 4px 0px 8px 14px;
+  position: absolute;
+  bottom: 0;
+}
+.doneimage-ios{
+  width: 66px;
+  background-color:transparent;
+  padding:9px 0px 0px 0px;
+  margin: 4px 0px 8px 14px;
+  position: absolute;
+  bottom: 0;
+}
+
+.line-clamp1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical; 
+  overflow : hidden; 
+} 
+
+.line-clamp2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; 
+  overflow : hidden; 
+}
+
+.line-clamp2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; 
+  overflow : hidden; 
+}
+
+.like {
+  color : #289b48 ;
+}
+
+.dislike {
+  color : #f04f34 ;
+}
+
+.unchecked {
+  color : #9b9b9b ;
+}
+
+.text-input.text-input{
+  width: 80%;
+}
+
+.activePadding {
+  padding:10px 12px 10px 10px; 
+}
+
+.inactivePadding {
+  padding:10px 12px 15px 10px; 
+}
+
+.attachPosition {
+  right:3%;
+ }
+
+ .dispatchPosition {
+  right:16%;
+ }
+
+.text-input{
+  margin:0px;
+}
+.toolbar-title {
+     padding: 0px;
+}
+.item ion-thumbnail[item-left]{
+  margin:0px; 
+} 
+.item-ios ion-thumbnail img {
+    width: 80px;
+    height: 80px;
+}
+.label-ios {
+    margin: 0px 0px 11px 0;
+        padding-right: 0px;
+}
+
+.item-ios [item-right]{
+  margin: 8px 0px 0px 0px;
+}
+
+.label-md {
+    margin: 0px 0px 13px 0;
+}
+ .item-md [item-right]{
+ margin: 8px 0px 0px 0px;
+ }
+
+.item [item-start] {
+   margin:0px;
+}
+
+.row {
+   padding:0px;
+   margin:0px;
+ }
+
+ion-grid .row:before {
+ width: 0px; 
+}
+
+.row:before {
+ width: 0px; 
+}
+
+  ion-textarea{
+  
+  background-color:#fff;
+  margin:0px 10px 0px 10px;
+  width:95%;
+  height:40px;
+  resize:none;
+  border-radius:10px;
+ 
+  overflow:auto;
+  float:left;
+  line-height:20px;
+}
+
+::-webkit-scrollbar {
+display: none;
+}
+.text-input.text-input {
+  background-color:#fff;
+  
+  font-size:1.6rem;
+}
+
+    ion-title img{ 
+    max-width: 50%;
+    margin: 40px;
+    
+}
+
+.back-button.show-back-button{
+     margin-left: 0px;
+
+}
+
+.text {
+ 
+ color:#010101;
+ margin:0px;
+ font-size:1.6rem;
+ font-style:italic;
+ font-weight:normal;
+ text-align:left;
+}
+.text1 {
+
+ font-size:1.4rem;
+ color:#010101;
+ 
+
+}
+
+.text2 {
+
+ font-size:1.2rem;
+ color:#848484;
+  margin-left: 5px;
+  font-weight:normal;
+}
+
+
+
+ion-card img {
+   
+    margin-right: 3px;
+    width:94%;
+   
+    border-radius:10px;
+}
+
+p {
+  
+  margin:0px;
+}
+
+.card{
+  
+  margin:5px 3px;
+  
+  //background-color:#f3f3f3;
+  width:auto;
+  box-shadow:none;
+}
+
+
+
+.item-inner {
+  
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.item {
+  
+    background-color:#fff;
+   // width:90%;
+    min-height:0px;
+    //height:40px;
+    border-radius:10px;
+    
+    //margin:0 18px 5px 18px;
+}
+ ion-footer {
+
+    padding:10px 0px 10px 0px;
+ }
+
+ .text-input::-moz-placeholder {
+  color: #646464;
+  font-size:1.6rem;
+  font-style: italic;
+}
+
+.text-input:-ms-input-placeholder {
+  color: #646464;
+  font-size:1.6rem;
+  font-style: italic;
+}
+
+.text-input::-webkit-input-placeholder {
+  text-indent: 0;
+  color: #646464;
+  font-size:1.6rem;
+  font-style: italic;
+}
+
+.angular-with-newlines {
+  white-space: pre-line;
+}
+.label {
+  color:blue;
+}
+.cssstyle{
+  height: 40px;
+  width: 40px;
+  float: left;
+}
+
+}

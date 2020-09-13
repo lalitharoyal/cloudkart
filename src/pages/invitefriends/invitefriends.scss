@@ -1,0 +1,44 @@
+page-invitefriends {
+
+.item-block {
+ background-color: #fff;
+    width: 84%;
+    min-height: 0px;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 27px;
+    margin-bottom: 25px;
+
+}
+.item-inner {
+border-bottom-color: transparent !important;
+
+box-shadow: none !important;
+}
+
+.text-input.text-input::-webkit-input-placeholder { /* WebKit browsers */
+  font-family: 'Roboto', sans-serif;
+  color: #aeaeae;
+}
+
+.text-input.text-input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  font-family: 'Roboto', sans-serif;
+  color: #aeaeae;
+}
+
+.text-input.text-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  font-family: 'Roboto', sans-serif;
+  color: #aeaeae;
+}
+.text-input.text-input::-ms-input-placeholder { /* Internet Explorer 10+ */
+  font-family: 'Roboto', sans-serif;
+  color: #aeaeae;
+}
+.toolbar-ios ion-title{
+  padding: 0px 0px 0px 35px;
+}
+// .text-input {
+//   margin-top: 4px;
+// }
+}

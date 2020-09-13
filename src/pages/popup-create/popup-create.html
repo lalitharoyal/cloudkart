@@ -1,0 +1,54 @@
+<!-- <ion-header >
+  <ion-navbar >
+   <button ion-button menuToggle>
+      <img src="assets/images/menu.svg" style="height:20px;width:20px">
+    </button>
+      
+  
+    <ion-title>
+    	<span style="color:#fff;font-size:1.7rem;">Filter Settings</span>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button style="color:#fff;" (click)="done()">
+       Done
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+<ion-list no-lines *ngIf="cards">
+  <ion-item>
+    <ion-label>My Cards</ion-label>
+    <ion-checkbox [(ngModel)]="cards.my_cards" (ionChange)="updateMyCards(cards.my_cards)"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>My Social Contacts Cards</ion-label>
+    <ion-checkbox [(ngModel)]="cards.my_social_contact_cards" (ionChange)="updateSocialCards(cards.my_social_contact_cards)"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Cards I Liked</ion-label>
+    <ion-checkbox [(ngModel)]="cards.cards_liked" (ionChange)="updateLikedCards(cards.cards_liked)"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Cards I Commented On</ion-label>
+    <ion-checkbox [(ngModel)]="cards.cards_commented_on" (ionChange)="updateCommentedCards(cards.cards_commented_on)"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Cards I Shared</ion-label>
+    <ion-checkbox [(ngModel)]="cards.cards_shared" (ionChange)="updateSharedCards(cards.cards_shared)"></ion-checkbox>
+  </ion-item>
+</ion-list> -->
+
+<ion-content padding style="background-color:#fff">
+	
+<p class="text1">{{segmentText}}</p>
+<ion-item no-lines>
+  <p  class="text" item-left (click)="closePopup()">No</p>
+  <p  class="text" item-right (click) = "tagsPages()">Yes</p>
+</ion-item>
+<p *ngIf="type == 'zones'" class="text1" style="font-size:1rem;">(*Zones are private spaces only for you and those who you invite in..)</p>
+</ion-content>

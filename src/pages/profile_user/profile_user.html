@@ -1,0 +1,366 @@
+<ion-header >
+  <ion-navbar>   
+   <ion-title *ngIf="profile" align="left"><span style="color:#fff;font-size:1.7rem;">{{profile.name}}'s Profile</span></ion-title>
+    <ion-buttons end *ngIf="editStatus" (click)="next()">
+      <button ion-button >
+        Done
+      </button>
+    </ion-buttons>
+   </ion-navbar>
+</ion-header>
+ 
+  <ion-content style="margin-top:0px;background: white;">
+    <ion-card style="padding-bottom: 6px;border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;border-top-left-radius: 0px;border-top-right-radius: 0px;box-shadow: none;margin: 0px;width: 100%;">
+        <ion-card class="csscard">
+            <p id="membershipCss">forEva Membership Card</p>
+            <ion-item *ngIf="profile" no-lines style="padding-left:0px;height:124px;color:#fff;">
+              <img item-left (click)="viewImage(profile.profile_image, profile.id, fileInput)" class="cssthumb" *ngIf="(profile.profile_image && profile.profile_image.url)" [src]="profile.profile_image.url" style="width:110px;height:110px;border-radius: 50%;margin:0px" onError="this.src='assets/images/placeholder_user1.png'">
+              <img item-left (click)="viewImage(profile.profile_image, profile.id, fileInput)" *ngIf="(!profile.profile_image || !profile.profile_image.url)" src="assets/images/placeholder_user1.png" class="cssthumb" style="width:110px;height:110px;border-radius: 50%;margin:0px">              
+              <img *ngIf="userProfile && (userProfile.id != profile_id_temp)" (click)="startChat(profile.id,profile.name)" src="assets/images/question_colored.svg" style="height:22px;width:22px;position:absolute;right: 21px;top:10px">
+              <input #fileInput value="" (click)="fileInput.value = null" (change)="fileUpload($event)" type="file" src="assets/images/cam.PNG" name="pic" accept="image/*" style="display: none;">
+              <span item-center>
+                  <p style="margin-bottom: 8px;margin-left: 0;" class="cssName" >{{getName(profile.name)}}</p>
+              <!-- <p *ngIf="profile_name[1]" style="margin-bottom: 8px;margin-left: 0;" class="cssName" >{{profile_name[1]}}</p> -->
+              <p class="cssstyle" style="margin-left: 0px;">
+                <span *ngIf="profile.age">{{profile.age}}&nbsp;</span>,&nbsp;{{getGender(profile.gender)}}</p>
+              <p *ngIf="!profile.avatar_toggle" class="csslocation">{{getCity(profile.display_location)}}</p>
+              <p *ngIf="profile.avatar_toggle" style="font-size:1.2rem;color:#565656">{{profile.country}}</p>
+              <p class="cssmembr">member since&nbsp;<b>{{getMemberSince(profile.member_since)}}</b></p>
+              <p class="cssview"><b>{{profile.profile_views}}</b> profile views</p>             
+              </span>        
+            </ion-item>
+          <div style="text-align: center;height:35px;">
+              <hr style="background-color:#E5A7C7;margin: 10px 15px 0px 3px;" />
+            <ion-item no-lines *ngIf="profile">
+              <p item-left style="color:#582841;font-size: 1.4rem; font-family: 'Roboto', sans-serif;">KARMA</p>
+              <!-- <span item-center>
+                <img *ngIf="(profile.street_cred == 1) || (profile.street_cred == 2) || (profile.street_cred == 3)" no-padding src="assets/images/star.svg" style="margin-right:-6px">
+                <img *ngIf="(profile.street_cred == 2) || (profile.street_cred == 3)" no-padding src="assets/images/star.svg" style="margin-right:-6px">
+                <img *ngIf="profile.street_cred == 3" no-padding src="assets/images/star.svg" style="margin-right:-6px">
+              </span> -->
+              <img item-left src="assets/images/like.svg" style="width:24px;height:24px;margin: 1px;">
+              <img item-left src="assets/images/favorite_outline.svg" style="width:24px;height:24px;margin: 1px;">
+              <img item-left src="assets/images/favorite_outline.svg" style="width:24px;height:24px;margin: 1px;">
+              <!-- <p *ngIf="profile" item-right style="font-size:1.1rem;color:#582841; font-family: 'Roboto', sans-serif;"> {{profile.hearts}} users</p> -->
+              <button *ngIf="userProfile && (userProfile.id != profile_id_temp) && !isBlocked" ion-button item-right class="mentor_follow_btn" (click)="blockUser()" style="font-size:1.3rem;padding:0 14px;color:grey;background-color: #e7e7e7;">Block</button>
+         <button *ngIf="userProfile && (userProfile.id != profile_id_temp) && isBlocked" item-right ion-button class="mentor_follow_btn" (click)="unblockUser()" style="font-size:1.3rem;padding:0 14px;color:#fff;background-color: #bf2572;">Unblock</button>
+            </ion-item>
+          </div>
+
+          <!-- <div *ngIf="profile && !profile.avatar_toggle">
+            <ion-item no-lines style="border-top: 1px solid #ffd8b5;" *ngIf="profile.categories && profile.categories.length > 0">
+              <span item-left style="font-size:1.4rem;color: #8b572a; font-family: 'Roboto', sans-serif;"> HER INTERESTS</span>             
+            </ion-item>
+            <button ion-button *ngFor="let category of profile.categories;let parentI=index;" style="box-shadow: 0 1px 0.4px 0 rgba(0,0,0,0.5);height: 3.0rem;margin: 3px 0px 3px 0px;padding: 10px;font-size:1.3rem;color:#fff; background: linear-gradient(to right,#f89d4d, #ee4648); font-family: 'Roboto', sans-serif;border-radius: 16px;margin: 0.4rem 0.4rem;">
+                #{{category.name}}
+            </button>       
+            <div *ngIf="profile.categories && profile.categories.length > 0">
+                <button *ngIf="profile.categories.length > 0" ion-button class="interets" >
+                  #{{profile.categories[0].category.name}}
+                </button>
+                <button *ngIf="profile.categories.length > 1" ion-button class="interets" >
+                  #{{profile.categories[1].category.name}}
+                </button>
+                <button *ngIf="profile.categories.length > 2" ion-button class="interets" >
+                  #{{interests[2].category.name}}
+                </button>
+                <button *ngIf="interests.length > 3" ion-button class="interets" >
+                  #{{interests[3].category.name}}
+                </button>
+                <button *ngIf="interests.length > 4" ion-button class="interets" >
+                  #{{interests[4].category.name}}
+                </button>
+                <button *ngIf="interests.length > 5" ion-button class="interets" >
+                  #{{interests[5].category.name}}
+                </button>
+                <button (click)="editInterests()" *ngIf="interests && interests.length > 6" class="interets" ion-button>
+                  +{{interests.length-6}}
+                </button>
+              </div>
+            <p class="csstext">*Interests are visible only to you, The more interests you add, the better and more relevant forEva will become.</p>
+          </div> -->
+    </ion-card>
+  </ion-card>
+
+  <!-- <p class="cssText">HER COLLECTION <span><img style="margin-left:10px;" src="assets/images/bookmark_colored.svg"/></span></p> -->
+  <p *ngIf="profile" class="cssText">{{getCollection(profile.gender)}}<span><img style="margin-left:10px;" src="assets/images/bookmark_colored.svg"/></span></p>
+  <p style="margin:10px;color:#444;text-align: center;">
+ {{errMsg}}
+ </p>
+  <ion-card (click)="viewCard(story.feed.id)" *ngFor="let story of bookmarkedStories; let idx = index" style="margin-bottom:20px;box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0px rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.12);border-radius:3px;">
+    <ion-card [ngClass]="{ discoverBorder : (story.feed.type == ('Story.Discover')), pollBorder : (story.feed.poll_type == ('poll')), recommendBorder : (story.feed.poll_type == ('recommend')), discussBorder : ( story.feed.type == ('Story.Post' )), reviewBorder :(story.feed.type == ('Story.Review'))}" style="margin: 0;width: 100%;background-color: transparent;box-shadow: none;border-radius:0px;">
+        <div class="row" style="height:0px">
+          <div class="col text-right">
+            <button ion-button [ngClass]="{ discoverBgColor : (story.feed.type == ('Story.Discover')), pollBgColor : (story.feed.poll_type == ('poll')), recommendBgColor : (story.feed.poll_type == ('recommend')), discussBgColor : ( story.feed.type == ('Story.Post' )), reviewBgColor :(story.feed.type == ('Story.Review'))}" 
+            style="color: #fff;font-size: 1.1rem;margin: -22px -5px 0 0;height: 20px;padding: 4px 0px 4px 0px;width: 90px;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.10), 0 3px 1px -2px rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.10);
+            z-index: 999;border-bottom-left-radius: 5px;">{{getCardType(story.feed) | uppercase}}
+            </button>
+          </div>
+        </div>
+        <ion-item *ngIf="story.feed.type != 'Story.Discover'" style="background-color:transparent;padding-left:5px;border-top-right-radius:0px;min-height: 20px;height: 70px;">
+          <ion-avatar item-start style="margin-right:5px;margin-left:5px">
+            <img class="cssthumb" *ngIf="story.feed.user.profile_image && story.feed.user.profile_image.url" [src]="story.feed.user.profile_image.url" style="border-radius: 50%;height:54px;width:54px;" onError="this.src='assets/images/placeholder_user1.png'">
+          </ion-avatar>
+          <p style="font-family: 'Roboto', sans-serif;color:#444444;font-size:1.4rem;margin-left:-6px;z-index:1;position:absolute;font-weight:500;">{{story.feed.user.name}}</p>
+          <!-- <p style="font-family: 'Roboto', sans-serif;color:#444444;margin-left:-6px;padding-top:20px;z-index:1;position:absolute;font-size:1.4rem;font-weight:400;width:50%;text-align: left"> <i>wants your {{getText(story)}}</i></p> -->
+          <p style="font-size:1.0rem;color:#444444;margin-left:-6px;padding-top:16px;text-align: left;  font-family: 'Roboto', sans-serif;">
+            <span>{{story.feed.user.display_location}}</span>
+          </p>
+          <p style="font-size:1.0rem;color:#444444;margin-left:-6px;text-align: left;  font-family: 'Roboto', sans-serif;">  
+            <span style="font-weight:500;font-size:1.1rem;font-family: 'Roboto', sans-serif;">{{displayTime(story.feed.published_at)}}</span> 
+            <span > <img style="width:25px;position: absolute;bottom:0px;right:12px;top:50px" src="assets/images/more_horiz.svg"></span> 
+          </p>
+        </ion-item>
+        <div style="padding-bottom: 4px;margin-bottom: 10px;background: transparent">
+          <p *ngIf="story.feed.type == 'Story.Discover'" style="margin:20px 0 -5px 10px;color:#434343;font-size:13px;margin-left: 13px;text-align: left;font-family: 'Roboto', sans-serif">
+            <span style="color:#4a4a4a; font-family: 'Roboto', sans-serif;font-size: 1.8rem;font-weight: 600;">{{story.feed.opinions_count}}</span>&nbsp;discoveries around
+         </p>
+          <p style="font-family:'Lato', sans-serif;font-size: 1.6rem;line-height:18px;color:#444;padding:10px 10px 1px 10px;text-align: left;font-weight:600;margin-bottom:10px;">{{displayTitle(story.feed.title)}}</p>          
+          <p class="line-clamp3" *ngIf=" story.feed.type != 'Story.Discover' && story.feed.description && (!story.feed.isSeeMore || story.feed.isSeeMore != true)" style="font-family:'Lato', sans-serif;font-size: 1.6rem;line-height:20px;color:#444;padding:0px 10px 0px 10px;margin-bottom:10px;text-align: left;font-weight:500;">
+            {{(story.feed.description)}}</p>          
+          <p *ngIf="story.feed.description && (!story.feed.isSeeMore || story.feed.isSeeMore != true) && story.feed.description.length > 140" style="font-family:'Lato', sans-serif;font-size: 1.15rem;line-height:20px;color:#444;text-align: right;font-weight:500;padding: 0 15px 10px 0;"><i>SEE MORE…</i></p>
+          <p *ngIf="story.feed.description && story.feed.isSeeMore && story.feed.isSeeMore == true && story.feed.description.length > 140" style="font-family:'Lato', sans-serif;font-size: 1.15rem;line-height:20px;color:#444;text-align: right;font-weight:500;padding: 0 15px 10px 0;"><i>SEE LESS…</i></p>
+          <!-- title preview starts for card face -->
+					<ion-row *ngIf="story.feed.link_preview && (story.feed.link_preview.description || story.feed.link_preview.title || story.feed.link_preview.image)">
+						<ion-card (click)="goToLink(story.feed.link_preview.url)" style="background-color:#f8f3e7;border-radius: 4px;margin:0 0 10px 9px;">
+						<ion-item style="background-color:transparent; padding-left:0px;">
+							<ion-thumbnail item-left style="margin-left:8px;margin-top:0px;">
+							<img *ngIf="story.feed.link_preview.image && story.feed.link_preview.image.url" [src]="story.feed.link_preview.image.url" style="border-radius:10px;margin-top:4px;" onError ="this.src='assets/images/add_pic.svg'">         
+							</ion-thumbnail>            
+							<ion-label style="white-space:normal;">
+							<p item-right class="line-clamp" style="font-size: 1.4rem;font-weight: 500;color: #444444;margin: 4px 0px 13px 0;text-align: left">{{story.feed.link_preview.title}}</p>
+							<p item-right class="line-clamp3" style="font-size:1.1rem;font-weight:normal;color:#444444;text-align: left;margin: 4px 0px;">{{story.feed.link_preview.description}}</p>
+							</ion-label>
+						</ion-item>  
+						<p class="line-clamp1" style="font-size: 1.3rem;color: #039BE5;text-align: left;margin: 0px 10px;">{{story.feed.link_preview.url}}</p>    
+						</ion-card>
+          </ion-row>
+          <!-- title preview ends for card face -->
+          <ion-scroll scrollX="true" style="width:97%;height:180px;margin:10px 8px 0 8px;" *ngIf="story.feed.attachments && story.feed.attachments.length>0"> 
+            <ion-row style="margin:0;display: inline;">
+             <ion-col col-12 *ngFor="let attachment of story.feed.attachments;let img_index = index;" >
+              <img class="cssthumb" [ngClass]="{'imageWidth_active':story.feed.attachments.length>1, 'imageWidth_inactive':story.feed.attachments.length == 1}" *ngIf="attachment.url != null" style="border-radius:10px;height:160px;margin-bottom:16px;display: inline-block;" [src]="attachment.url">
+             </ion-col> 
+            </ion-row> 
+          </ion-scroll>
+          <ion-scroll scrollX="true" style="width:100%;height:180px;" *ngIf="story.feed.results && story.feed.results.length > 0">
+            <ion-card class="horizontal_scroll" *ngFor="let result of story.feed.results" style="margin: 0px 0px 0px 10px;width: 75%;height:171px"> 
+             <ion-row style="padding-top: 0px;padding-right: 0px;padding-left: 0px;margin: 0px -5px 0 -5px;">
+               <ion-col col-12 style="padding: 0 1px 1px 0px;">
+                <img class="cssthumb" *ngIf="!result.feed.cover_image || !result.feed.cover_image.url" src="assets/images/hackerImg.jpg" style="border-radius:10px 0 0 0;height:130px;">
+                <img *ngIf="result.feed.cover_image && result.feed.cover_image.url" [src]="result.feed.cover_image.url" onError="this.src='assets/images/hackerImg.jpg'" style="border-radius:10px 0 0 0;height:130px;">
+                 <div class="grad divbox1" >
+                   <p style="padding-left: 5px;text-align: left;color:#fff;font-size: 1.1rem;font-weight: normal; font-family: 'Roboto', sans-serif;" >{{result.feed.domain}}</p> 
+                   <p class="line-clamp" style="padding-left: 5px;line-height:1.2;text-align: left;color:#fff;font-size: 1.5rem; font-family: 'Roboto', sans-serif;" >{{result.feed.title}}</p>
+                 </div>
+               </ion-col>
+              </ion-row>
+              <ion-row style="padding-top: 0px;padding-right: 0px;padding-left: 0px;margin: 0px;">
+                <ion-col col-10 style="white-space: normal;">
+                  <p class="line-clamp" style="font-size: 1.1rem;text-align: left;padding: 0px 5px 0px 8px;height:30px;line-height: 17px; font-family: 'Roboto', sans-serif;">{{result.feed.excerpt}}</p>
+                </ion-col>
+                <ion-col col-2> 
+                <p><img style="width: 16px;margin-top: 5px;" src="assets/images/share_1.svg"></p>
+                <!-- <div class="count">{{result.feed.shares}}</div> -->
+                </ion-col>
+              </ion-row> 
+            </ion-card>            
+            <div *ngIf="story.feed.opinions_count > 7" style="display:inline-block; background-color:rgba(255,255,255,0.6); margin:0px 0px 0px 10px;width:16%; height:171px;position: absolute; text-align: center;border-radius: 8px;">
+             <button style="background-color: transparent;margin-top:63px;">
+              <img class="text-center" src="assets/images/circle_icon_forward.svg">
+             </button>
+            </div>
+          </ion-scroll>
+          <div class="progress" *ngFor="let option of story.feed.options;let i = index" style="margin-top:-5px;" [ngClass]="{'selected_item':getClass(option.id,story.user.user_responses)}">
+            <span class="progress-text line-clamp">{{option.name}}</span>
+            <div class="value" *ngIf="profile && ((story.user.is_answered == true) || (myProfileId(profile.id) == cardOwner(story.feed.user.id)))">{{option.response_count}}</div>
+            <div class="progress-bar" style.background = {{story.feed.color_scheme}} style="font-family: 'Roboto', sans-serif;" *ngIf="profile && (story.user.is_answered == true || (myProfileId(profile.id) == cardOwner(story.feed.user.id)))" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style.width={{option.response_count}}%>
+            </div>
+          </div>
+          <p *ngIf="story.feed.options && story.feed.type == 'Story.Poll' && story.user.is_answered == false && userProfile && (myProfileId() != cardOwner(story.feed.user.id))" style="color:#4a4a4a;font-size: 1.2rem;margin:10px 0 10px 25px;text-align: left;font-weight:normal;font-family: 'Roboto', sans-serif;">{{getVotingText(story.feed.options)}}</p>
+          <div *ngIf="story.feed.type == 'Story.Review' && profile">
+            <div *ngIf="profile && ((story.user.is_answered == true) || (myProfileId(profile.id) == cardOwner(story.feed.user.id))) && story.feed.type == 'Story.Review'">
+             <hr style="margin:10px;background-color: #c8c7cc;height:1px;">
+             <ion-row>
+              <ion-col col-9>
+               <div *ngIf="profile && ((story.user.is_answered == true) || (myProfileId(profile.id) == cardOwner(story.feed.user.id))) && story.feed.type == 'Story.Review'" style="display: block;">
+                <canvas baseChart [datasets]="barChartData[idx]" [labels]="barChartLabels" [options]="barChartOptions" [colors]="barChartColors" [legend]="barChartLegend" [chartType]="barChartType"></canvas>
+               </div>
+              </ion-col>
+              <ion-col col-3>
+               <ion-row>
+                <ion-col col-12 style="text-align: center;padding:0px;color:#444444;font-size:3.0rem;">{{story.feed.votes}}</ion-col>
+                <ion-col *ngIf="story.feed.votes == 1" col-12 style="text-align: center;padding:0px;color:#444444;font-size:1.2rem;font-weight:500;margin-top:-10px">Rating</ion-col>
+                <ion-col *ngIf="story.feed.votes > 1" col-12 style="text-align: center;padding:0px;color:#444444;font-size:1.2rem;font-weight:500;margin-top:-10px">Ratings</ion-col>
+                <ion-col col-12 style="text-align: center;padding:0px;color:#444444;font-size:1.2rem;font-weight:500;margin-top:5px">Avg Rating</ion-col>
+                <ion-col col-12 style="text-align: center;padding:0px;color:#444444;font-size:3.0rem;margin-top:-6px">{{story.feed.average}}</ion-col>
+               </ion-row>
+              </ion-col>
+             </ion-row>
+             <ion-row *ngIf="story.user.is_answered == true">
+              <ion-col col-10>
+               <div *ngFor="let response of story.feed.responses" style="margin-top:15px">
+                <div class="slider" *ngIf="((response.user.id == profile.id) && (story.feed.type == 'Story.Review'))">
+                 <div class="progressReview">
+                  <div class="progress-bar progress-bar-danger" *ngIf="response.percentage < 7" role="progressbar" aria-valuemin="0" aria-valuemax="100" style.width={{(response.percentage)*10}}%>
+                  </div>
+                  <div class="progress-bar progress-bar-warning" aria-valuemin="0" aria-valuemax="100" *ngIf="(response.percentage > 6) &amp;&amp; (response.percentage < 9)" role="progressbar" style.width={{(response.percentage)*10}}%>
+                  </div>
+                  <div class="progress-bar progress-bar-success" aria-valuemin="0" aria-valuemax="100" *ngIf="response.percentage > 8" role="progressbar" style.width={{(response.percentage)*10}}%>
+                  </div>
+                 </div>
+                 <div class="value" style="margin-top:7px;font-size:0.8rem;width:13%">
+                  <p style="font-size:1.1rem">{{response.percentage}}/10</p>
+                 </div>
+                </div>
+               </div>
+              </ion-col>
+              <ion-col col-2 style="padding:10px 0 0 0;font-size:1.1rem">
+               Your
+               <br>Rating
+              </ion-col>
+             </ion-row>
+            </div>
+            <div *ngIf="profile && (story.user.is_answered == false) && (myProfileId(profile.id) != cardOwner(story.feed.user.id)) && (story.feed.type == 'Story.Review')" style="margin-top:10px">
+             <div class="slider_1">
+              <ion-range [disabled] = "true" (ionChange)="myMethod(percentage,story.feed.id)" [(ngModel)]="percentage[story.feed.id]" min="0" max="10" style="padding:7px 0px 5px 15px;" [color]="color">
+               <ion-label range-right style="color:#444444;font-size:1.4rem;margin-right:10px;">{{percentage[story.feed.id]}}/10</ion-label>
+              </ion-range>
+             </div>
+             <ion-checkbox  [disabled]="true" [(ngModel)]="checked[story.feed.id]" style="margin:0 auto" (ionChange)="updateCheckbox(story.feed.id)">
+             </ion-checkbox>
+             <p style="display: inline-block;color:#444;font-size:11px;position:absolute;z-index:1;margin:18px 0px 0px -26px">not sure</p>
+             <p *ngIf="story.feed.poll_type == 'recommend' && story.feed.options.length != 0" style="margin:0px 10px;padding:5px 10px;color:#444;font-weight:normal;text-align: left;font-family: 'Roboto', sans-serif;">vote one above, or</p>
+            <p *ngIf="story.feed.type == 'Story.Review'" style="margin:0px 10px 10px;padding:0px 10px;color:#4a4a4a;font-weight:normal;text-align: left;font-family: 'Roboto', sans-serif;font-size:1.1rem;">{{getReviewText(story)}}</p>
+            </div> 
+           </div>
+          <div *ngIf="story.feed.type != 'Story.Discover'">
+            <ion-row style="margin-bottom: 10px;">
+              <ion-col col-10 style="padding-left: 8px;"> 
+                <ion-item style="border-radius: 10px; background-color: #f1f1f1; height: 4.5rem; padding-left: 4px;" >
+                  <!-- <img item-left style="float: left;border-radius: 10px;height:40px;width:40px;margin-top: 3px;" src="assets/images/placeholder_user1.png "> -->
+                  <img item-left *ngIf="!profile" style="float: left;border-radius: 50%;height:40px;width:40px;margin-top: 3px;" src="assets/images/placeholder_user1.png"> 
+                  <div item-left *ngIf="profile" style="margin-top: 0px;margin-right: 8px;">
+                    <img class="cssthumb" *ngIf="(profile.profile_image == null && profile.avatar_toggle == false) || (profile.avatar_image == null && profile.avatar_toggle == true)" style="float: left;border-radius: 50%;height:40px;width:40px;margin-top: 3px;" src="assets/images/placeholder_user1.png">
+                    <img class="cssthumb" *ngIf="profile.avatar_image != null && profile.avatar_toggle == true" style="float: left;border-radius: 50%;height:40px;width:40px;margin-top: 3px;" [src]="profile.avatar_image.url" onError ="this.src='assets/images/placeholder_user1.png'">
+                    <img class="cssthumb" *ngIf="profile.profile_image != null && profile.avatar_toggle == false" style="float: left;border-radius: 50%;height:40px;width:40px;margin-top: 3px;" [src]="profile.profile_image.url" onError ="this.src='assets/images/placeholder_user1.png'">
+                  </div> 
+                  <ion-textarea item-right rows="1" style="margin:10px auto;border-radius:10px;font-size: 1.7rem;line-height: 1.4;"
+                    autocomplete="off" autocorrect="off" placeholder="{{getPlaceholder(story.feed)}}" type="text" [(ngModel)]="textInput"></ion-textarea>
+                </ion-item>
+              </ion-col>
+              <ion-col col-2 >
+                <button clear style="background-color: transparent;margin: 0px 0px 6px 0px;position: absolute;bottom: 0;padding: 0px;width:40px;height:40px;">
+                  <img type="submit" style="width:100%;" src="assets/images/circle_icon_done_disable.svg">
+                </button>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+        <div style="margin:auto 10px;">
+          <button ion-button *ngIf="story.feed.hashtags && story.feed.hashtags.length > 0" style="box-shadow: none;height: 3.0rem;margin: 3px 0px 3px 0px;padding:auto 10px;font-size:1.3rem;font-family: 'Roboto', sans-serif;border-radius: 15px;margin: 0.4rem 0.4rem;" [ngClass]="{'backendTagActive':(myHashtag(story.feed.hashtags[0]) == true), 'backendTagInactive':(myHashtag(story.feed.hashtags[0]) != true)}">
+            #{{story.feed.hashtags[0]}}
+          </button>
+          <button ion-button *ngIf="story.feed.hashtags && story.feed.hashtags.length > 1" style="box-shadow: none;height: 3.0rem;margin: 3px 0px 3px 0px;padding:auto 10px;font-size:1.3rem;font-family: 'Roboto', sans-serif;border-radius: 15px;margin: 0.4rem 0.4rem;" [ngClass]="{'backendTagActive':(myHashtag(story.feed.hashtags[1]) == true), 'backendTagInactive':(myHashtag(story.feed.hashtags[1]) != true)}">
+            #{{story.feed.hashtags[1]}}
+          </button>
+          <button ion-button *ngIf="story.feed.hashtags && story.feed.hashtags.length > 2" style="box-shadow: none;height: 3.0rem;margin: 3px 0px 3px 0px;padding:auto 10px;font-size:1.3rem;font-family: 'Roboto', sans-serif;border-radius: 15px;margin: 0.4rem 0.4rem;" [ngClass]="{'backendTagActive':(myHashtag(story.feed.hashtags[2]) == true), 'backendTagInactive':(myHashtag(story.feed.hashtags[2]) != true)}">
+            #{{story.feed.hashtags[2]}}
+          </button>
+          <button ion-button *ngIf="story.feed.hashtags && story.feed.hashtags.length > 3" style="box-shadow: none;height: 3.0rem;margin: 3px 0px 3px 0px;padding:auto 10px;font-size:1.3rem;font-family: 'Roboto', sans-serif;border-radius: 15px;margin: 0.4rem 0.4rem;" [ngClass]="{'backendTagActive':(myHashtag(story.feed.hashtags[3]) == true), 'backendTagInactive':(myHashtag(story.feed.hashtags[3]) != true)}">
+            #{{story.feed.hashtags[3]}}
+          </button>
+          <button ion-button *ngIf="story.feed.hashtags && story.feed.hashtags.length > 4" style="box-shadow: none;height: 3.0rem;margin: 3px 0px 3px 0px;padding:auto 10px;font-size:1.3rem;font-family: 'Roboto', sans-serif;border-radius: 15px;margin: 0.4rem 0.4rem;" [ngClass]="{'backendTagActive':(myHashtag(story.feed.hashtags[4]) == true), 'backendTagInactive':(myHashtag(story.feed.hashtags[4]) != true)}">
+            #{{story.feed.hashtags[4]}}
+          </button>
+          <button ion-button *ngIf="story.feed.hashtags && story.feed.hashtags.length > 5" style="box-shadow: none;height: 3.0rem;margin: 3px 0px 3px 0px;padding:auto 10px;font-size:1.3rem;font-family: 'Roboto', sans-serif;border-radius: 15px;margin: 0.4rem 0.4rem;" [ngClass]="{'backendTagActive':(myHashtag(story.feed.hashtags[5]) == true), 'backendTagInactive':(myHashtag(story.feed.hashtags[5]) != true)}">
+            #{{story.feed.hashtags[5]}}
+          </button>
+          <button ion-button *ngIf="story.feed.hashtags && story.feed.hashtags.length > 6" style="box-shadow: none;height: 3.0rem;margin: 3px 0px 3px 0px;padding:auto 10px;font-size:1.3rem;font-family: 'Roboto', sans-serif;border-radius: 15px;margin: 0.4rem 0.4rem;" [ngClass]="{'backendTagActive':(myHashtag(story.feed.hashtags[6]) == true), 'backendTagInactive':(myHashtag(story.feed.hashtags[6]) != true)}">
+            #{{story.feed.hashtags.length-6}}
+          </button>
+        </div>  
+        <ion-row style="padding:10px 5px 0px 6px"> 
+          <ion-col col-5 *ngIf="story.feed.type != 'Story.Discover'" style="padding-left: 10px;padding-top: 1px;text-align: left;"></ion-col>
+          <ion-col col-7 *ngIf="story.feed.type == 'Story.Discover'" style="padding-left: 10px;padding-top: 1px;text-align: left;"></ion-col> 
+          <ion-col *ngIf="story.user.liked == true && story.feed.type == 'Story.Discover'"> 
+            <img *ngIf="story.user.liked == true" src="assets/images/like.svg" class="imgIcon">
+            <div *ngIf="story.user.liked == true" class="count">{{story.feed.likes}}</div>
+          </ion-col>
+          <ion-col *ngIf=" story.user.liked == false && story.feed.type == 'Story.Discover'">
+            <img *ngIf="story.user.liked == false" src="assets/images/unlike.svg" class="imgIcon">
+            <div *ngIf="story.user.liked == false" class="count">{{story.feed.likes}}</div>
+          </ion-col>
+          <ion-col *ngIf="story.feed.type != 'Story.Discover'">
+            <img *ngIf="!story.user.liked" src="assets/images/thumbs_up.svg" class="imgIcon">
+            <img *ngIf="story.user.liked" src="assets/images/thumbs_up_colored.svg" class="imgIcon">
+            <div class="count">{{story.feed.likes}}</div>
+          </ion-col>
+          <ion-col *ngIf="story.feed.type != 'Story.Discover'">
+            <img *ngIf="!story.user.disliked" src="assets/images/thumbs_down.svg" class="imgIcon">
+            <img *ngIf="story.user.disliked" src="assets/images/thumbs_down_colored.svg" class="imgIcon">
+            <div class="count">{{story.feed.dislikes}}</div>
+          </ion-col>
+          <ion-col>
+            <img *ngIf="!story.user.commented" src="assets/images/comment_1.svg" class="imgIcon">
+            <img *ngIf="story.user.commented" src="assets/images/comment_colored.svg" class="imgIcon">
+            <div class="count">{{story.feed.comments.length}}</div>
+          </ion-col>
+          <ion-col>               
+            <img src="assets/images/share_1.svg" class="imgIcon">
+            <div class="count">{{story.feed.shares}}</div>
+          </ion-col>
+          <ion-col>
+            <img *ngIf="!story.user.bookmarked" src="assets/images/bookmark.svg" class="imgIcon">
+            <img *ngIf="story.user.bookmarked" src="assets/images/bookmark_colored.svg" class="imgIcon">
+            <div class="count">{{story.feed.follows}}</div>
+          </ion-col>
+        </ion-row>
+        <!-- <ion-item *ngIf="story.feed.comments.length > 0" style="width:93%;padding-left: 8px;margin:0px 10px 10px 10px;border-radius:10px;background-color: #f7f7f7;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.10), 0 3px 1px -2px rgba(0, 0, 0, 0.05), 0 1px 5px 0 rgba(0, 0, 0, 0.0);background-color: #fff">
+          <ion-avatar item-left style="margin:11px 0px 11px 0px;">
+            <img class="cssthumb" *ngIf="!story.feed.comments[story.feed.comments.length-1].user.avatar_toggle && story.feed.comments[story.feed.comments.length-1].user.profile_image && story.feed.comments[story.feed.comments.length-1].user.profile_image.url" style="border-radius:10px;" [src]="story.feed.comments[story.feed.comments.length-1].user.profile_image.url" onError="this.src='assets/images/placeholder_user1.png'">
+            <img class="cssthumb" *ngIf="story.feed.comments[story.feed.comments.length-1].user.avatar_toggle && story.feed.comments[story.feed.comments.length-1].user.avatar_image && story.feed.comments[story.feed.comments.length-1].user.avatar_image.url" style="border-radius:10px;" [src]="story.feed.comments[story.feed.comments.length-1].user.avatar_image.url" onError="this.src='assets/images/placeholder_user1.png'">
+            <img class="cssthumb" *ngIf="(story.feed.comments[story.feed.comments.length-1].user.avatar_toggle && (!story.feed.comments[story.feed.comments.length-1].user.avatar_image || !story.feed.comments[story.feed.comments.length-1].user.avatar_image.url)) || (!story.feed.comments[story.feed.comments.length-1].user.avatar_toggle && (!story.feed.comments[story.feed.comments.length-1].user.profile_image || !story.feed.comments[story.feed.comments.length-1].user.profile_image.url))" style="border-radius:10px;" src="assets/images/placeholder_user1.png">
+          </ion-avatar>
+          <ion-label style="white-space:normal;margin-top: 0px;line-height: unset;">
+            <p *ngIf="!story.feed.comments[story.feed.comments.length-1].user.avatar_toggle" style="font-size: 1.2rem;font-weight: bold;text-align: left;margin-top:4px;font-family: 'Roboto', sans-serif;">{{story.feed.comments[story.feed.comments.length-1].user.name}}</p>
+            <p *ngIf="story.feed.comments[story.feed.comments.length-1].user.avatar_toggle" style="font-size: 1.2rem;font-weight: bold;text-align: left;margin-top:4px;font-family: 'Roboto', sans-serif;">{{story.feed.comments[story.feed.comments.length-1].user.avatar_name}}</p>
+            <p class="line-clamp" style="color: #000;font-size: 1.2rem;font-weight: normal;text-align: left;font-family: 'Roboto', sans-serif;">{{story.feed.comments[story.feed.comments.length-1].description}}</p>
+          </ion-label>
+        </ion-item> -->
+        <div *ngIf="story.feed.latest_comments && story.feed.latest_comments.length == 1">
+					<ion-item *ngFor="let comment of story.feed.latest_comments; let commentIdx = index;" (click)="commenting(story.feed.id, story.feed.comments, story.feed.title, story.user, story.feed)" style="width:94%;margin:0px 10px 10px 10px;border-radius:10px;background-color: #f1f1f1;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.10), 0 3px 1px -2px rgba(0, 0, 0, 0.05), 0 1px 5px 0 rgba(0, 0, 0, 0.0);">
+					  <ion-avatar item-left style="margin:11px 0px 11px 6px;">
+						<img style="border-radius:50%;" *ngIf="comment.user.profile_image" [src]="comment.user.profile_image.url" onError="this.src='assets/images/placeholder_user1.png'">
+						<!-- <img style="border-radius:10px;" *ngIf="comment.user.avatar_image != null && comment.user.avatar_toggle == true" [src]="comment.user.avatar_image.url" onError="this.src='assets/images/placeholder_user1.png'"> -->
+						<img style="border-radius:50%;" *ngIf="!comment.user.profile_image || !comment.user.profile_image.url" src="assets/images/placeholder_user1.png">
+					  </ion-avatar>
+					  <ion-label style="white-space:normal; height: 50px;line-height: unset;">
+						<p *ngIf="comment.user.name" style="font-size: 1.2rem;font-weight: bold;text-align: left;margin-top:4px; font-family: 'Roboto', sans-serif;">{{comment.user.name}}</p>
+						<!-- <p *ngIf="comment.user.avatar_toggle" style="font-size: 1.2rem;font-weight: bold;text-align: left; font-family: 'Roboto', sans-serif;">{{comment.user.avatar_name}}</p> -->
+						<p id="demo1{{idx}}{{commentIdx}}" class="line-clamp" style="color: #000;font-size: 1.2rem;font-weight: normal;text-align: left; font-family: 'Roboto', sans-serif;"> {{desChange(comment.description, commentIdx, idx, "demo1")}} </p>
+					  </ion-label>
+					</ion-item>
+				  </div> 
+				  <marquee scrollamount="5" behavior="scroll" direction="up" *ngIf="story.feed.latest_comments && story.feed.latest_comments.length > 1"  style="height:50px;width:94%;margin:0px 10px 10px 10px;border-radius:10px;background-color: transparent;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.10), 0 3px 1px -2px rgba(0, 0, 0, 0.05), 0 1px 5px 0 rgba(0, 0, 0, 0.0);">
+					<div style="white-space:nowrap;" *ngFor="let comment of story.feed.latest_comments; let commentIdx = index;" >
+						<ion-item  style="background-color: #f1f1f1" (click)="commenting(story.feed.id, story.feed.comments, story.feed.title, story.user, story.feed)" >
+						 <ion-avatar item-left style="margin:11px 0px 11px 6px;">
+						   <img style="border-radius:50%;" *ngIf="comment.user.profile_image" [src]="comment.user.profile_image.url" onError="this.src='assets/images/placeholder_user1.png'">
+						   <!-- <img style="border-radius:10px;" *ngIf="comment.user.avatar_image != null && comment.user.avatar_toggle == true" [src]="comment.user.avatar_image.url" onError="this.src='assets/images/placeholder_user1.png'"> -->
+						   <img style="border-radius:50%;" *ngIf="!comment.user.profile_image || !comment.user.profile_image.url" src="assets/images/placeholder_user1.png">
+						 </ion-avatar>
+						 <ion-label style="white-space:normal; height: 50px;line-height: unset;">
+						   <p *ngIf="comment.user.name" style="font-size: 1.2rem;font-weight: bold;text-align: left;margin-top:4px; font-family: 'Roboto', sans-serif;">{{comment.user.name}}</p>
+						   <!-- <p *ngIf="comment.user.avatar_toggle" style="font-size: 1.2rem;font-weight: bold;text-align: left; font-family: 'Roboto', sans-serif;">{{comment.user.avatar_name}}</p> -->
+						   <p id="demo2{{idx}}{{commentIdx}}" class="line-clamp" style="color: #000;font-size: 1.2rem;font-weight: normal;text-align: left; font-family: 'Roboto', sans-serif;"> {{desChange(comment.description, commentIdx, idx, "demo2")}} </p>
+						 </ion-label>
+					   </ion-item>
+					  </div>
+				</marquee>
+    </ion-card>
+  </ion-card> 
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+		<ion-infinite-scroll-content></ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,94 @@
+page-tabs {
+    .ion-ios-home, .ion-md-home {
+        content: url(../assets/images/ic_home.svg);
+        width: 20px;
+    }
+    .ion-ios-discover, .ion-md-discover {
+        content: url(../assets/images/ic_search.svg);
+        width: 20px;
+    }
+    .ion-ios-tags, .ion-md-tags {
+        content: url(../assets/images/pound_box.svg);
+        width: 20px;
+    }
+    .ion-ios-zones, .ion-md-zones {
+        content: url(../assets/images/ic_group.svg);
+        width: 20px;
+    }
+    .ion-ios-customPeople, .ion-md-customPeople {
+        content: url(../assets/images/account_search.svg);
+        width: 24px;
+        height: 20px !important;
+    }
+    .ion-ios-home-outline {
+        content: url(../assets/images/ic_home.svg);
+        width: 20px;
+    }
+    .ion-ios-discover-outline {
+        content: url(../assets/images/ic_search.svg);
+        width: 20px;;
+    }
+    .ion-ios-tags-outline {
+        content: url(../assets/images/pound_box.svg);
+        width: 20px;
+    }
+    .ion-ios-zones-outline {
+        content: url(../assets/images/ic_group.svg);
+        width: 20px;
+    }
+    .ion-ios-customPeople-outline {
+        content: url(../assets/images/account_search.svg);
+        width: 24px;
+        height: 20px !important;
+    }
+    // .ion-md-settings[ng-reflect-is-active=false]{
+    //     content: url(../assets/icon/cutom-unselected-icon.svg);
+    //     width: 20px;
+    // }
+    .tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text{
+        color:#be2472;
+        font-size: 1.0rem;
+        font-weight: 500;
+        font-family: 'Roboto', sans-serif;
+    }
+    .tabs-ios[tabsLayout=icon-top] .has-icon .tab-button-text{
+        color:#be2472;
+        font-size: 1.0rem;
+        font-weight: 500;
+        font-family: 'Roboto', sans-serif;
+    }
+    .tabs-md .tab-button[aria-selected=true] .tab-button-icon{
+        height: 16px;
+    }
+    .tabs-ios .tab-button[aria-selected=true] .tab-button-icon{
+        height: 16px;
+    }
+   
+    .tabs-md .tab-button[aria-selected=true] .tab-button-text{
+        font-size: 1.0rem !important; 
+    }
+    .tabs-md .tab-button-text{
+        font-size: 1.0rem !important;
+    }
+    .tabs-md .tab-button[aria-selected=true]{
+        border-top:2px solid #be2472;
+    }
+    .tabs-ios .tab-button[aria-selected=true]{
+        border-top:2px solid #be2472;
+    }
+    .tabs-md .tab-button-icon{
+        height: 16px;
+    }
+    .tabs-ios .tab-button-icon{
+        height: 16px;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+    .tabs-ios .tabbar{
+        box-shadow: rgba(0,0,0,0.7) 0px 12px 10px 10px;
+    }
+    .tabs-md .tabbar{
+        box-shadow: rgba(0,0,0,0.7) 0px 12px 10px 10px;
+    }
+}

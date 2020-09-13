@@ -1,0 +1,3271 @@
+{
+	"status": false,
+	"meta": {
+		"listen_for": null,
+		"payload": "COMPLETE"
+	},
+	"data": {
+		"preferences": [{
+			"category": {
+				"name": "Business & Economics",
+				"color": "#b71c1c",
+				"parent_category": null,
+				"highlight_color": "#eb1919",
+				"sub_categories": [{
+					"name": "Manufacturing, Engineering",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MANUFACTURING-ENGINEERING",
+					"slug": "manufacturing-engineering"
+				}, {
+					"name": "Construction, Real estate",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CONSTRUCTION-REAL ESTATE",
+					"slug": "construction-real-estate"
+				}, {
+					"name": "Energy",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ENERGY",
+					"slug": "energy"
+				}, {
+					"name": "Biotechnology, Pharmaceutical",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BIOTECHNOLOGY-PHARMACEUTICALS",
+					"slug": "biotechnology-pharmaceutical"
+				}, {
+					"name": "Healthcare Services",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HEALTHCARE-SERVICES",
+					"slug": "healthcare-services"
+				}, {
+					"name": "Media",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MEDIA",
+					"slug": "media"
+				}, {
+					"name": "Currency",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CURRENCY",
+					"slug": "currency"
+				}, {
+					"name": "Agriculture",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-AGRICULTURE",
+					"slug": "agriculture"
+				}, {
+					"name": "Education, Training",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-EDUCATION-TRAINING",
+					"slug": "education-training"
+				}, {
+					"name": "Startups, Small Business, Venture Capital",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-STARTUPS-SMALL-BUSINESSES-VENTURE-CAPITAL",
+					"slug": "startups-small-business-venture-capital"
+				}, {
+					"name": "Tourism",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TOURISM",
+					"slug": "tourism"
+				}, {
+					"name": "Technology",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TECHNOLOGY",
+					"slug": "technology"
+				}, {
+					"name": "Telecommunications",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TELECOMMUNICATIONS",
+					"slug": "telecommunications"
+				}, {
+					"name": "Retail",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-RETAIL",
+					"slug": "retail"
+				}, {
+					"name": "Hotels, Restaurants",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HOTELS-RESTAURANTS",
+					"slug": "hotels-restaurants"
+				}, {
+					"name": "Transport, Logistics",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TRANSPORT-LOGISTICS",
+					"slug": "transport-logistics"
+				}, {
+					"name": "Food & Beverages",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FOOD-BEVERAGES",
+					"slug": "food-beverages"
+				}, {
+					"name": "Advertising, Marketing, PR",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ADVERTISING-MARKETING-PR",
+					"slug": "advertising-marketing-pr"
+				}, {
+					"name": "Human Resources",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HUMAN-RESOURCES",
+					"slug": "human-resources"
+				}, {
+					"name": "Banking, Finance, Insurance",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BANKING-FINANCE-INSURANCE",
+					"slug": "banking-finance-insurance"
+				}, {
+					"name": "Space, Aerospace",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SPACE-AEROSPACE",
+					"slug": "space-aerospace"
+				}, {
+					"name": "Public Service, Utlities, Government",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PUBLIC-SERVICES-UTILITIES-GOVERNMENT",
+					"slug": "public-service-utlities-government"
+				}, {
+					"name": "Non-profit, Social Services ",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-NON-PROFIT-SOCIAL-SERVICES",
+					"slug": "non-profit-social-services"
+				}, {
+					"name": "Economics, Stock Markets",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ECONOMICS-STOCK-MARKETS",
+					"slug": "economics-stock-markets"
+				}],
+				"id": "CAT-BUSINESS-ECONOMICS",
+				"slug": "business-economics"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Manufacturing, Engineering",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MANUFACTURING-ENGINEERING",
+					"slug": "manufacturing-engineering"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Construction, Real estate",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CONSTRUCTION-REAL ESTATE",
+					"slug": "construction-real-estate"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Energy",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ENERGY",
+					"slug": "energy"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Biotechnology, Pharmaceutical",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BIOTECHNOLOGY-PHARMACEUTICALS",
+					"slug": "biotechnology-pharmaceutical"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Healthcare Services",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HEALTHCARE-SERVICES",
+					"slug": "healthcare-services"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Media",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MEDIA",
+					"slug": "media"
+				},
+				"set": false,
+				"interest": 60,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Currency",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CURRENCY",
+					"slug": "currency"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Agriculture",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-AGRICULTURE",
+					"slug": "agriculture"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Education, Training",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-EDUCATION-TRAINING",
+					"slug": "education-training"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Startups, Small Business, Venture Capital",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-STARTUPS-SMALL-BUSINESSES-VENTURE-CAPITAL",
+					"slug": "startups-small-business-venture-capital"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Tourism",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TOURISM",
+					"slug": "tourism"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Technology",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TECHNOLOGY",
+					"slug": "technology"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Telecommunications",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TELECOMMUNICATIONS",
+					"slug": "telecommunications"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Retail",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-RETAIL",
+					"slug": "retail"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Hotels, Restaurants",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HOTELS-RESTAURANTS",
+					"slug": "hotels-restaurants"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Transport, Logistics",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TRANSPORT-LOGISTICS",
+					"slug": "transport-logistics"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Food & Beverages",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FOOD-BEVERAGES",
+					"slug": "food-beverages"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Advertising, Marketing, PR",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ADVERTISING-MARKETING-PR",
+					"slug": "advertising-marketing-pr"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Human Resources",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HUMAN-RESOURCES",
+					"slug": "human-resources"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Banking, Finance, Insurance",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BANKING-FINANCE-INSURANCE",
+					"slug": "banking-finance-insurance"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Space, Aerospace",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SPACE-AEROSPACE",
+					"slug": "space-aerospace"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Public Service, Utlities, Government",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PUBLIC-SERVICES-UTILITIES-GOVERNMENT",
+					"slug": "public-service-utlities-government"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Non-profit, Social Services ",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-NON-PROFIT-SOCIAL-SERVICES",
+					"slug": "non-profit-social-services"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Economics, Stock Markets",
+					"color": "#d66f7c",
+					"parent_category": "CAT-BUSINESS-ECONOMICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ECONOMICS-STOCK-MARKETS",
+					"slug": "economics-stock-markets"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Culture & Entertainment",
+				"color": "#880e4f",
+				"parent_category": null,
+				"highlight_color": "#b21468",
+				"sub_categories": [{
+					"name": "Films",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FILMS",
+					"slug": "films"
+				}, {
+					"name": "Theatre",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-THEATRE",
+					"slug": "theatre"
+				}, {
+					"name": "Music",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MUSIC",
+					"slug": "music"
+				}, {
+					"name": "Dance",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DANCE",
+					"slug": "dance"
+				}, {
+					"name": "Literature",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LITERATURE",
+					"slug": "literature"
+				}, {
+					"name": "Television",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TELEVISION",
+					"slug": "television"
+				}, {
+					"name": "Visual Arts",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-VISUAL-ARTS",
+					"slug": "visual-arts"
+				}, {
+					"name": "Language",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LANGUAGE",
+					"slug": "language"
+				}, {
+					"name": "Etiquette, Manners",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ETIQUETTE-MANNERS",
+					"slug": "etiquette-manners"
+				}, {
+					"name": "Comics, Graphic Novel",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-COMICS-GRAPHIC-NOVELS",
+					"slug": "comics-graphic-novel"
+				}, {
+					"name": "Equipment, Instrument",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-EQUIPEMENT-INSTRUMENT",
+					"slug": "equipment-instrument"
+				}, {
+					"name": "Stage Events",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-STAGE-EVENTS",
+					"slug": "stage-events"
+				}, {
+					"name": "Street Art, Performances",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-STREET-ART-PERFORMANCES",
+					"slug": "street-art-performances"
+				}, {
+					"name": "Jokes, Memes, GIFs",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-JOKES-MEMES-GIFS",
+					"slug": "jokes-memes-gifs"
+				}],
+				"id": "CAT-CULTURE-ENTERTAINMENT",
+				"slug": "culture-entertainment"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Films",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FILMS",
+					"slug": "films"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Theatre",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-THEATRE",
+					"slug": "theatre"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Music",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MUSIC",
+					"slug": "music"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Dance",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DANCE",
+					"slug": "dance"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Literature",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LITERATURE",
+					"slug": "literature"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Television",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TELEVISION",
+					"slug": "television"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Visual Arts",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-VISUAL-ARTS",
+					"slug": "visual-arts"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Language",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LANGUAGE",
+					"slug": "language"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Etiquette, Manners",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ETIQUETTE-MANNERS",
+					"slug": "etiquette-manners"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Comics, Graphic Novel",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-COMICS-GRAPHIC-NOVELS",
+					"slug": "comics-graphic-novel"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Equipment, Instrument",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-EQUIPEMENT-INSTRUMENT",
+					"slug": "equipment-instrument"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Stage Events",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-STAGE-EVENTS",
+					"slug": "stage-events"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Street Art, Performances",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-STREET-ART-PERFORMANCES",
+					"slug": "street-art-performances"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Jokes, Memes, GIFs",
+					"color": "#c33a83",
+					"parent_category": "CAT-CULTURE-ENTERTAINMENT",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-JOKES-MEMES-GIFS",
+					"slug": "jokes-memes-gifs"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Education & Work",
+				"color": "#4a148c",
+				"parent_category": null,
+				"highlight_color": "#6f1fd1",
+				"sub_categories": [{
+					"name": "School",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SCHOOL",
+					"slug": "school"
+				}, {
+					"name": "College, Post-Grad",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-COLLEGE-POST-GRAD",
+					"slug": "college-post-grad"
+				}, {
+					"name": "Online, Ed Tech",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ONLINE-ED-TECH",
+					"slug": "online-ed-tech"
+				}, {
+					"name": "Teaching, Training",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TEACHING-TRAINING",
+					"slug": "teaching-training"
+				}, {
+					"name": "Education Related Services",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-EDUCATION-RELATED-SERVICES",
+					"slug": "education-related-services"
+				}, {
+					"name": "Entrepreneurship, Self-Employment",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ENTREPRENEURSHIP-SELF-EMPLOYMENT",
+					"slug": "entrepreneurship-self-employment"
+				}, {
+					"name": "Employment, Work, Jobs",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-EMPLOYMENT-WORK-JOBS",
+					"slug": "employment-work-jobs"
+				}, {
+					"name": "Retirement, Unemployment",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-RETIREMENT-UNEMPLOYMENT",
+					"slug": "retirement-unemployment"
+				}],
+				"id": "CAT-EDUCATION-WORK",
+				"slug": "education-work"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "School",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SCHOOL",
+					"slug": "school"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "College, Post-Grad",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-COLLEGE-POST-GRAD",
+					"slug": "college-post-grad"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Online, Ed Tech",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ONLINE-ED-TECH",
+					"slug": "online-ed-tech"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Teaching, Training",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TEACHING-TRAINING",
+					"slug": "teaching-training"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Education Related Services",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-EDUCATION-RELATED-SERVICES",
+					"slug": "education-related-services"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Entrepreneurship, Self-Employment",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ENTREPRENEURSHIP-SELF-EMPLOYMENT",
+					"slug": "entrepreneurship-self-employment"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Employment, Work, Jobs",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-EMPLOYMENT-WORK-JOBS",
+					"slug": "employment-work-jobs"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Retirement, Unemployment",
+					"color": "#783dc1",
+					"parent_category": "CAT-EDUCATION-WORK",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-RETIREMENT-UNEMPLOYMENT",
+					"slug": "retirement-unemployment"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Relationships & Health",
+				"color": "#311b92",
+				"parent_category": null,
+				"highlight_color": "#4020cd",
+				"sub_categories": [{
+					"name": "Friendship, Dating, Relationships",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FRIENDSHIP-DATING-RELATIONSHIPS",
+					"slug": "friendship-dating-relationships"
+				}, {
+					"name": "LGBTQ",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LGBTQ",
+					"slug": "lgbtq"
+				}, {
+					"name": "Marriage, Divorce",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MARRIAGE-DIVORCE",
+					"slug": "marriage-divorce"
+				}, {
+					"name": "Pregnancy, Maternity",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PREGNANCY-MATERNITY",
+					"slug": "pregnancy-maternity"
+				}, {
+					"name": "Babycare, Children",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BABYCARE-CHILDREN",
+					"slug": "babycare-children"
+				}, {
+					"name": "Eldercare",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ELDERCARE",
+					"slug": "eldercare"
+				}, {
+					"name": "Bereavement",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BEREAVEMENT",
+					"slug": "bereavement"
+				}, {
+					"name": "Pets",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PETS",
+					"slug": "pets"
+				}, {
+					"name": "Diseases, Conditions, Treatments",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DISEASES-CONDITIONS-TREATMENTS",
+					"slug": "diseases-conditions-treatments"
+				}, {
+					"name": "Fitness, Nutrition, Wellness",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FITNESS-NUTRITION-WELLNESS",
+					"slug": "fitness-nutrition-wellness"
+				}, {
+					"name": "Hospital, Clinic, Pharmacy",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HOSPITAL-CLINIC-PHARMACY",
+					"slug": "hospital-clinic-pharmacy"
+				}, {
+					"name": "Equipment, Gadget",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-EQUIPMENT-GADGET",
+					"slug": "equipment-gadget"
+				}],
+				"id": "CAT-RELATIONSHIP-HEALTH",
+				"slug": "relationships-health"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Friendship, Dating, Relationships",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FRIENDSHIP-DATING-RELATIONSHIPS",
+					"slug": "friendship-dating-relationships"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "LGBTQ",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LGBTQ",
+					"slug": "lgbtq"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Marriage, Divorce",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MARRIAGE-DIVORCE",
+					"slug": "marriage-divorce"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Pregnancy, Maternity",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PREGNANCY-MATERNITY",
+					"slug": "pregnancy-maternity"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Babycare, Children",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BABYCARE-CHILDREN",
+					"slug": "babycare-children"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Eldercare",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ELDERCARE",
+					"slug": "eldercare"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Bereavement",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BEREAVEMENT",
+					"slug": "bereavement"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Pets",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PETS",
+					"slug": "pets"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Diseases, Conditions, Treatments",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DISEASES-CONDITIONS-TREATMENTS",
+					"slug": "diseases-conditions-treatments"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Fitness, Nutrition, Wellness",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FITNESS-NUTRITION-WELLNESS",
+					"slug": "fitness-nutrition-wellness"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Hospital, Clinic, Pharmacy",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HOSPITAL-CLINIC-PHARMACY",
+					"slug": "hospital-clinic-pharmacy"
+				},
+				"set": false,
+				"interest": 50,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Equipment, Gadget",
+					"color": "#5b43c2",
+					"parent_category": "CAT-RELATIONSHIP-HEALTH",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-EQUIPMENT-GADGET",
+					"slug": "equipment-gadget"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Fashion & Beauty",
+				"color": "#1a237e",
+				"parent_category": null,
+				"highlight_color": "#202dae",
+				"sub_categories": [{
+					"name": "Fashion, Clothes",
+					"color": "#3d48b7",
+					"parent_category": "CAT-FASHION-BEAUTY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FASHION-CLOTHES",
+					"slug": "fashion-clothes"
+				}, {
+					"name": "Cosmetics, Makeup, Hair",
+					"color": "#3d48b7",
+					"parent_category": "CAT-FASHION-BEAUTY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-COSMETICS-MAKEUP-HAIR",
+					"slug": "cosmetics-makeup-hair"
+				}, {
+					"name": "Accessories, Footwear",
+					"color": "#3d48b7",
+					"parent_category": "CAT-FASHION-BEAUTY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ACCESSORIES-FOOTWEAR",
+					"slug": "accessories-footwear"
+				}, {
+					"name": "Treatments, Procedures",
+					"color": "#3d48b7",
+					"parent_category": "CAT-FASHION-BEAUTY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TREATMENTS-PROCEDURES",
+					"slug": "treatments-procedures"
+				}],
+				"id": "CAT-FASHION-BEAUTY",
+				"slug": "fashion-beauty"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Fashion, Clothes",
+					"color": "#3d48b7",
+					"parent_category": "CAT-FASHION-BEAUTY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FASHION-CLOTHES",
+					"slug": "fashion-clothes"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Cosmetics, Makeup, Hair",
+					"color": "#3d48b7",
+					"parent_category": "CAT-FASHION-BEAUTY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-COSMETICS-MAKEUP-HAIR",
+					"slug": "cosmetics-makeup-hair"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Accessories, Footwear",
+					"color": "#3d48b7",
+					"parent_category": "CAT-FASHION-BEAUTY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ACCESSORIES-FOOTWEAR",
+					"slug": "accessories-footwear"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Treatments, Procedures",
+					"color": "#3d48b7",
+					"parent_category": "CAT-FASHION-BEAUTY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TREATMENTS-PROCEDURES",
+					"slug": "treatments-procedures"
+				},
+				"set": false,
+				"interest": 0, 
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Food, Drinks Smoke",
+				"color": "#0d47a1",
+				"parent_category": null,
+				"highlight_color": "#125ed2",
+				"sub_categories": [{
+					"name": "Restaurants, Bars, F&B Tourism",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-RESTAURANTS-BAR-FB-TOURISM",
+					"slug": "restaurants-bars-f-b-tourism"
+				}, {
+					"name": "Cuisines, Cooking, Recipes",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CUISINES-COOKING-RECIPES",
+					"slug": "cuisines-cooking-recipes"
+				}, {
+					"name": "Bakes, Desserts, Chocolates",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BAKES-DESSERTS-CHOCOLATES",
+					"slug": "bakes-desserts-chocolates"
+				}, {
+					"name": "Liquors, Beers, Wines",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LIQUORS-BEERS-WINES",
+					"slug": "liquors-beers-wines"
+				}, {
+					"name": "Cocktails",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-COCKTAILS",
+					"slug": "cocktails"
+				}, {
+					"name": "Non-Alcoholic Beverages",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-NON-ALCOHOLIC-BEVERAGES",
+					"slug": "non-alcoholic-beverages"
+				}, {
+					"name": "Smokes",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SMOKES",
+					"slug": "smokes"
+				}],
+				"id": "CAT-FOOD-DRINK-SMOKES",
+				"slug": "food-drink-smokes"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Restaurants, Bars, F&B Tourism",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-RESTAURANTS-BAR-FB-TOURISM",
+					"slug": "restaurants-bars-f-b-tourism"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Cuisines, Cooking, Recipes",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CUISINES-COOKING-RECIPES",
+					"slug": "cuisines-cooking-recipes"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Bakes, Desserts, Chocolates",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BAKES-DESSERTS-CHOCOLATES",
+					"slug": "bakes-desserts-chocolates"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Liquors, Beers, Wines",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LIQUORS-BEERS-WINES",
+					"slug": "liquors-beers-wines"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Cocktails",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-COCKTAILS",
+					"slug": "cocktails"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Non-Alcoholic Beverages",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-NON-ALCOHOLIC-BEVERAGES",
+					"slug": "non-alcoholic-beverages"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Smokes",
+					"color": "#4280e1",
+					"parent_category": "CAT-FOOD-DRINK-SMOKES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SMOKES",
+					"slug": "smokes"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Gadgets & Appliances",
+				"color": "#01579b",
+				"parent_category": null,
+				"highlight_color": "#026dc3",
+				"sub_categories": [{
+					"name": "Desktops, Laptops",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DESKTOPS-LAPTOPS",
+					"slug": "desktops-laptops"
+				}, {
+					"name": "Mobile, Tablet",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MOBILE-TABLET",
+					"slug": "mobile-tablet"
+				}, {
+					"name": "Gaming Device, Game",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-GAMING-DEVICE-GAME",
+					"slug": "gaming-device-game"
+				}, {
+					"name": "Computer Accessories",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-COMPUTER-ACCESSORIES",
+					"slug": "computer-accessories"
+				}, {
+					"name": "Home Appliances, Gadgets",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HOME-APPLIANCES-GADGETS",
+					"slug": "home-appliances-gadgets"
+				}, {
+					"name": "Photo & Video",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PHOTO-VIDEO",
+					"slug": "photo-video"
+				}, {
+					"name": "Audio, Home Theatre",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-AUDIO-HOME-THEATRE",
+					"slug": "audio-home-theatre"
+				}, {
+					"name": "IoT, Wearables",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-IOT-WEARABLES",
+					"slug": "iot-wearables"
+				}],
+				"id": "CAT-GADGETS-APPLIANCES",
+				"slug": "gadgets-appliances"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Desktops, Laptops",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DESKTOPS-LAPTOPS",
+					"slug": "desktops-laptops"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Mobile, Tablet",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MOBILE-TABLET",
+					"slug": "mobile-tablet"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Gaming Device, Game",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-GAMING-DEVICE-GAME",
+					"slug": "gaming-device-game"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Computer Accessories",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-COMPUTER-ACCESSORIES",
+					"slug": "computer-accessories"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Home Appliances, Gadgets",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HOME-APPLIANCES-GADGETS",
+					"slug": "home-appliances-gadgets"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Photo & Video",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PHOTO-VIDEO",
+					"slug": "photo-video"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Audio, Home Theatre",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-AUDIO-HOME-THEATRE",
+					"slug": "audio-home-theatre"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "IoT, Wearables",
+					"color": "#2e8dd8",
+					"parent_category": "CAT-GADGETS-APPLIANCES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-IOT-WEARABLES",
+					"slug": "iot-wearables"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Law & Politics",
+				"color": "#006064",
+				"parent_category": null,
+				"highlight_color": "#01989e",
+				"sub_categories": [{
+					"name": "Current Affairs",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CURRENT-AFFAIRS",
+					"slug": "current-affairs"
+				}, {
+					"name": "Political Science",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-POLITICAL-SCIENCE",
+					"slug": "political-science"
+				}, {
+					"name": "Law",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LAW",
+					"slug": "law"
+				}, {
+					"name": "Police",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-POLICE",
+					"slug": "police"
+				}, {
+					"name": "Defence, Military",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DEFENCE-MILITARY",
+					"slug": "defence-military"
+				}, {
+					"name": "Constitution",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CONSTITUTION",
+					"slug": "constitution"
+				}, {
+					"name": "Crime & Punishment",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CRIME-PUNISHMENT",
+					"slug": "crime-punishment"
+				}, {
+					"name": "War",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-WAR",
+					"slug": "war"
+				}, {
+					"name": "Terrorism",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TERRORISM",
+					"slug": "terrorism"
+				}],
+				"id": "CAT-LAW-POLITICS",
+				"slug": "law-politics"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Current Affairs",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CURRENT-AFFAIRS",
+					"slug": "current-affairs"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Political Science",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-POLITICAL-SCIENCE",
+					"slug": "political-science"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Law",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LAW",
+					"slug": "law"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Police",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-POLICE",
+					"slug": "police"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Defence, Military",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DEFENCE-MILITARY",
+					"slug": "defence-military"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Constitution",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CONSTITUTION",
+					"slug": "constitution"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Crime & Punishment",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CRIME-PUNISHMENT",
+					"slug": "crime-punishment"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "War",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-WAR",
+					"slug": "war"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Terrorism",
+					"color": "#26898d",
+					"parent_category": "CAT-LAW-POLITICS",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TERRORISM",
+					"slug": "terrorism"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Society & Home",
+				"color": "#004d40",
+				"parent_category": null,
+				"highlight_color": "#017c67",
+				"sub_categories": [{
+					"name": "Social Issues",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SOCIAL-ISSUES",
+					"slug": "social-issues"
+				}, {
+					"name": "Human Rights",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HUMAN-RIGHTS",
+					"slug": "human-rights"
+				}, {
+					"name": "Animal Rights",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ANIMAL-RIGHTS",
+					"slug": "animal-rights"
+				}, {
+					"name": "Real Estate, Housing Development",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-REAL-ESTATE-HOUSING-DEVELOPMENT",
+					"slug": "real-estate-housing-development"
+				}, {
+					"name": "Architecture, Construction",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ARCHITECTURE-CONSTRUCTION",
+					"slug": "architecture-construction"
+				}, {
+					"name": "Design & Decor",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DESIGN-DECOR",
+					"slug": "design-decor"
+				}, {
+					"name": "Services & Utilities",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SERVICES-UTILITIES",
+					"slug": "services-utilities"
+				}, {
+					"name": "Plants, Nursery",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PLANTS-NURSERY",
+					"slug": "plants-nursery"
+				}, {
+					"name": "Gardening",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-GARDENING",
+					"slug": "gardening"
+				}, {
+					"name": "Civic planning, Development",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CIVIC-PLANNING-DEVELOPMENT",
+					"slug": "civic-planning-development"
+				}, {
+					"name": "Local Culture, Society, Living Standards",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LOCAL-CULTURE-SOCIETY-LIVING-STANDARDS",
+					"slug": "local-culture-society-living-standards"
+				}],
+				"id": "CAT-SOCIETY-HOME",
+				"slug": "society-home"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Social Issues",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SOCIAL-ISSUES",
+					"slug": "social-issues"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Human Rights",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HUMAN-RIGHTS",
+					"slug": "human-rights"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Animal Rights",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ANIMAL-RIGHTS",
+					"slug": "animal-rights"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Real Estate, Housing Development",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-REAL-ESTATE-HOUSING-DEVELOPMENT",
+					"slug": "real-estate-housing-development"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Architecture, Construction",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ARCHITECTURE-CONSTRUCTION",
+					"slug": "architecture-construction"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Design & Decor",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DESIGN-DECOR",
+					"slug": "design-decor"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Services & Utilities",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SERVICES-UTILITIES",
+					"slug": "services-utilities"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Plants, Nursery",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PLANTS-NURSERY",
+					"slug": "plants-nursery"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Gardening",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-GARDENING",
+					"slug": "gardening"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Civic planning, Development",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CIVIC-PLANNING-DEVELOPMENT",
+					"slug": "civic-planning-development"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Local Culture, Society, Living Standards",
+					"color": "#32a491",
+					"parent_category": "CAT-SOCIETY-HOME",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LOCAL-CULTURE-SOCIETY-LIVING-STANDARDS",
+					"slug": "local-culture-society-living-standards"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Motors & Vehicles",
+				"color": "#1b5e20",
+				"parent_category": null,
+				"highlight_color": "#2c8b33",
+				"sub_categories": [{
+					"name": "Store, Organization",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-STORE-ORGANISATION",
+					"slug": "store-organization"
+				}, {
+					"name": "Car, SUV, Van",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CAR-SUV-VAN",
+					"slug": "car-suv-van"
+				}, {
+					"name": "Motorcycle, Cycle",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MOTORCYCLE-CYCLE",
+					"slug": "motorcycle-cycle"
+				}, {
+					"name": "Truck, Commercial Vehicle",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TRUCK-COMMERCIAL-VEHICLES",
+					"slug": "truck-commercial-vehicle"
+				}, {
+					"name": "Water Crafts",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-WATER-CRAFTS",
+					"slug": "water-crafts"
+				}, {
+					"name": "Air Crafts",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-AIR-CRAFTS",
+					"slug": "air-crafts"
+				}, {
+					"name": "Taxi, Rental",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TAXI-RENTALS",
+					"slug": "taxi-rental"
+				}, {
+					"name": "Accessories, Parts, Repair",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ACCESSORIES-PARTS-REPAIR",
+					"slug": "accessories-parts-repair"
+				}],
+				"id": "CAT-MOTORS-VEHICLES",
+				"slug": "motors-vehicles"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Store, Organization",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-STORE-ORGANISATION",
+					"slug": "store-organization"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Car, SUV, Van",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CAR-SUV-VAN",
+					"slug": "car-suv-van"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Motorcycle, Cycle",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MOTORCYCLE-CYCLE",
+					"slug": "motorcycle-cycle"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Truck, Commercial Vehicle",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TRUCK-COMMERCIAL-VEHICLES",
+					"slug": "truck-commercial-vehicle"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Water Crafts",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-WATER-CRAFTS",
+					"slug": "water-crafts"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Air Crafts",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-AIR-CRAFTS",
+					"slug": "air-crafts"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Taxi, Rental",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TAXI-RENTALS",
+					"slug": "taxi-rental"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Accessories, Parts, Repair",
+					"color": "#46a14d",
+					"parent_category": "CAT-MOTORS-VEHICLES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ACCESSORIES-PARTS-REPAIR",
+					"slug": "accessories-parts-repair"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Nature & Climate",
+				"color": "#33691e",
+				"parent_category": null,
+				"highlight_color": "#578d42",
+				"sub_categories": [{
+					"name": "Weather, Climate, Environment",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-WEATHER-CLIMATE-ENVIRONMENT",
+					"slug": "weather-climate-environment"
+				}, {
+					"name": "Wildlife",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-WILDLIFE",
+					"slug": "wildlife"
+				}, {
+					"name": "Aquatic Life",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-AQUATIC-LIFE",
+					"slug": "aquatic-life"
+				}, {
+					"name": "Birds",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BIRDS",
+					"slug": "birds"
+				}, {
+					"name": "Insects",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-INSECTS",
+					"slug": "insects"
+				}, {
+					"name": "Flowers, Trees, Forests",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FLOWERS-TREES-FORESTS",
+					"slug": "flowers-trees-forests"
+				}, {
+					"name": "Water Bodies",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-WATER-BODIES",
+					"slug": "water-bodies"
+				}, {
+					"name": "Land Forms",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LAND-FORMS",
+					"slug": "land-forms"
+				}],
+				"id": "CAT-NATURE-CLIMATE",
+				"slug": "nature-climate"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Weather, Climate, Environment",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-WEATHER-CLIMATE-ENVIRONMENT",
+					"slug": "weather-climate-environment"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Wildlife",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-WILDLIFE",
+					"slug": "wildlife"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Aquatic Life",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-AQUATIC-LIFE",
+					"slug": "aquatic-life"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Birds",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BIRDS",
+					"slug": "birds"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Insects",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-INSECTS",
+					"slug": "insects"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Flowers, Trees, Forests",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FLOWERS-TREES-FORESTS",
+					"slug": "flowers-trees-forests"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Water Bodies",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-WATER-BODIES",
+					"slug": "water-bodies"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Land Forms",
+					"color": "#62a747",
+					"parent_category": "CAT-NATURE-CLIMATE",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LAND-FORMS",
+					"slug": "land-forms"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Religion & Philosophy",
+				"color": "#827717",
+				"parent_category": null,
+				"highlight_color": "#a89b29",
+				"sub_categories": [{
+					"name": "Religion",
+					"color": "#bfb242",
+					"parent_category": "CAT-RELIGION-PHILOSOPHY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-RELIGION",
+					"slug": "religion"
+				}, {
+					"name": "Philisophy",
+					"color": "#bfb242",
+					"parent_category": "CAT-RELIGION-PHILOSOPHY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PHILOSOPHY",
+					"slug": "philisophy"
+				}, {
+					"name": "Spirituality",
+					"color": "#bfb242",
+					"parent_category": "CAT-RELIGION-PHILOSOPHY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SPIRITUALITY",
+					"slug": "spirituality"
+				}, {
+					"name": "Mythology, Superstition, Ritual",
+					"color": "#bfb242",
+					"parent_category": "CAT-RELIGION-PHILOSOPHY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MYTHOLOGY-SUPERSTITION-RITUAL",
+					"slug": "mythology-superstition-ritual"
+				}],
+				"id": "CAT-RELIGION-PHILOSOPHY",
+				"slug": "religion-philosophy"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Religion",
+					"color": "#bfb242",
+					"parent_category": "CAT-RELIGION-PHILOSOPHY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-RELIGION",
+					"slug": "religion"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Philisophy",
+					"color": "#bfb242",
+					"parent_category": "CAT-RELIGION-PHILOSOPHY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PHILOSOPHY",
+					"slug": "philisophy"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Spirituality",
+					"color": "#bfb242",
+					"parent_category": "CAT-RELIGION-PHILOSOPHY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SPIRITUALITY",
+					"slug": "spirituality"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Mythology, Superstition, Ritual",
+					"color": "#bfb242",
+					"parent_category": "CAT-RELIGION-PHILOSOPHY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MYTHOLOGY-SUPERSTITION-RITUAL",
+					"slug": "mythology-superstition-ritual"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Science & Technology",
+				"color": "#e17e27",
+				"parent_category": null,
+				"highlight_color": "#ff7f0e",
+				"sub_categories": [{
+					"name": "Hardware, Networking",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HARDWARE-NETWORKING",
+					"slug": "hardware-networking"
+				}, {
+					"name": "Software, Programming, Technology",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SOFTWARE-PROGRAMMING-TECHNOLOGY",
+					"slug": "software-programming-technology"
+				}, {
+					"name": "Maths, Logic",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MATHS-LOGIC",
+					"slug": "maths-logic"
+				}, {
+					"name": "Physical Sciences",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PHYSICAL-SCIENCES",
+					"slug": "physical-sciences"
+				}, {
+					"name": "Life Science, Biotechnology",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LIFE-SCIENCE-BIOTECHNOLOGY",
+					"slug": "life-science-biotechnology"
+				}, {
+					"name": "Social Sciences",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SOCIAL-SCIENCES",
+					"slug": "social-sciences"
+				}, {
+					"name": "Applied Science, Engineering",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-APPLIED-SCIENCE-ENGINEERING",
+					"slug": "applied-science-engineering"
+				}, {
+					"name": "Space, Universe",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SPACE-UNIVERSE",
+					"slug": "space-universe"
+				}, {
+					"name": "Apps",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-APPS",
+					"slug": "apps"
+				}],
+				"id": "CAT-SCIENCE-TECHNOLOGY",
+				"slug": "science-technology"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Hardware, Networking",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HARDWARE-NETWORKING",
+					"slug": "hardware-networking"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Software, Programming, Technology",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SOFTWARE-PROGRAMMING-TECHNOLOGY",
+					"slug": "software-programming-technology"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Maths, Logic",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MATHS-LOGIC",
+					"slug": "maths-logic"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Physical Sciences",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-PHYSICAL-SCIENCES",
+					"slug": "physical-sciences"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Life Science, Biotechnology",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-LIFE-SCIENCE-BIOTECHNOLOGY",
+					"slug": "life-science-biotechnology"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Social Sciences",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SOCIAL-SCIENCES",
+					"slug": "social-sciences"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Applied Science, Engineering",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-APPLIED-SCIENCE-ENGINEERING",
+					"slug": "applied-science-engineering"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Space, Universe",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SPACE-UNIVERSE",
+					"slug": "space-universe"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Apps",
+					"color": "#f19f56",
+					"parent_category": "CAT-SCIENCE-TECHNOLOGY",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-APPS",
+					"slug": "apps"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Sports & Games",
+				"color": "#e4690b",
+				"parent_category": null,
+				"highlight_color": "#ff6f00",
+				"sub_categories": [{
+					"name": "Gymnastics, Acrobatics",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-GYMNASTICS-ACROBATICS",
+					"slug": "gymnastics-acrobatics"
+				}, {
+					"name": "Swimming, Diving, Water Polo",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SWIMMING-DIVING-WATER-POLO",
+					"slug": "swimming-diving-water-polo"
+				}, {
+					"name": "Water Sports (Non Swimming)",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-WATER SPORTS-NON-SWIMMING",
+					"slug": "water-sports-non-swimming"
+				}, {
+					"name": "Combat sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-COMBAT-SPORTS",
+					"slug": "combat-sports"
+				}, {
+					"name": "Endurance, Adventure sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ENDURANCE-ADVENTURE-SPORTS",
+					"slug": "endurance-adventure-sports"
+				}, {
+					"name": "Ball Games (no bats/racquets)",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BALL-GAMES-NO BATS-RACQUETS",
+					"slug": "ball-games-no-bats-racquets"
+				}, {
+					"name": "Bat/Racquet/Stick/Club Sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BAT-RACQUET-STICK-CLUB-SPORTS",
+					"slug": "bat-racquet-stick-club-sports"
+				}, {
+					"name": "Track & Field",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TRACK-FIELD",
+					"slug": "track-field"
+				}, {
+					"name": "Motor Sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MOTOR-SPORTS",
+					"slug": "motor-sports"
+				}, {
+					"name": "Animal Sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ANIMAL-SPORTS",
+					"slug": "animal-sports"
+				}, {
+					"name": "Cards, Board Games, Video games",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CARDS-BOARD-GAMES-VIDEO-GAMES",
+					"slug": "cards-board-games-video-games"
+				}, {
+					"name": "Air Sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-AIR-SPORTS",
+					"slug": "air-sports"
+				}, {
+					"name": "Childrens' Sports, Games, Toys",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CHILDRENS-SPORTS-GAMES-TOYS",
+					"slug": "childrens-sports-games-toys"
+				}, {
+					"name": "Disabled Sports, senior sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DISABLED-SPORTS-SENIOR-SPORTS",
+					"slug": "disabled-sports-senior-sports"
+				}, {
+					"name": "Fantasy Sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FANTASY-SPORTS",
+					"slug": "fantasy-sports"
+				}, {
+					"name": "Ice & Snow Sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ICE-SNOW-SPORTS",
+					"slug": "ice-snow-sports"
+				}, {
+					"name": "Betting, Gambling, Lottery",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BETTING-GAMBLING-LOTTERY",
+					"slug": "betting-gambling-lottery"
+				}],
+				"id": "CAT-SPORTS-GAMES",
+				"slug": "sports-games"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Gymnastics, Acrobatics",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-GYMNASTICS-ACROBATICS",
+					"slug": "gymnastics-acrobatics"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Swimming, Diving, Water Polo",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-SWIMMING-DIVING-WATER-POLO",
+					"slug": "swimming-diving-water-polo"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Water Sports (Non Swimming)",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-WATER SPORTS-NON-SWIMMING",
+					"slug": "water-sports-non-swimming"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Combat sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-COMBAT-SPORTS",
+					"slug": "combat-sports"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Endurance, Adventure sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ENDURANCE-ADVENTURE-SPORTS",
+					"slug": "endurance-adventure-sports"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Ball Games (no bats/racquets)",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BALL-GAMES-NO BATS-RACQUETS",
+					"slug": "ball-games-no-bats-racquets"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Bat/Racquet/Stick/Club Sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BAT-RACQUET-STICK-CLUB-SPORTS",
+					"slug": "bat-racquet-stick-club-sports"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Track & Field",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-TRACK-FIELD",
+					"slug": "track-field"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Motor Sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MOTOR-SPORTS",
+					"slug": "motor-sports"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Animal Sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ANIMAL-SPORTS",
+					"slug": "animal-sports"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Cards, Board Games, Video games",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CARDS-BOARD-GAMES-VIDEO-GAMES",
+					"slug": "cards-board-games-video-games"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Air Sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-AIR-SPORTS",
+					"slug": "air-sports"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Childrens' Sports, Games, Toys",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-CHILDRENS-SPORTS-GAMES-TOYS",
+					"slug": "childrens-sports-games-toys"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Disabled Sports, senior sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DISABLED-SPORTS-SENIOR-SPORTS",
+					"slug": "disabled-sports-senior-sports"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Fantasy Sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-FANTASY-SPORTS",
+					"slug": "fantasy-sports"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Ice & Snow Sports",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-ICE-SNOW-SPORTS",
+					"slug": "ice-snow-sports"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Betting, Gambling, Lottery",
+					"color": "#ffa966",
+					"parent_category": "CAT-SPORTS-GAMES",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-BETTING-GAMBLING-LOTTERY",
+					"slug": "betting-gambling-lottery"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}, {
+			"category": {
+				"name": "Travel & Tourism",
+				"color": "#e65100",
+				"parent_category": null,
+				"highlight_color": "#ff5b02",
+				"sub_categories": [{
+					"name": "Destinations, Activities",
+					"color": "#e3773c",
+					"parent_category": "CAT-TRAVEL-TOURISM",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DESTINATIONS-ACTIVITIES",
+					"slug": "destinations-activities"
+				}, {
+					"name": "Hotels, Stay",
+					"color": "#e3773c",
+					"parent_category": "CAT-TRAVEL-TOURISM",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HOTELS-STAY",
+					"slug": "hotels-stay"
+				}, {
+					"name": "Modes of Travel",
+					"color": "#e3773c",
+					"parent_category": "CAT-TRAVEL-TOURISM",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MODES-OF-TRAVEL",
+					"slug": "modes-of-travel"
+				}],
+				"id": "CAT-TRAVEL-TOURISM",
+				"slug": "travel-tourism"
+			},
+			"set": false,
+			"interest": 50,
+			"sub_categories": [{
+				"category": {
+					"name": "Destinations, Activities",
+					"color": "#e3773c",
+					"parent_category": "CAT-TRAVEL-TOURISM",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-DESTINATIONS-ACTIVITIES",
+					"slug": "destinations-activities"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Hotels, Stay",
+					"color": "#e3773c",
+					"parent_category": "CAT-TRAVEL-TOURISM",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-HOTELS-STAY",
+					"slug": "hotels-stay"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}, {
+				"category": {
+					"name": "Modes of Travel",
+					"color": "#e3773c",
+					"parent_category": "CAT-TRAVEL-TOURISM",
+					"highlight_color": null,
+					"sub_categories": [],
+					"id": "CAT-MODES-OF-TRAVEL",
+					"slug": "modes-of-travel"
+				},
+				"set": false,
+				"interest": 0,
+				"sub_categories": []
+			}]
+		}]
+	}
+}

@@ -1,0 +1,276 @@
+page-tags {
+
+  .card-header.card-header{
+    padding:10px 10px 0px 10px;
+  }  
+  ion-searchbar {
+    width: 80%;
+    padding:0;
+  }    
+  .searchbar-ios{
+    //padding-left: 0px;
+    background-color:transparent;
+    border-bottom: none;
+    padding:8px;
+    width: 80% !important;
+  }
+  .item ion-thumbnail[item-left], .item ion-avatar[item-start], .item ion-thumbnail[item-start] {
+    margin:0px;  
+  }  
+  .item [item-left], .item [item-right], .item [item-start], .item [item-end] {
+    margin:0px;
+  }  
+  .loader{
+    margin: 0 0 2em;
+    height: 100px;
+    width: 20%;
+    text-align: center;
+    padding: 1em;
+    margin: 0 auto 1em;
+    display: inline-block;
+    vertical-align: top;
+  }  
+  .item.item-block.item {    
+    //height:30px;
+    margin:0px;
+  }  
+  .item {
+    background-color:transparent;
+    margin:0px;
+    padding-left:0px;
+  }
+  .selected-item {
+    border : 1px solid #f5a623;  
+  }    
+  .toolbar-title {    
+    padding:0px;
+    margin-left: -10px; font-weight:400;
+  }
+  .item ion-thumbnail {
+    min-width: 0px; 
+    min-height: 0px; 
+    border-radius:10px;
+  }  
+  .toggle.toggle-checked .toggle-icon {
+    background-color: #4990e2;
+  }
+  .searchbar .searchbar-input::-moz-placeholder {
+    color: #878787;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+  }  
+  .searchbar .searchbar-input:-ms-input-placeholder {
+    color: #878787;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+  }   
+  .searchbar .searchbar-input::-webkit-input-placeholder {
+    text-indent: 0;
+    color: #878787;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+  }
+  .searchbar-md .searchbar-search-icon {
+    //background-image:none !important;
+  }
+  .searchbar-ios .searchbar-search-icon {
+    //background-image:none !important;
+  }  
+  .searchbar .searchbar-clear-icon {    
+    background-image: url('/assets/images/clear.svg');
+  }
+  .toolbar .searchbar-ios .searchbar-input{
+    background-color: #FFF;
+    //padding-left: 8px;
+    width: 84%;
+  }
+  .searchbar .searchbar-input {
+    border-radius: 4px;
+    height:3.2rem;
+    box-shadow: none;
+    background: #f1f1f1;
+  }
+  .segment-ios .segment-button.segment-activated{
+    background-color: transparent;
+    border-bottom:2px solid #8b572a;
+    color:#404040;
+  }
+  .segment-md .segment-button.segment-activated{
+    background-color: transparent;
+    border-bottom:2px solid #8b572a;
+  }
+  .segment-ios .segment-button{
+    //background-color: transparent;
+    border:none;
+    //margin-left:8px;
+    height: 4.2rem;
+  } 
+  .segment .segment-button.segment-activated{
+    opacity:1;
+  }
+  .segment .segment-button {
+    color:#404040;
+    font-size: 1.0rem;
+    font-weight: 500;
+    // height: 6.3rem;
+    // border-bottom:1px solid #4a4a4a;
+    opacity:1;
+    font-family: 'Roboto', sans-serif;
+    } 
+  //  .scroll-content{
+  //    margin-top:34px;
+  //  }
+  .segment-ios .segment-button:first-of-type{    
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+  .searchbar-md .searchbar-input {
+    //padding-left: 15px;
+    padding-right: 10px;
+  }
+  .searchbar-ios .searchbar-input{
+    padding-right: 10px;  
+  }
+  .line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+  }
+  .grad{
+    background: linear-gradient(to top, #5B5959, transparent);
+    opacity:1;    
+  }
+  .divbox1{
+    height:97px;
+    overflow: hidden;
+    margin-top: -97px;
+  }
+  ion-scroll{
+    white-space: nowrap;
+    position: relative;
+  }
+  .moreHoriz1{
+    top: 21%;
+    width: 20px;
+    position: absolute;
+    bottom:0px;
+    right: 30px;    
+  } 
+  .moreHoriz2{
+    top: 82%;
+    width: 20px;
+    position: absolute;
+    bottom:0px;
+    right: 30px;    
+  } 
+  .count {
+    font-size: 11px;
+    text-align:center;
+    font-weight:normal;
+    width:90%;
+  }    
+  .imgIcon {    
+    width:90%;
+    height:50%;
+    text-align:center;    
+  }
+  .horizontal_scroll{
+    display: inline-block;       
+  }
+  ion-scroll{
+    white-space: nowrap;
+    position: relative;
+  }  
+  .tags{
+    padding: 0px 15px;
+    font-size: 1.4rem;
+    text-align: center;
+    //background: linear-gradient(to right,#f89d4d, #ee4648);
+    background: #bd2472;
+    font-weight: 500;
+    text-transform: capitalize;
+    display: inline-block;
+    border-radius:15px;
+    font-family: 'Roboto', sans-serif;  
+  }
+  .card-badge1 {
+    position: absolute;
+    top: 0;
+    vertical-align: middle;
+    font-size: 9px;
+    z-index:1;
+    border-radius:20px;
+    background-color:#FF0000;
+    left: 34%;
+  }  
+  .card-badge6 {
+    position: absolute;
+    vertical-align: middle;
+    font-size: 9px;
+    z-index:1;
+    border-radius:20px;
+    background-color:#ffbf00;
+    top: 0;
+    right: 10px;
+  }
+  .image_text{
+    color:#4a4a4a;
+    text-align: center;
+    margin-top: 7px;
+    line-height: 1;
+    font-size: 13px;
+    font-weight: 500;
+    word-break: break-word;
+    width: 90x;
+    font-family: 'Roboto', sans-serif;
+  }
+  .item.item-block .item-inner{
+    border-bottom: none !important;
+  }
+  .bdg1{  
+    position: relative;
+    margin-top: -19px;
+    right: 12%;
+    border-radius: 10px;
+    background-color: #F9A51B;
+  }
+  .bdg{  
+    position: absolute;
+    top: 3px;
+    left: 80%;
+    border-radius: 10px;
+    background-color: #F9A51B;
+  }
+  .back-button-md {
+    margin: 0px;
+    padding: 0px;
+    min-width: 30px;
+  }
+  .button{
+    height: 3.0rem;
+  }
+  .row {
+    padding-top:0px;
+    padding-right:0px;
+    padding-left:0px;
+    margin:0px;
+  }  
+  ion-grid .row:before {
+    width: 0px; 
+  }  
+  .row:before {
+    width: 0px; 
+  }
+  .searchbar-ios .searchbar-search-icon {
+    top:10px !important ;
+  } 
+  .searchbar-md .searchbar-search-icon {
+   top:6px !important ;
+  } 
+  // .searchbar-ios .searchbar-input{
+  //   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  // }
+  .bar-button-menutoggle-md{
+    margin-left: 0px;
+  }
+}

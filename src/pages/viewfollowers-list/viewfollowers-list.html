@@ -1,0 +1,17 @@
+
+<ion-header>
+  <ion-navbar>
+      <ion-title>Followers({{count}})</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+        <p *ngIf="count == 0 " style="margin:10px;color:#444;text-align: center;">No followers yet.</p>   
+    <ion-item class="itemHt" no-lines *ngFor="let follower of viewFollowersList; let idx = index" (click) ="userProfile($event, follower)" >   
+        <img class="cssthumb cssImage" *ngIf="follower.profile_image && follower.profile_image.url" no-lines  item-left src="{{follower.profile_image.url}}"  onError ="this.src='assets/images/placeholder_user1.png'">
+        <img class="cssthumb cssImage" *ngIf="(!follower || !follower.profile_image || !follower.profile_image.url)" item-left src="assets/images/placeholder_user1.png" >  
+        <p class="cssText">{{follower.name}}</p>
+        <p  class="cssText_1">{{follower.age}},&nbsp;{{follower.city}},&nbsp;{{follower.country}}</p>   
+        <!-- <img  *ngIf="this.sg['selectedMembers'] && this.sg['selectedMembers'].length > 0" item-right [ngClass]="{'selected': !this.sg['userStatus'][user.id]}" src="assets/images/done_copy.svg" style="width:20px;height:20px"> -->
+      </ion-item>
+</ion-content>

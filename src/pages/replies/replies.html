@@ -1,0 +1,222 @@
+
+<ion-header>
+  <ion-navbar>
+   <ion-title style="color:#fff;font-size:1.4rem;">
+     Replies
+    </ion-title>
+     </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+    <p *ngIf="!story_comments" style="margin:10px;color:#444">No replies yet</p>
+
+<ion-list no-lines style="position:absolute;bottom:1%;">
+    <ion-item *ngFor="let person of pupil" style="margin-bottom:0px;height:30px;border-radius:0px" (click)="selectName(person, textarea1)">
+     
+      <h2>{{person.name}}</h2>
+    
+    </ion-item>
+  </ion-list>
+
+  <ion-row  *ngIf="story_comments">
+    <ion-col col-2 style="padding-right:0px;margin-left:2px;">
+        <img  class="cssthumb"  *ngIf="!story_comments.user.profile_image || !story_comments.user.profile_image.url" style=" border-radius: 50%;height: 30px;width: 30px;  float: left;" src="assets/images/placeholder_user1.png">
+        <img  class="cssthumb"  *ngIf="story_comments.user.profile_image && story_comments.user.profile_image.url" style=" border-radius: 50%;height: 30px;width: 30px;  float: left;" [src]="story_comments.user.profile_image.url" onError="this.src='assets/images/placeholder_user1.png'">
+
+        <!-- <img *ngIf="story_comments.user.avatar_toggle == true && story_comments.user.avatar_image == null" style=" border-radius: 10px;height: 30px;width: 30px;  float: left;" src="assets/images/placeholder_user1.png">
+        <img *ngIf="story_comments.user.avatar_toggle == true && story_comments.user.avatar_image != null" style=" border-radius: 10px;height: 30px;width: 30px;  float: left;" [src]="story_comments.user.avatar_image.url" onError="this.src='assets/images/placeholder_user1.png'"> -->
+      </ion-col>
+    <ion-col col-10 style="padding-left:0px;margin-left:-5px;">
+     <div *ngIf="!story_comments.link_preview" style="background-color: #ededed;padding:3px 1px 1px 15px;margin-bottom: 6px;border-radius: 10px;margin-right:1px;margin-left: -12px;">
+       <p  class="text1" *ngIf="story_comments.user.name" style="font-weight: 500;margin-bottom: 5px;">{{story_comments.user.name}}</p>
+       <!-- <p  class="text1" *ngIf="story_comments.user.avatar_toggle == true && story_comments.user.avatar_name" style="font-weight: 500;margin-bottom: 5px;">{{story_comments.user.avatar_name}}</p> -->
+       <p id="parentComment0" class="text1 angular-with-newlines" style="font-weight:normal;margin-top:-4px;line-height: 1.2;font-size: 1.3rem">{{desChange(story_comments.description, 0, 'parentComment')}}</p>
+      </div>
+      <ion-card *ngIf="story_comments.link_preview" (click)="goToLink(story_comments.link_preview.url)" style="background-color:#EDEDED;border-radius: 10px;padding: 5px 10px;
+      margin: 0 0 0 -10px;">
+          <p class="text1" *ngIf="story_comments.user.name"><b>{{story_comments.user.name}}</b></p>
+          <!-- <p class="text1" *ngIf="story_comments.user.avatar_toggle == true && story_comments.user.avatar_name"><b>{{story_comments.user.avatar_name}}</b></p>          -->
+          <p id="parentComment0" class="text1 angular-with-newlines" style="font-weight:normal">
+           {{desChange(story_comments.description, 0, 'parentComment')}}
+            <!-- <span style="color:#75A8E4;">{{nestedComment.link_preview.url}}</span> -->
+          </p>
+          <ion-item style="background-color:transparent; padding-left:0px;">
+            <ion-thumbnail item-left>
+              <img [src]="story_comments.link_preview.image.url" style="border-radius:10px" onError="this.src='assets/images/add_pic.svg'">
+              <img src="assets/images/add_pic.svg" *ngIf="!story_comments.link_preview.image || !story_comments.link_preview.image.url" style="border-radius:10px" >         
+            </ion-thumbnail>            
+            <ion-label>
+              <p item-right style="font-size: 1.4rem;font-weight: 500;color: #444444;margin-bottom: 13px; ">{{story_comments.link_preview.title}}</p>
+              <p item-right style="font-size:1.1rem;font-weight:normal;color:#444444;text-align: left;">{{story_comments.link_preview.description}}</p>
+            </ion-label>
+          </ion-item>
+          <p style="font-size:1.1rem;font-weight:normal;color:#65A0E6;text-align: left;text-decoration: underline">{{story_comments.link_preview.url}}</p>      
+      </ion-card>      
+        <p class="text2">
+          <span style="font-weight: normal;">{{getDateFormat(story_comments.created_at)}}&nbsp;&nbsp;&nbsp;</span>
+          <span (click)="likeCommentParent(story_comments.id, story_comments.likes, story_comments.dislikes)" style="font-weight:bold;" [ngClass]="{'like' : commentReaction.comment_reactions[story_comments.id] == 'LIKE', 'unchecked' : !commentReaction.comment_reactions[story_comments.id] }">{{story_comments.likes}}&nbsp;Like&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+
+          <span (click)="unlikeCommentParent(story_comments.id, story_comments.likes, story_comments.dislikes)" style="font-weight:bold;" [ngClass]="{'dislike' : commentReaction.comment_reactions[story_comments.id] == 'DISLIKE', 'unchecked' : !commentReaction.comment_reactions[story_comments.id] }" >{{story_comments.dislikes}}&nbsp;Dislike&nbsp;&nbsp;&nbsp;&nbsp;</span>           
+          <span style="font-weight:bold;color:red" *ngIf="userProfile && (userProfile.id == cardOwner(story_comments.user.id))" (click)="delete(story_comments.id,0, 'parent')">&nbsp;Delete</span>
+        </p> 
+        <!-- preview starts-->
+        <ion-row *ngIf="preview && temptrim.length > 0" >
+            <ion-col col-2 style="text-align: right;padding-right: 0px;">
+              <img  class="cssthumb"  style="width:30px;border-radius: 50%;margin-left: 3px;height:30px;" *ngIf="!userProfile.avatar_toggle && userProfile.profile_image && userProfile.profile_image.url" [src]="userProfile.profile_image.url" onError ="this.src='assets/images/placeholder_user1.png'">
+              <img  class="cssthumb"  style="width:30px;border-radius: 50%;margin-left: 3px;height:30px;" *ngIf="userProfile.avatar_toggle && userProfile.avatar_image && userProfile.avatar_image.url" [src]="userProfile.avatar_image.url" onError ="this.src='assets/images/placeholder_user1.png'">
+              <img  class="cssthumb"  style="width:30px;border-radius: 50%;margin-left: 3px;height:30px;" *ngIf="(!userProfile.avatar_toggle && (!userProfile.profile_image || !userProfile.profile_image.url)) || (userProfile.avatar_toggle && (!userProfile.avatar_image || !userProfile.avatar_image.url))" src="assets/images/placeholder_user1.png">
+            </ion-col>           
+            <ion-col col-10 *ngIf="feed && preview" (click)="goToLink(preview.url)">
+              <ion-card style="background-color:#EDEDED;border-radius: 10px;padding: 5px 10px;margin-left: -3px;">
+                <p class="text1" *ngIf="feed.user"><b>{{feed.user.name}}</b></p>
+                <p class="text1" style="font-weight:normal">
+                 {{textInput}}
+                  <!-- <span style="color:#75A8E4;">{{preview.url}}</span> -->
+                </p>
+                <ion-item style="background-color:transparent; padding-left:0px;">
+                  <ion-thumbnail item-left style="margin-left:8px;position: absolute;">
+                    <img [src]="preview.image" style="border-radius:10px" onError ="this.src='assets/images/review.jpg'">         
+                  </ion-thumbnail>            
+                  <ion-label style="white-space:normal;    margin-left: 90px;">
+                    <p item-right style="font-size: 1.4rem;font-weight: 500;color: #444444;    margin-bottom: 13px; ">{{preview.title}}</p>
+                    <p item-right style="font-size:1.1rem;font-weight:normal;color:#444444;text-align: left;">{{preview.description}}</p>
+                  </ion-label>
+                </ion-item> 
+                <p style="font-size:1.1rem;font-weight:normal;color:#650ae6;text-align: left;text-decoration: underline">{{preview.url}}</p>     
+              </ion-card>             
+            </ion-col>
+          </ion-row>  
+    	 <ion-row *ngFor="let nestedComment of story_comments.replies; let idx = index;">
+    		<ion-col col-2 style="text-align: right;padding-right: 0px;padding-top:10px;">
+          <img class="cssthumb"  *ngIf="!nestedComment.user.profile_image || !nestedComment.user.profile_image.url" style="width:30px;border-radius: 50%;margin-left: 3px;height:30px;" src="assets/images/placeholder_user1.png"><img *ngIf="nestedComment.user.profile_image == null" style="width:30px;border-radius: 10px;margin-left: 3px;height:30px;" src="assets/images/placeholder_user1.png">
+          <img  class="cssthumb"  *ngIf="nestedComment.user.profile_image && nestedComment.user.profile_image.url" style="width:30px;border-radius: 50%;margin-left: 3px;height:30px;" [src]="nestedComment.user.profile_image.url" onError="this.src='assets/images/placeholder_user1.png'">
+
+          <!-- <img  class="cssthumb"  *ngIf="nestedComment.user.avatar_toggle == true && nestedComment.user.avatar_image == null" style="width:30px;border-radius: 10px;margin-left: 3px;height:30px;" src="assets/images/placeholder_user1.png"><img *ngIf="nestedComment.user.avatar_image == null" style="width:30px;border-radius: 10px;margin-left: 3px;height:30px;" src="assets/images/placeholder_user1.png">
+          <img  class="cssthumb"  *ngIf="nestedComment.user.avatar_toggle == true && nestedComment.user.avatar_image != null" style="width:30px;border-radius: 10px;margin-left: 3px;height:30px;" [src]="nestedComment.user.avatar_image.url" onError="this.src='assets/images/placeholder_user1.png'"> -->
+    		</ion-col>
+    		<ion-col col-10>
+          <ion-card  (click)="goToLink(nestedComment.link_preview.url)" *ngIf="nestedComment.link_preview" style="background-color:#EDEDED;border-radius: 10px;padding: 5px 10px;margin-left: -3px;">
+              <p class="text1" >
+                <b *ngIf="nestedComment.user.name">{{nestedComment.user.name}}</b>
+                <!-- <b *ngIf="nestedComment.user.avatar_toggle == true && nestedComment.user.avatar_name">{{nestedComment.user.avatar_name}}</b> -->
+              </p>
+              <img *ngIf="(story_comments.attachment != null)" style="margin:5px 3px 7px 0px;border-radius: 0px;" [src]="story_comments.attachment.url">              
+              <p  id="nested{{idx}}" class="text1 angular-with-newlines" style="font-weight:normal">
+               {{desChange(nestedComment.description, idx, 'nested')}}
+                <!-- <span style="color:#75A8E4;">{{nestedComment.link_preview.url}}</span> -->
+              </p>
+              <ion-item style="background-color:transparent; padding-left:0px;">
+                <ion-thumbnail item-left style="margin-left:8px;position: absolute;">
+                  <img  class="cssthumb"  [src]="nestedComment.link_preview.image.url" style="border-radius:10px" onError="this.src='assets/images/add_pic.svg'">
+                  <img  class="cssthumb" *ngIf="!nestedComment.link_preview.image || !nestedComment.link_preview.image.url" src="assets/images/add_pic.svg" style="border-radius:10px">         
+                </ion-thumbnail>            
+                <ion-label style="white-space:normal;margin-left: 90px;">
+                  <p item-right style="font-size: 1.4rem;font-weight: 500;color: #444444;margin-bottom: 13px; ">{{nestedComment.link_preview.title}}</p>
+                  <p item-right style="font-size:1.1rem;font-weight:normal;color:#444444;text-align: left;">{{nestedComment.link_preview.description}}</p>
+                </ion-label>
+              </ion-item> 
+              <p style="font-size:1.1rem;font-weight:normal;color:#65A0E6;text-align: left;text-decoration: underline">{{nestedComment.link_preview.url}}</p>     
+          </ion-card>          
+    			<ion-card *ngIf="!nestedComment.link_preview" style="background-color:#EDEDED;border-radius: 8px;padding:5px 1px 10px 14px;margin:0 0 0 3px;width:100%">
+      			<p class="text1" *ngIf="nestedComment.user.name" style="font-weight: 500;margin-bottom: 5px;">
+              {{nestedComment.user.name}}
+            </p>
+            <!-- <p class="text1" *ngIf="nestedComment.user.avatar_name && nestedComment.user.avatar_toggle == true" style="font-weight: 500;margin-bottom:0px;">
+              {{nestedComment.user.avatar_name}}
+            </p> -->
+            <img *ngIf="(nestedComment.attachment && nestedComment.attachment.url)" style="margin:3px 3px 12px 0px;border-radius:0px;" [src]="nestedComment.attachment.url">  
+            <p id="nested{{idx}}" class="angular-with-newlines" style="font-size:1.3rem;margin-top:-5px;line-height: 1.2;font-weight:normal;">{{desChange(nestedComment.description, idx, 'nested')}}</p>
+           </ion-card>
+            <p class="text2">
+             <span  *ngIf="nestedComment.id">{{getDateFormat(nestedComment.created_at)}}&nbsp;&nbsp;&nbsp;</span>
+             <span  *ngIf="nestedComment.id" [ngClass]="{'like' : commentReaction.comment_reply_reactions[nestedComment.id] == 'LIKE', 'unchecked' : !commentReaction.comment_reply_reactions[nestedComment.id] }" (click)="likeComment(nestedComment.id, nestedComment.likes, nestedComment.dislikes, idx)">&nbsp;{{nestedComment.likes}}&nbsp;<b>&nbsp;Like </b>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+             <span  *ngIf="nestedComment.id" [ngClass]="{'dislike' : commentReaction.comment_reply_reactions[nestedComment.id] == 'DISLIKE', 'unchecked' : !commentReaction.comment_reply_reactions[nestedComment.id] }" (click)="unlikeComment(nestedComment.id,nestedComment.likes, nestedComment.dislikes, idx)">&nbsp;{{nestedComment.dislikes}}&nbsp;<b>&nbsp;Dislike&nbsp;&nbsp;&nbsp;&nbsp;</b></span>
+             <span style="color:red" *ngIf="(nestedComment.id) && userProfile && (userProfile.id == cardOwner(nestedComment.user.id))" (click)="delete(nestedComment.id, idx, 'child')">&nbsp;<b>&nbsp;Delete</b></span> 
+ 
+            </p>
+    		</ion-col>
+    	</ion-row>
+    </ion-col>
+  </ion-row>
+
+	<!-- <ion-row style="margin-top:-5px;">
+		<ion-col col-2 style="text-align: right;padding-right: 0px;"><img style="width:40px;" src="assets/images/profile_shot_copy_5.jpg">
+		</ion-col>
+		<ion-col col-10>
+			<ion-card style="background-color:#EDEDED;border-radius: 10px;padding: 5px 10px;margin: 0px;">
+			<p class="text1" style="margin-top: 1px;"><b>Lydia Curry</b></p>
+           <p style="font-size:1.5rem;">How about this saturday we go get some beers and steak at the porto, you did win that bet afterall :D   </p>
+       </ion-card>
+           <p class="text2">
+   <span > 5h &nbsp;&nbsp;&nbsp;</span>
+   <span >&nbsp;5 <b>Like</b>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+   <span><b>&nbsp;10&nbsp;<b>Dislike</b>&nbsp;&nbsp;&nbsp;&nbsp;</b></span>
+  
+ </p>
+		</ion-col>
+  </ion-row>  -->
+
+   <ion-row *ngIf="imagePreview" style="margin:5px 0px;position: absolute;bottom: 5%">
+     <ion-col col-1></ion-col>
+      <ion-col col-10 style="padding:0px">
+        <img  src="assets/images/close.svg" (click)="close()" style="width:8%;position:absolute;z-index:1;right:-4%;top: -2%">
+        <img  class="cssthumb"  [src]="imagePreview"  style="border-radius:10px;height:200px;width:300px">        
+      </ion-col>
+      <ion-col col-1></ion-col>
+       
+    </ion-row>
+
+    
+
+</ion-content>
+<ion-footer no-border transparent style="background-color: #fff;">
+  <ion-list *ngIf="isValidExp && people.length > 0" style="border-radius:4px 4px 0 0;background:#f1f1f1;min-height:50px;max-height:190px;overflow: auto;padding: 10px 0;margin:0;padding: 10px 0;">
+    <ion-item *ngFor="let person of people" style="padding: 0px 10px 5px 16px;text-transform:capitalize;background: transparent;min-height:4.0rem;" (click)="selectName(person)">
+      <ion-avatar item-start>
+        <img  class="cssthumb"  *ngIf="person.avatar" [src]="person.avatar" onError="this.src='assets/images/placeholder_user1.png'">
+        <img  class="cssthumb"  *ngIf="!person.avatar" src="assets/images/placeholder_user1.png">
+      </ion-avatar>     
+      <p item-left style="padding-left:16px;">{{person.name}}</p>    
+    </ion-item>
+  </ion-list> 
+  <ion-row style="border-top: 2px solid #e1e1e1;">
+    <ion-col *ngIf="!userProfile" col-2 style="padding: 5px 0 0 8px;">
+      <img style="float: left;border-radius: 10px;height:40px;width:40px" src="assets/images/placeholder_user1.png">
+    </ion-col>
+    <ion-col col-2 style="padding:5px 0 0 8px;" *ngIf="userProfile"> 
+      <img  class="cssthumb"  *ngIf="(userProfile.profile_image == null && userProfile.avatar_toggle == false) || (userProfile.avatar_image == null && userProfile.avatar_toggle == true)" style="float: left;border-radius: 50%;height:40px;width:40px" src="assets/images/placeholder_user1.png">
+      <img  class="cssthumb"  *ngIf="userProfile.avatar_image != null && userProfile.avatar_toggle == true" style=" float: left;border-radius: 50%;height:40px;width:40px" [src]="userProfile.avatar_image.url" onError ="this.src='assets/images/placeholder_user1.png'">
+      <img  class="cssthumb"  *ngIf="userProfile.profile_image != null && userProfile.avatar_toggle == false" style=" float: left;border-radius: 50%;height:40px;width:40px" [src]="userProfile.profile_image.url" onError ="this.src='assets/images/placeholder_user1.png'">
+    </ion-col>
+    <ion-col col-8 style="padding-left:0px;margin-left: -5px">
+      <!-- <ion-item no-lines style="border: 1px solid #e1e1e1;border-radius: 10px; padding-left:10px">    
+        <ion-input  type="text" placeholder="Your comment here..." (ionChange)="myMethod($event,textInput)" [(ngModel)]="textInput"></ion-input>
+         <button  clear item-right style="background-color: transparent;margin:0px;padding:0px">
+           <img item-left src="assets/images/attachment.svg" style="width:24px;">
+         </button>
+          <button   clear item-right style="background-color: transparent;margin:0px;padding:0px">
+           <img item-left src="assets/images/camera.svg" style="width:22px;">
+         </button>
+         <input #fileInput (change)="fileUpload($event)" type="file" src="assets/images/cam.PNG" name="pic" accept="image/*" style="display: none;">     
+      </ion-item> -->
+      <ion-textarea #textarea1 [style.height]="myHeight" style="line-height: 1.2;border:1px solid #e1e1e1;border-radius: 10px;width: 104%;margin-left: 2px;" [ngClass]="{ 'activePadding' :  (activatePadding ==  true), 'inactivePadding' :  (activatePadding ==  false)}" autocomplete="on" autocorrect="on" type="text" id="replyInputBox" (input)="change()" placeholder="Reply here..." (ionChange)="myMethod($event,textInput)" [(ngModel)]="textInput"></ion-textarea>
+     <button (click)="gallery_run(fileInput)" [ngClass] =" [ temptrim ? 'attachPosition' :  'dispatchPosition']" item-right ion-button clear style="background-color: transparent;margin:0% 7% 3% 0%;;padding:0px;position: absolute;bottom: 0;">
+       <img item-left src="assets/images/attachment.svg" style="width:20px;">
+       <input #fileInput (change)="fileUpload($event)" value="" (click)="fileInput.value = null" type="file" src="assets/images/cam.PNG" name="pic" accept="image/*" style="display: none;">
+     </button>
+      <button (click)="fileUploadCamera()" item-right ion-button *ngIf = "!temptrim"  clear style="background-color: transparent;margin:0px;padding:0px;position: absolute;bottom: 0;right: 10%;margin-bottom: 3%">
+       <img item-left src="assets/images/camera.svg" style="width:18px;">
+     </button>
+    </ion-col>
+    <ion-col col-2>
+      <button *ngIf="temptrim || attachPic" item-right ion-button (click)="submitcomment()" clear style="width:66px;margin-right: 0px;background-color: transparent;position: absolute;bottom:0;">
+        <img class="doneimage" style="margin-right: 10px;" type="submit" src="assets/images/circle_icon_done.svg"> 
+      </button>
+       <button  *ngIf = "!temptrim && !attachPic" item-right ion-button clear style="width:66px;margin-right: 0px;background-color: transparent;position: absolute;bottom:0;">
+        <img  class="doneimage" style="margin-right: 10px;"  type="submit" src="assets/images/circle_icon_done_disable.svg"> 
+      </button>
+    </ion-col>
+  </ion-row>  
+</ion-footer>

@@ -1,0 +1,90 @@
+page-invitecode {
+  .header::after {
+    height:0px;
+  }
+  .scroll-content{  
+    overflow-y:hidden !important;
+    overflow-x:hidden !important; 
+    padding-bottom:0px !important;
+  }
+  .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+    border-radius: 10px;
+  }
+  .toolbar-background {
+    background:transparent;  
+  }
+  .item-block {  
+    width:80%;
+    border-radius:23px; 
+    background-color:#fff;
+    margin: 5% 10% auto 10%;   
+  }
+  .text-input.text-input {
+    text-align: center;
+  }  
+  .text-input.text-input::-webkit-input-placeholder { /* WebKit browsers */
+    font-size: 1.8rem;
+    color: #646464; 
+    text-align:center;
+    font-weight:300;
+    letter-spacing: 0.5px;
+    font-family: 'Roboto', sans-serif;
+  }
+  ion-content { 
+    background-repeat: no-repeat center center fixed;
+    background-size: 100% 100%;
+    background-position:fixed;
+    height:100%;
+    background-size: cover;
+    object-fit: cover; 
+  }
+  .input-cover {  
+    width:80%;
+    height:0%;
+  }
+  .bar-button-default, .bar-button-clear-default, .bar-button-default {
+    color:#000;
+  }
+  .line2 {
+    margin: 4% 0 6% 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    z-index: 100; 
+  }
+  .line1 {
+    text-align: center; 
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 3.4rem;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;  
+    position: relative;
+     z-index: 100; 
+     margin:23% 0% 5% 0%;   
+  }
+  .circleImg {    
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    padding-top: 22%;
+    margin-top: 0;
+    //background: rgba(148, 139, 160, 0.3);
+    //border-radius: 50%;
+    /* width: 315px; */
+    padding-bottom: 28%;   
+  }
+  .back-button-icon {    
+    color: #fff;
+  }
+  // .scroll-content {
+  //   margin-top: 30px !important;
+  // } 
+  .header-ios .toolbar-ios:last-child .toolbar-background-ios {
+    border-width : 0;
+  } 
+}

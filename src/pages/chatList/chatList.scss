@@ -1,0 +1,75 @@
+page-chatList {
+
+    ion-navbar.toolbar {
+        min-height: 5px;
+        height:38px;
+    }
+    ion-title img{ 
+        max-width: 60%;
+        margin-left:25px;        
+    }
+    .card{
+        background-color: #fff;
+        border-radius: 15px;
+        height:100%;
+    }
+    .searchbar-ios {
+        background-color:transparent;
+        border-bottom: none;
+        padding:8px;
+    }
+    .searchbar searchbar-ios searchbar-left-aligned searchbar-active {
+        margin: 15px 8px 8px 8px;
+    }
+    .searchbar-ios .searchbar-input {
+        margin-bottom: 0px;
+        height: 4rem;
+    }
+    .searchbar-md .searchbar-clear-icon {
+        top:3px;
+        height:36px;
+    }
+    .searchbar-ios .searchbar-search-icon {
+        top: 13px;
+        left: 10px;
+    }
+    .active {
+        font-weight: 500;
+    }
+    .delChat {
+        background-color:#C9D6E9;
+    }
+    .undelChat {
+        background-color:transparent;
+    }
+    .searchbar .searchbar-input {
+        border-radius: 4px;
+        margin-bottom: 11px;
+        background: #f1f1f1;
+        box-shadow: none;
+    }
+    .button {
+        background-color:transparent;
+    }
+    .label {
+        text-align:left;
+    }
+    .item ion-avatar[item-left] {
+        margin:8px 0px 8px 0px;
+    }
+    .item ion-avatar img {
+        border-radius:50%;
+    }
+    .item [item-left] {
+        margin: 9px 8px 9px 30px;
+    }
+    .item [item-right] {
+        margin: 0px 5px 0 0;
+    }
+    .card p.errMsg {
+        margin:10px;
+        color:#444;
+        text-align: center;
+        font-family : 'Lato', sans-serif; 
+    }
+}

@@ -1,0 +1,36 @@
+page-joinzone-popup {
+    .activePadding {
+        padding:10px 12px 15px 10px; 
+      }
+      
+      .inactivePadding {
+        padding:0px 12px 10px 10px; 
+      }
+      .text-input{
+          margin:0px;
+      }
+      .row {
+        padding-top:0px;
+        padding-right:0px;
+        padding-left:0px;
+        margin:0px;
+      }
+     
+     ion-grid .row:before {
+      width: 0px; 
+     }
+     
+     .row:before {
+      width: 0px; 
+     } 
+     .cssInput{
+      line-height: 1.5;
+      border:1px solid #e1e1e1;
+      border-radius: 4px; 
+      width: 90%;
+       margin-top: 15px;
+      height: 38px; 
+      margin-left: 10px;
+      padding: 6px 10px;
+     }
+}

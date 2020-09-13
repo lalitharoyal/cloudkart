@@ -1,0 +1,56 @@
+
+
+   <!-- popup for location --> 
+ 
+  <p style="font-size: 1.4rem;font-weight: normal;color:#acacac;margin: 0px 10px 0px 0px;text-align: center">YOUR HOME AREA IS:<br>
+    <span style="font-size: 1.2rem;"><i>Your Home Area is never publicly displayed, only your City.</i></span>
+  </p>
+   <div class="row">
+     <div class="col text-center blink"  >
+        <button class="currentBtn" *ngIf="this.sg['city']" (click) = "selectLocation('current')" style="width:80%;" [ngClass]="{'unselectedChoice' : this.sg['locationStatus'] == 'specific', 'selectedChoice' : this.sg['locationStatus'] == 'current'}" ion-button round >
+          {{this.sg['city']}}</button>
+        <button class="getLocationBtn" *ngIf="!this.sg['city']" (click) = "fetchMyLocation('current')" style="width:80%;" [ngClass]="{'unselectedChoice' : this.sg['locationStatus'] == 'specific', 
+        'selectedChoice' : this.sg['locationStatus'] == 'current', 'animationCss_none' : statusUpdate == 'detect automatically', 'animationCss' : statusUpdate == 'detecting...'}" ion-button round >
+            {{statusUpdate}}</button>
+        <!-- <p *ngIf="!this.sg['city']"  style="color:#f5a623;	animation: blink 1s linear infinite;">Detecting ...</p> -->
+        <!-- <ion-icon style="font-size:2.2em;color:#444;" (click)="fetchMyLocation()" name="pin"></ion-icon> -->
+     </div>
+   </div>  
+   <p style="font-size: 1.4rem;font-weight: normal;color:#acacac;margin:0;text-align: center" >OR</p>
+   <div class="row">
+       <div class="col text-center">
+           <button style="width:80%" (click)="selectLocation('specific')" [ngClass]="{'unselectedChoice' : this.sg['locationStatus'] != 'specific', 'selectedChoice' : this.sg['locationStatus'] == 'specific'}" ion-button round >ENTER MANUALLY</button>
+       </div>
+     </div>
+     <!-- <p>Your specific location: {{this.sg['specific_location']}}</p>           -->
+   <!-- <google-places-autocomplete *ngIf="this.sg['locationStatus'] == 'specific'" [(ngModel)]="specificLocation" placeholder="search" (callback)="detail($event[0])" key="AIzaSyBk6_i7y6Dgg1QBUdJ1TlWndGBT4vv2CaI"></google-places-autocomplete> -->
+   <ion-searchbar placeholder="Enter area" *ngIf="this.sg['locationStatus'] == 'specific'" [(ngModel)]="this.sg['specific_location']" (ionInput)="getItems($event)"></ion-searchbar>
+   <p *ngIf="this.sg['locationStatus'] == 'specific'" style="color:#acacac;font-size: 1.2rem;text-align: center;" >Enter area; not city, country, etc</p>
+   <ion-list>
+     <ion-item *ngFor="let place of places" (click)="selectedPlace(place)">
+       {{ place.description }}
+     </ion-item>
+   </ion-list>
+   <div class="row" style="height:50px" *ngIf="this.sg['locationStatus'] == 'current'">
+     <div class="col text-center">            
+       <button (click)="done()" *ngIf="this.sg['city']" item-right style="background-color: transparent;margin-right: 8px;margin-bottom:15px;margin-top:10px">
+         <img src="assets/images/circle_icon_done.svg">
+       </button>
+       <button *ngIf="!this.sg['city']" item-right style="background-color: transparent;margin-right: 8px;margin-bottom:15px;margin-top:10px">
+        <img src="assets/images/circle_icon_done_disable.svg">
+      </button>    
+     </div>
+   </div> 
+   <div class="row" style="height:50px" *ngIf="this.sg['locationStatus'] == 'specific'">
+     <div class="col text-center">            
+       <button (click)="done()" *ngIf="this.sg['specific_location']" item-right style="background-color: transparent;margin-right: 8px;margin-bottom:15px;margin-top:10px">
+         <img src="assets/images/circle_icon_done.svg">
+       </button>
+       <button item-right *ngIf="!this.sg['specific_location']" style="background-color: transparent;margin-right: 8px;margin-bottom:15px;margin-top:10px">
+         <img src="assets/images/circle_icon_done_disable.svg">
+       </button>    
+     </div>
+   </div> 
+ 
+ 
+

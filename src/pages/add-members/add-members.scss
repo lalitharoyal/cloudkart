@@ -1,0 +1,145 @@
+page-add-members {
+  .row {
+    padding-top:0px;
+    padding-right:0px;
+    padding-left:0px;
+    margin:0px;
+  }
+  ion-grid .row:before {
+    width: 0px; 
+  }
+  .row:before {
+    width: 0px; 
+  }
+  .select-icon{
+    position: absolute;
+    right: 10px!important;
+}
+ .footer-md::before{
+  background-image:none !important;
+ }
+  .item.item-input.input-has-focus .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }      
+  ion-card {          
+    overflow: auto;
+  }
+  .horizontal_scroll{
+    display: inline-block;       
+  }
+  ion-scroll{
+    white-space: nowrap;
+    position: relative;
+  }    
+  .cssDiv{
+    background-color:transparent;  
+    margin: 5px 10px 10px 10px;
+    border-radius: 0px;
+    padding-top: 8px;
+  }      
+  .selected {      
+    display: none;
+  }      
+  .selected-item {
+    border : 1px solid #f5a623;
+  }      
+  .card {        
+    padding:10px;
+    background-color:#dbdbdb;
+    margin-top:5px;
+    height:100%;
+  }
+  .item {        
+    background-color:transparent;
+  }
+  ion-scroll .scroll-content { 
+    padding: 0 10px;
+  }
+  .item .item-button {      
+    color:#fff;
+    background-color:#f5a623;
+    height:40px;
+    border-radius:10px;
+    font-size:1.8rem;
+    width:50%;          
+  }
+  .toolbar-title {
+    font-size:1.8rem;
+    margin-left:-20px;
+    font-weight:400;
+  }      
+  .card {
+    box-shadow: none;
+  }
+  .text-input::-moz-placeholder {
+    color: #909090;
+  }      
+  .text-input:-ms-input-placeholder {
+    color: #909090;
+  }      
+  .text-input::-webkit-input-placeholder {
+    text-indent: 0;
+    color: #909090;
+  }      
+  .searchbar-search-icon {
+    display:none;
+    width:0;
+    height:0;
+  }      
+  .searchbar .searchbar-input {         
+    border-radius: 4px;
+    padding:7px 7px 7px 16px;
+    background: #f1f1f1;
+  }
+  .searchbar-md .searchbar-input{
+    box-shadow: none;
+  }
+// .searchbar .searchbar-input {
+//     border-radius: 4px;
+//     padding:7px 7px 7px 16px;
+//     }
+    .searchbar-ios {
+      background-color:transparent;
+      border-bottom: none;
+      padding:8px;
+  }
+  .searchbar searchbar-ios searchbar-left-aligned searchbar-active {
+      margin: 15px 8px 8px 8px;
+  }
+  .searchbar-ios .searchbar-input {
+      margin-bottom: 0px;
+      height: 4rem;
+  }
+  .alert .alert-head{
+    padding: 11px 15px 11px;
+  }
+  .select-text {
+    min-width: 90%;
+  }
+  .checkbox-ios .checkbox-checked .checkbox-inner{
+    left: 4px;
+    top: 0;
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-top-width: 0;
+    border-left-width: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+  .checkbox .checkbox-checked{
+    border-color: #716F69;
+    background-color: #716F69;
+  }
+  .checkbox-ios .checkbox-icon{
+    width: 16px;
+    height: 16px;
+    border: 2px solid #787878;
+  }
+  .item.itemHt {
+    min-height:40px;
+    height:44px;
+  }
+}

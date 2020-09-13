@@ -1,0 +1,119 @@
+page-edit_zone {
+  .row {
+    padding-top:0px;
+    padding-right:0px;
+    padding-left:0px;
+    margin:0px;
+  }
+
+  ion-grid .row:before {
+    width: 0px; 
+  }
+
+  .row:before {
+    width: 0px; 
+  }
+  .horizontal_scroll{
+    display: inline-block;       
+  }
+  ion-scroll{
+    white-space: nowrap;
+    position: relative;
+  } 
+
+  .item.item-input.input-has-focus .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+  .card {
+    border-radius: 4px;
+    padding:10px;
+    background-color:#f1f1f1;
+    margin-top:5px;   
+  }
+  .item {  
+    background-color:transparent;
+  }
+  .toolbar-title {
+    font-size:1.8rem;
+    margin-left:-20px;
+    font-weight:400;
+  }
+  .card{
+    box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.10), 0 0px 1px -2px rgba(0, 0, 0, 0.2), 0 0px 1px 0 rgba(0, 0, 0, 0.10);
+  }
+  .text-input::-moz-placeholder {
+    color: #909090;
+    font-family: 'Lato', sans-serif;
+  }
+  .text-input:-ms-input-placeholder {
+    color: #909090;
+    font-family: 'Lato', sans-serif;
+  }
+  .text-input::-webkit-input-placeholder {
+    text-indent: 0;
+    color: #909090;
+    font-family: 'Lato', sans-serif;
+  }
+  ion-textarea{  
+    background-color:#fff;
+    color: #4a4a4a;
+    font-size: 1.4rem;
+    margin-bottom:10px;
+    // height:90px;
+    resize:none;
+    border-radius:4px;
+    padding:0px;
+    overflow:auto;
+    float:left;
+    line-height:20px;
+  }
+  .item .item-button {
+    color:#fff;
+    background-color:#f5a623;
+    height:40px;
+    border-radius:10px;
+    font-size:1.8rem;
+    width:60%;
+    margin-left:20%;  
+  }
+  .text-input-ios{
+    padding-left:5px;
+  }
+  .label .label-ios{
+    padding: 0px;
+    margin-right: 0px;
+  }
+  .label.label {
+    color: rgba(84, 81, 81, 0.76);
+    font-size: 1.6rem;
+    text-align: left;
+    font-weight: normal;
+    padding: 0px;
+    margin: 13px 0px;
+  }    
+  .cssBtn{
+    color:#fff;
+    background-color:#bd2472;
+    padding: 10px;
+    height: 3rem;
+    font-size: 1.4rem;
+    border-radius:4px;
+    font-weight: normal;
+    font-family: 'Lato', sans-serif;
+  }
+  textarea.text-input{
+    height:222px;
+  }
+  ion-card img {
+    border-radius: 4px;
+  }
+  .input-cover {  
+    height :0%;
+  }  
+}

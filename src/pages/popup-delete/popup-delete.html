@@ -1,0 +1,39 @@
+
+<!-- <ion-list >
+    <ion-item (click)="remove()" style="padding-left: 0px;">
+  
+      Remove
+     
+    </ion-item>
+    <ion-item (click)="report()" style="padding-left: 0px;">
+     
+      Report Offensive content
+      
+    </ion-item>
+    
+</ion-list> -->
+
+<ion-list style="margin:0px;border-bottom:none;" >
+	<p style="margin: 6px 0px 0px 10px;font-size: 1.6rem;font-weight: 500;">
+     More card options</p>
+  <p style="font-size: 1.2rem; margin:0px 0px 0px 10px;">What would you like to do?</p>
+  <ion-item *ngIf="userProfile && (user_id == userProfile.id)" (click)="deleteCard()" style="padding-left: 0px;margin-top:12px;
+      border-top: 1px solid rgb(222, 222, 222);">
+    <ion-label style="color:#65A0E6;font-size:1.5rem;">Delete card</ion-label>
+  </ion-item>
+  <ion-item *ngIf="userProfile && (user_id != userProfile.id)" (click)="removeCard()" style="padding-left: 0px;">
+      <ion-label style="color:#65A0E6;margin-bottom:4px;font-size:1.5rem;">
+        Remove from my feed
+      </ion-label>
+    </ion-item>
+  <ion-item (click)="report()" style="padding-left: 0px;">
+    <ion-label style="color:#65A0E6;margin-bottom:4px;font-size:1.5rem;">
+      Report offensive content
+    </ion-label>
+  </ion-item>
+  <ion-item (click)="notAWoman()" style="padding-left: 0px;">
+    <ion-label style="color:#65A0E6;margin-bottom:4px;font-size:1.5rem;">
+      Report suspicious profile 
+    </ion-label>
+  </ion-item>
+</ion-list>

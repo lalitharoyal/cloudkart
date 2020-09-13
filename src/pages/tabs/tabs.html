@@ -1,0 +1,39 @@
+
+
+<!-- <ion-header >
+  <ion-navbar >
+    <button ion-button menuToggle class="logoFix">
+      <img src="assets/images/menu.svg" >
+    </button>   
+    <ion-buttons left>
+      <img style="width: 75px;margin-top:-5px;"  src="assets/images/for_eva_logo_white.svg">
+    </ion-buttons>    
+    <ion-buttons end>      
+      <button ion-button (click)="notifications(this.sg['myProfileData'].new_notification_count)" style="padding:0 10px;">
+        <img src="assets/images/notifications.png" style="height: 18px;width:15px;margin-right:6px;">        
+      </button>
+      <ion-badge *ngIf="this.sg['myProfileData'] && this.sg['myProfileData'].new_notification_count > 0" class="card-badge1" style="margin-right:34%;width: 30px;height: 18px;border-radius: 20px;padding: 4px 2px 0px 2px;font-size: 1.0rem;font-weight: bold;">
+        <span *ngIf="this.sg['myProfileData'].new_notification_count < 100" style="font-weight:bold;">{{this.sg['myProfileData'].new_notification_count}}</span>
+        <span *ngIf="this.sg['myProfileData'].new_notification_count > 99" style="font-weight:bold;">99</span>
+        <span *ngIf="this.sg['myProfileData'].new_notification_count > 99" style="font-weight:bold;">+</span>
+      </ion-badge>
+      <button ion-button (click)="myProfilePage()" style="padding:0 10px;">        
+        <img *ngIf="!this.sg['myProfileData']" style="margin-top:-2px;width: 28px;border-radius: 5px;height:28px;" src="assets/images/placeholder_user1.png">       
+        <div *ngIf="this.sg['myProfileData']">
+          <img *ngIf="((!this.sg['myProfileData'].profile_image || !this.sg['myProfileData'].profile_image.url) && !this.sg['myProfileData'].avatar_toggle) || ((!this.sg['myProfileData'].avatar_image || !this.sg['myProfileData'].avatar_image.url) && this.sg['myProfileData'].avatar_toggle)" style="margin-top:-2px;width: 28px;border-radius: 5px;height:28px;" src="assets/images/placeholder_user1.png">
+          <img *ngIf="this.sg['myProfileData'].avatar_toggle && this.sg['myProfileData'].avatar_image && this.sg['myProfileData'].avatar_image.url" style="margin-top:-2px;width: 28px;border-radius: 5px;height:28px;" [src]="this.sg['myProfileData'].avatar_image.url" onError ="this.src='assets/images/placeholder_user1.png'">
+          <img *ngIf="!this.sg['myProfileData'].avatar_toggle && this.sg['myProfileData'].profile_image && this.sg['myProfileData'].profile_image.url" style="margin-top:-2px;width: 28px;border-radius: 5px;height:28px;" [src]="this.sg['myProfileData'].profile_image.url" onError ="this.src='assets/images/placeholder_user1.png'">
+        </div>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-tabs  #myTabs>
+  <ion-tab tabIcon="home" tabTitle="HOME" [root]="tab1Root"> </ion-tab>
+  <!-- <ion-tab tabIcon="discover"  tabTitle="DISCOVER" [root]="tab2Root"></ion-tab> -->  
+  <ion-tab tabIcon="zones"  tabTitle="ZONES" [root]="tab3Root"></ion-tab>
+  <ion-tab tabIcon="tags"   tabTitle="TAGS" [root]="tab2Root"> </ion-tab>
+  <ion-tab tabIcon="customPeople"  tabTitle="PEOPLE" [root]="tab4Root"> </ion-tab>
+</ion-tabs>
+

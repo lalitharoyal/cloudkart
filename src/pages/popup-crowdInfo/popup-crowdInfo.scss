@@ -1,0 +1,27 @@
+page-popup-crowdInfo {
+    // .item-ios [item-left]{
+    //     margin: 8px 8px 8px 0;
+    //}
+    .item-ios [item-left]{
+        margin: 2px 8px 2px 0;
+    }
+    .item-md [item-left]{
+        margin: 2px 8px 2px 0;
+    }
+
+    .crowdLabelFloater {
+        background-color: #d8d8d8;
+        color:#4a4a4a;
+    }
+    .crowdLabelFloater1 {
+        padding: 22% 10px;    
+        width: 58%;
+        margin: auto;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1.15;
+    }
+    .popover-ios .popover-content {
+        border-radius: 0px;
+    }
+}

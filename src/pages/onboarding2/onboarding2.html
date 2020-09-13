@@ -1,0 +1,100 @@
+
+ <ion-content style="background-image: url('assets/images/wlcm_2.png')">
+		
+				<div class="circleImg" style="background-image: url('assets/images/oval_gradient_idscreen.svg')">
+					<p class="line1">IT’S SAFE HERE</p>
+					<p class="line2">Entry here is by-invitation, and we<br> never reveal your personal data<br> without your permission.<br>
+						<span (click)="readPolicy()">(Read our Policy)</span></p>
+				</div>			      
+				
+				<div class="circleImg_bottom" style="background-image: url('assets/images/bottom_oval_gradient_hello.svg');position: absolute;
+				bottom: 0;width: 100%;margin: 0;background-repeat: no-repeat;background-size: 100% 100%;">
+					<p class="line3" style="text-transform: none;">What's more, here it's up to you to<br> reveal your identity. Or not.</p>
+					<p class="line4">YOU CAN</p>
+					<ion-row>
+						<ion-col col-5 style="padding:0px 0px 0px 18px;">
+							<p style="color:#fff;font-size: 1.5rem;font-weight: 400;font-family:'Open Sans Condensed', sans-serif;margin-bottom: -4px;margin-left: 22px;">BE YOURSELF</p>
+							<ion-item no-lines style="background-color:transparent;">                          
+								<!-- <input style="margin: 0px; width: 30%; height: 20px;" type="radio" [checked]="!this.sg['userObj'].avatar_toggle" item-left (change)="profileStatus($event, 'me')" /> -->
+								<ion-avatar item-start style="margin: 8px 0px 8px 28px;" [ngClass]="{'deselectAvatar' : !this.sg['userObj'].avatar_toggle , 'selectAvatar' : this.sg['userObj'].avatar_toggle}" (click)="profileStatus('me')">
+									<img style="width:65px;height:65px;border-radius:50%;object-fit:cover;margin:0px;" *ngIf="this.sg['userObj'] && this.sg['userObj'].profile_image && this.sg['userObj'].profile_image.url" [src]="this.sg['userObj'].profile_image.url" onError="this.src='assets/images/placeholder_user1.png'">
+									<img style="width:65px;height:65px;border-radius:50%;object-fit:cover;margin:0px;" *ngIf="!this.sg['userObj'] || !this.sg['userObj'].profile_image  || !this.sg['userObj'].profile_image.url" src="assets/images/placeholder_user1.png">
+									<img *ngIf="!this.sg['userObj'].avatar_toggle" style="width:15px;position: absolute;left:82px;top:-6px;" src="assets/images/circle_icon_done_green.svg">
+								</ion-avatar>								
+							</ion-item>
+						</ion-col>
+						<ion-col col-1 style="padding:0px;" >
+							<p style="font-size:1.0rem;margin-top:40px;font-family:Lato;color:#fff;text-align: right;">OR</p>  
+						</ion-col>
+						<ion-col col-6 style="padding:0px;">
+							<p style="color:#fff;font-size:1.5rem;font-weight:normal;font-family:'Open Sans Condensed', sans-serif;margin-bottom: -4px;margin-right: 10px;">WEAR A MASK</p>
+								<ion-item no-lines style="background-color:transparent;">                          
+									<!-- <input style="margin: 0px; width: 23%; height: 20px;" type="radio" [checked]="this.sg['userObj'].avatar_toggle" item-left (change)="profileStatus($event, 'mask')"/> -->
+									<ion-avatar item-left [ngClass]="{'deselectAvatar' : this.sg['userObj'].avatar_toggle , 'selectAvatar' : !this.sg['userObj'].avatar_toggle}" (click)="profileStatus('mask')" style="margin: 8px 0px 8px 36px;">
+										<img *ngIf="this.sg['userObj'].avatar_image.url" style="width:65px;height:65px;border-radius:50%;object-fit:cover;margin:0px;" [src]="this.sg['userObj'].avatar_image.url">
+										<img *ngIf="this.sg['userObj'].avatar_toggle" style="width:15px;position: absolute;left:98px;top:-6px;" src="assets/images/circle_icon_done_green.svg">	
+									</ion-avatar>
+								</ion-item>
+						</ion-col>             
+					</ion-row>
+					<p style="font-size: 1.2rem;font-family: 'Lato', sans-serif;font-weight:300;color:#fff;text-align: center">
+						* Tap the mask, to choose one for yourself.</p>
+						<ion-footer style="z-index: 1;">
+								<button (click) = "goToPrevSlide()"   style="float: left;background-color: transparent;margin-left: 20px;margin-top:4px;">
+									<img src="assets/images/backward.svg" style="width: 36px;height: 36px;">
+								</button>
+								<button (click) = "goToSlide()"   style="float: right;background-color: transparent;margin-right: 18px;margin-bottom:14px;margin-top:4px;">
+									<img src="assets/images/circle_icon_forward.svg">
+								</button>
+							</ion-footer>			
+				</div>
+			     
+		
+		<!--avatarPopUp starts-->
+		<div id="avatarOverlay">
+			<div class="modal" style="overflow: auto;">
+					<div class="modal-dialog">
+						<div class="modal-content" > 
+								<div class="modal-header" style=" padding: 20px 10px 10px 20px;border-bottom: none;font-size: 1.4rem;font-weight: 500;text-align: center;color:#000000;font-family: 'Roboto', sans-serif;">																		
+									<img (click)="closeCrowdReach('avatarOverlay', 'avatar')" style="width:22px;opacity:0.7;position:absolute;right:3%;top:10px;" src="assets/images/close1.svg">
+								</div>
+								<ion-row>
+									<ion-col col-9>
+										<ion-input type="text" class="mask" style="font-size: 1.3rem;padding: 6px;
+										background: #e8e8e8;
+										border-radius: 6px;
+										width: 98%;
+										margin: auto;margin-left:22px;" [(ngModel)]="streetName" (ionChange)="street_name(streetName)" placeholder="Pick your masked name (required)"></ion-input> 
+									</ion-col>
+									<ion-col col-3 style="padding-top: 8px;">
+										<div align="center" >
+											<button *ngIf="this.sg['userObj'].avatar_image.url && streetName" (click)="next('avatarOverlay', 'avatar')" style="background-color: transparent;margin-right: -5px;margin-bottom:8px;">
+												<img src="assets/images/circle_icon_done.svg">
+											</button>
+											<button *ngIf="!this.sg['userObj'].avatar_image.url || !streetName"  style="background-color: transparent;margin-right: -5px;margin-bottom:8px;">
+												<img src="assets/images/circle_icon_done_disable.svg">
+											</button>   
+									</div> 
+									</ion-col>  
+									<p style="color:#444444;width: 100%;margin: 35px 10px 10px 10px; font-family: 'Lato', sans-serif;">Pick your mask</p>
+									
+								</ion-row>
+									<div class="modal-body" style="padding:0px;"> 										
+											<ion-grid *ngIf="avatarGrid" style="padding-bottom: 20px;text-align: center;">
+												<ion-row style="padding: 5px 10px 7px 10px;" *ngFor="let row of avatarGrid">
+													<ion-col col-4 style="padding:1px;" *ngFor="let col of row;let i = index;" (click)="chooseMask(col, i)">
+														<img [src]="col"  style="width:90px;height:90px;border-radius:50%;">
+														<img [ngClass]="{'unselected-image': !(this.sg['userObj'].avatar_image.url === col)}" style="width:30px;position: absolute;top: -5%;right: 5px;" src="assets/images/circle_icon_done_green.svg">
+													</ion-col>
+												</ion-row>												
+											</ion-grid>											
+											
+										</div>               
+								</div>
+						</div>
+				</div>
+			</div>
+		 <!--Ending-->		 
+		
+</ion-content>
+

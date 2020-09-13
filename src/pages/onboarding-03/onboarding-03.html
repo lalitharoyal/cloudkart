@@ -1,0 +1,198 @@
+
+
+
+<ion-content  style="background-image: url('assets/images/wlcm_3.png'); background-repeat: no-repeat;
+background-size: 100% 100%;">
+ <ion-row style="margin:10px 0px 0px 0px;">
+    <ion-col col-12 style="background-image: url('assets/images/oval_gradient_membership.svg'); 
+	background-repeat: no-repeat;
+	width: 100%;
+	background-size: 100% 100%;height: 330px;">
+        <p class="test1">YOU’RE IN CONTROL</p>
+        <p class="cssText" >Every time you post, you decide who sees</p>
+        <p class="cssText" style="margin-bottom: 35px;" >your post, by their interests, age or location.</p>
+        <p class="cssText">Get posts relevant to you, by filling up</p>
+        <p class="cssText">your membership card.</p>
+    </ion-col>
+  </ion-row>
+  <div style="background: transparent;position: relative;bottom: 64px;padding-left: 10px;">
+					<button class="membersCss" ion-button>Membership Card</button>	
+					<ion-card class="card1" style="border-radius: 0 4px 4px 4px;height:310px;">
+						<ion-item class="profileItem">
+							<ion-thumbnail item-start style="margin-right:0px;">
+								<img  *ngIf="this.sg['userObj'] && this.sg['userObj'].profile_image && this.sg['userObj'].profile_image.url" item-left src="assets/images/circle_icon_done_green.svg" class="doneImg">
+								<img *ngIf="!this.sg['userObj'] || !this.sg['userObj'].profile_image" src="assets/images/placeholder_user1.png" class="cssthumb"  style="width:90px;height:90px;border-radius:4px;">
+								<img *ngIf="this.sg['userObj'] && this.sg['userObj'].profile_image && this.sg['userObj'].profile_image.url" [src]="this.sg['userObj'].profile_image.url" class="cssthumb"  style="width:90px;height:90px;border-radius:4px;" onError="this.src='assets/images/placeholder_user1.png'">
+								<img src="assets/images/photo_edit.svg" class="editImg" (click)="editProfilePic(fileInput)" > 
+								<input #fileInput value="" (click)="fileInput.value = null" (change)="imageUpload($event)" type="file" src="assets/images/cam.PNG" name="pic" accept="image/*" style="display: none;">
+								
+							</ion-thumbnail>
+							<ion-label style="margin:-3px 0 0 0;padding:0 10px;">					
+								<p  *ngIf="this.sg['userObj']" class="cssname" style="margin-bottom:2px;font-size:1.5rem;">{{this.sg['userObj'].name}}</p>
+								<p  *ngIf="!this.sg['userObj'] || !this.sg['userObj'].name" class="cssname" style="margin-bottom:2px;font-size:1.5rem;">Your Name</p>
+								<button *ngIf="!this.sg['userObj'] || !this.sg['isSelfieUploadSuccess']" class="addBtn" (click)="popupText()" ion-button>+ add gender
+									<span style="color:#d0021b">*</span>
+								</button>
+								<p *ngIf="this.sg['userObj'] && this.sg['isSelfieUploadSuccess']" class="cssgender" style="font-size:1.5rem;">{{this.sg['userObj'].gender}}
+									<span *ngIf="this.sg['userObj'] && this.sg['isSelfieUploadSuccess']"><img style="display: inline;width: 15px;" src="assets/images/circle_icon_done_green.svg"></span>
+								</p>
+								<!-- <ion-item *ngIf="!this.sg['userObj'] || !this.sg['userObj'].dob" class="dateTimeItem" style="padding: 0;margin-bottom: 3px;">									
+									<ion-datetime style="padding:0px;" class="addAge" [(ngModel)]="bdayDate" (ionChange)="dobStatus(bdayDate)" type="text" displayFormat="MMM DD, YYYY">
+									</ion-datetime>
+									<button item-left class="addBtn" style="padding: 0px 12px;" ion-button>+ add age
+										<span style="color:#d0021b">*</span>
+									</button>
+								</ion-item>	 -->
+								<ion-item  *ngIf="!this.sg['userObj'] || !this.sg['userObj'].dob" class="dateTimeItem" style="padding: 0;margin-bottom: 3px;">									
+									<button item-left (click) = "popupAge()" class="addBtn" style="padding: 0px 12px;" ion-button>+ add age
+										<span style="color:#d0021b">*</span>
+									</button>
+									<div>
+										<ion-datetime #datePicker style="padding:0px;" class="addAge" [(ngModel)]="bdayDate" (ionChange)="dobStatus(bdayDate)" type="text" displayFormat="MMM DD, YYYY">
+										</ion-datetime>
+									</div>
+								</ion-item>
+								<ion-item *ngIf="this.sg['userObj'] && this.sg['userObj'].dob" class="dateTimeItem cssAge" style="background: transparent;padding-left: 0px;width:100%">									
+									<ion-datetime style="padding:0px;margin-left: -3px;" (ionChange)="dobStatus(this.sg['userObj'].dob)" [(ngModel)]="this.sg['userObj'].dob" type="text" displayFormat="MMM DD, YYYY">
+									</ion-datetime>									
+									<p item-left class="cssgender" style="margin-bottom:6px;font-size:1.5rem;">{{getYears(this.sg['userObj'].dob)}}&nbsp;years
+										<span><img style="display: inline;width: 15px;" src="assets/images/circle_icon_done_green.svg"></span>
+									</p>
+								</ion-item>						
+								<button *ngIf="!this.sg['userObj'] || !this.sg['userObj'].display_location" class="addBtn" ion-button (click)="popupLocation()">+ add location
+									<span style="color:#d0021b">*</span>
+								</button>
+								<div (click)="popupLocation()" *ngIf="this.sg['userObj'] && this.sg['userObj'].display_location" style="display: inline-block;">
+									<p class="cssLocation" >{{this.sg['userObj'].display_location}}</p>
+									<img style="display: inline;width: 15px;margin-top: -3%;" src="assets/images/circle_icon_done_green.svg">
+								</div>									
+							</ion-label>	
+						</ion-item>
+						<p style="font-size:1.2rem;color: #bd2572; font-family: 'Roboto', sans-serif;text-align:left;margin-left:10px;margin-top:14px;"> YOUR INTERESTS
+							<span *ngIf="this.sg['interests'] && this.sg['interests'].length>0" ><img style="display: inline;width: 15px;" src="assets/images/circle_icon_done_green.svg"></span>
+						</p>
+						<!-- <button *ngIf="this.sg['interests'] && this.sg['interests'].length < 1" (click)="getInterests()" class="addInterets" ion-button style="margin:8% auto; text-transform: lowercase;">+ add interests
+							<span style="color:#d0021b">*</span>
+						</button> -->
+						<div style="text-align:center;" *ngIf="this.sg['interests'] && this.sg['interests'].length < 1">
+							<button (click)="getInterests()" class="addInterets" ion-button style="margin:8% auto; text-transform: lowercase;">+ add interests
+								<span style="color:#d0021b">*</span>
+							</button>
+					   </div>
+						<div style="text-align: center;margin: 8px 0px;" (click)="getInterests()" *ngIf="this.sg['interests'] && this.sg['interests'].length>0">
+							<button *ngIf="this.sg['interests'].length > 0" ion-button class="interets" >
+								#{{this.sg['interests'][0]}}<span style="margin-left:10px;"><img style="width: 16px;height: 16px;margin-top: -8px;" src="assets/images/internet.svg"></span>
+							</button>
+							<button *ngIf="this.sg['interests'].length > 1" ion-button class="interets" >
+								#{{this.sg['interests'][1]}}<span style="margin-left:10px;"><img style="width: 16px;height: 16px;margin-top: -8px;" src="assets/images/internet.svg"></span>
+							</button>
+							<button *ngIf="this.sg['interests'].length > 2" ion-button class="interets" >
+								#{{this.sg['interests'][2]}}<span style="margin-left:10px;"><img style="width: 16px;height: 16px;margin-top: -8px;" src="assets/images/internet.svg"></span>
+							</button>
+							<button *ngIf="this.sg['interests'].length > 3" ion-button class="interets" >
+								#{{this.sg['interests'][3]}}<span style="margin-left:10px;"><img style="width: 16px;height: 16px;margin-top: -8px;" src="assets/images/internet.svg"></span>
+							</button>
+							<button *ngIf="this.sg['interests'].length > 4" ion-button class="interets" >
+								#{{this.sg['interests'][4]}}<span style="margin-left:10px;"><img style="width: 16px;height: 16px;margin-top: -8px;" src="assets/images/internet.svg"></span>
+							</button>
+							<button *ngIf="this.sg['interests'].length > 5" ion-button class="interets" >
+								#{{this.sg['interests'][5]}}<span style="margin-left:10px;"><img style="width: 16px;height: 16px;margin-top: -8px;" src="assets/images/internet.svg"></span>
+							</button>
+							<button *ngIf="this.sg['interests'] && this.sg['interests'].length > 6" class="interets" ion-button>
+								+{{this.sg['interests'].length-6}}<span style="margin-left:10px;"><img style="width: 16px;height: 16px;margin-top: -8px;" src="assets/images/internet.svg"></span>
+							</button>
+						</div>						
+						<ion-footer style="padding-bottom:8px;z-index: 0;">						
+							<p *ngIf="!this.sg['userObj'] || !this.sg['userObj'].dob || !this.sg['userObj'].display_location || (this.sg['interests'] && this.sg['interests'].length == 0) || !this.sg['isSelfieUploadSuccess'] || !attachPic" class="line0Css">*All fields are mandatory for posts to reach you.</p>
+							<p *ngIf="this.sg['userObj'] && this.sg['userObj'].dob && this.sg['userObj'].display_location && (this.sg['interests'] && this.sg['interests'].length > 0) && this.sg['isSelfieUploadSuccess'] && attachPic" class="line1Css">Awesome, your membership card is done :) </p>
+						</ion-footer>
+					</ion-card>
+	  </div>
+	  	 
+		<!--interestoverlay-->
+		<div id="interestOverlay">
+				<div class="modal" style="overflow: auto;">
+					<div class="modal-dialog">
+							<div class="modal-content" style="padding: 0 10px;text-align: center;">
+								<img (click)="closeCrowdReach('interestOverlay', 'interest')" style="width:22px;opacity:0.7;position:absolute;right:3%;top:5px;" src="assets/images/close1.svg">							
+								<p class="csstitle">#BeUnique</p>
+								<p class="csstags" style="font-size:1.6rem;">Define who you are: #Tag your own passions, causes, problems,<br> 
+										identities. Get fewer, but more deeply relevant conversations<br>
+										in your feed, soon as they are posted. </p>
+								<div class="modal-body" style="padding:0px;text-align: center;overflow: auto;">
+									<ion-input type="text" (keyup.enter)="enterTag(hashtagInput)" placeholder="Enter #tags" (ionChange)="changeHashTag(hashtagInput)" [(ngModel)]="hashtagInput" class="hashtagInput hashText hashtag"></ion-input>
+									<ion-list class="hashtagsList" *ngIf="tags && tags.length > 0">
+										<p class="csstitle" style="font-size: 1.5rem;text-align: left; margin: 12px 0px 0px 25px;">Existing tags:</p>
+										<ion-item *ngFor="let tag of tags;" no-lines (click)="selectHashTag(tag)">
+											#{{tag}}
+										</ion-item>
+									</ion-list>
+									<div style="text-align: center; margin-bottom:20px;">
+										<button class="hashTagBtn" style="box-shadow: 0 1px 0.4px 0 rgba(0,0,0,0.5);" 
+										*ngFor="let tag of this.sg['userObj'].hashtags;let i = index;">       
+											<ion-row>
+												<ion-col (click)="editHashTag(tag, i)" style="font-size: 1.2rem;">
+													#{{tag}}
+												</ion-col>
+												<ion-col style="padding-right: 0px;"><img style="width: 16px;height: 16px;margin-top: -10px;" src="assets/images/lock.svg"></ion-col>
+												<ion-col (click)="deleteHashTag(tag, i)" style="padding:1px 0 0 5px;">
+													<ion-icon name="close-circle" style="font-size:1.8em;"></ion-icon>
+												</ion-col>
+											</ion-row>
+										</button>
+									</div>
+								</div>							
+								<!-- <hr style="margin: 0px 0px 25px 0px;"> -->
+								<!-- <p class="csstitle">BROAD INTERESTS</p> -->
+								<p class="csstitle">#GetVariety</p>
+								<p class="csstags" style="font-size:1.6rem;">Pick more interests, to get a wider variety<br>of relevant posts in your feed.</p>
+								<div>							
+									<button *ngFor="let interest of this.sg['categories'];let i = index;" (click)="categorySelection(interest, i)" [ngClass]="{'selectedChoice':(this.sg['categories'][i].set == true), 'unselectedChoice':(this.sg['categories'][i].set == false)}" ion-button round 
+									style="box-shadow: 0 1px 0.4px 0 rgba(0,0,0,0.5);padding: 0px 10px;font-size: 1.2rem;text-align: center;">#{{interest.category.name}} <span style="margin-left:10px;"><img style="width: 16px;height: 16px;margin-top: -8px;" src="assets/images/internet.svg"></span></button>
+								</div>
+								<div class="modal-footer">
+									<ion-row>
+										<!-- <ion-col col-9>
+												<p style="color: #4a4a4a;font-size: 1.1rem;text-align: right;margin-bottom: 0px;">*The more interests you choose,</p> 
+												<p style="color: #4a4a4a;text-align: right;font-size: 1.1rem;"> the better forEva works for you.</p>
+										</ion-col> -->
+										<ion-col col-12>
+												<div align="center" >              
+														<button *ngIf="(this.sg['myInterests'] && this.sg['myInterests'].length > 0) || newTag" (click)="next('interestOverlay', 'interest')" item-right style="background-color: transparent;">
+															<img src="assets/images/circle_icon_done.svg">
+														</button>
+														<button *ngIf="(this.sg['myInterests'] && this.sg['myInterests'].length == 0 && !newTag)" item-right style="background-color: transparent;">
+																<img src="assets/images/circle_icon_done_disable.svg">
+															</button>
+													</div>
+										</ion-col>
+									</ion-row>
+								</div>
+							</div>               
+						</div>
+					</div>
+				</div>		 
+		<!--Ending-->	
+		<ion-footer style="z-index:0;">
+			<button (click) = "goBack()" style="float: left;background-color: transparent;margin-left: 20px;margin-top:4px;">
+					<img src="assets/images/backward.svg"  style="width: 36px;height: 36px;">
+				</button>	
+				<div *ngIf="!this.sg['userObj'].avatar_toggle">
+					<button *ngIf="this.sg['userObj'] && this.sg['userObj'].dob && this.sg['userObj'].display_location && (this.sg['interests'] && this.sg['interests'].length > 0) && this.sg['isSelfieUploadSuccess'] && attachPic" (click) = "userRegistration()" item-right style="background-color: transparent;margin-bottom: 15px;margin-top: 4px;padding-left: 25px;width: 75px;float:right;">
+						<img src="assets/images/circle_icon_done.svg">
+					 </button>
+					 <button *ngIf="!this.sg['userObj'] || !this.sg['userObj'].dob || !this.sg['userObj'].display_location || (this.sg['interests'] && this.sg['interests'].length == 0) || !this.sg['isSelfieUploadSuccess'] || !attachPic" item-right style="background-color: transparent;margin-right: 8px;margin-bottom:15px;margin-top:4px;float:right;">
+						<img src="assets/images/circle_icon_done_disable.svg">
+					</button> 
+				</div>	
+				<div *ngIf="this.sg['userObj'].avatar_toggle">
+					<button  *ngIf="this.sg['userObj'] && this.sg['userObj'].dob && this.sg['userObj'].display_location && (this.sg['interests'] && this.sg['interests'].length > 0) && this.sg['userObj'].avatar_name && this.sg['isSelfieUploadSuccess'] && attachPic" (click)="userRegistration()" item-right style="background-color: transparent;margin-right: 8px;margin-bottom:15px;margin-top:4px;float:right;">
+						<img src="assets/images/circle_icon_done.svg">
+					</button>
+					<button *ngIf="!this.sg['userObj'] || !this.sg['userObj'].dob || !this.sg['userObj'].display_location || !this.sg['userObj'].avatar_name || (this.sg['interests'] && this.sg['interests'].length == 0) || !this.sg['isSelfieUploadSuccess'] || !attachPic" item-right style="background-color: transparent;margin-right: 8px;margin-bottom:15px;margin-top:4px;float:right;">
+						<img src="assets/images/circle_icon_done_disable.svg">
+					</button> 
+				</div>	
+		</ion-footer>	
+</ion-content>
+

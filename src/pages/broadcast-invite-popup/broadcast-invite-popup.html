@@ -1,0 +1,57 @@
+
+
+<ion-content >
+    <img (click)="closePopup()"  class="cssimage"  src="assets/images/close1.svg"> 
+    <p class="cssP">Send invite by</p>
+    <ion-row>
+        <ion-col col-3 class="cssCol" (click)="shareViaWhatsapp()">
+            <img class="shareImg" src="assets/images/whatsapp_1.png">
+        </ion-col>
+        <ion-col col-3 (click)="shareViaInsta()">
+            <img class="shareImg" src="assets/images/instagram_1.png">
+        </ion-col>
+        <ion-col col-3 (click)="shareViaFB()">
+            <img class="shareImg" src="assets/images/facebook_1.png">
+        </ion-col>
+        <ion-col col-3 (click)="shareViaTwitter()">
+            <img class="shareImg" src="assets/images/twitter_1.png">
+        </ion-col>
+        <!-- <ion-col  class="cssCol1" (click)="shareViaLinkedin()">
+            <img src="assets/images/linkedin.jpg">
+        </ion-col> -->
+    </ion-row>
+    <ion-card>
+        <!-- <img *ngIf="image" [src]="image"> -->
+        <p *ngIf="zoneInfo && zoneInfo.name" class="csstext">{{zoneInfo.name}}</p>
+        <p *ngIf="!zoneInfo || !zoneInfo.name" class="csstext">Zone Name</p>
+        <p class="csstext" style="font-weight:normal;margin-bottom: 6%;line-height: 0; text-transform: capitalize;" >has a new home</p>
+        <!-- <p class="cssText_1">Hey! We are now on forEva, the world&apos;s first <br> 
+        by-invite home for all women&apos;s groups.</p>
+        <p *ngIf="zoneInfo && zoneInfo.admin" class="cssText2">- {{zoneInfo.admin.name}}</p> -->
+        <div align = "center">
+            <img class="cssBg" src="assets/images/env_set.jpg">
+            <p class="cssCode">use invite code 
+                <!-- <b *ngIf="zoneInfo && zoneInfo.invite_code" style="font-size: 1.6rem;">{{zoneInfo.invite_code}}</b> -->
+            </p>      
+            <button *ngIf="zoneInfo && zoneInfo.invite_code" ion-button>{{zoneInfo.invite_code}}</button>
+       </div>                    
+       <p class="cssText_2">*Existing forEva member: Join from your zones tab<br>
+            Code reserved for WOMEN ONLY</p>
+        <p class="cssText_3">Download the app 
+            <span><img style="width:70px;display: inline-block;margin: 0 3px 8px 3px;" src="assets/images/for_eva_2019.png"></span> on iOS or Android  <br>
+            www.forEva.app</p>
+    </ion-card>
+</ion-content>
+
+<!-- <ion-card  *ngIf="!invitePopup">
+    <p class="csstext">YOU ARE INVITED</p>
+    <p class="csstext_1" >To forEva, the world&apos;s first <br>
+        by-invite home for all women&apos;s groups.</p>
+    <p class="cssText_2">I’m in! come join me.</p>
+    <p class="cssText3">- Farah Shahed</p>
+    <div align = "center">
+      <img class="cssBg" src="assets/images/env_set.jpg">
+   </div>
+   <p class="cssCode">use invite code <b style="font-size: 1.6rem;">ABC4567</b></p>
+   <button (click)="invite()" ion-button>JOIN NOW</button>
+</ion-card> -->

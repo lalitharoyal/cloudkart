@@ -1,0 +1,43 @@
+
+<ion-header >
+  <ion-navbar ></ion-navbar>
+</ion-header>
+
+<ion-content padding style="margin-top:0px; background-image: url('assets/images/loginScreen_BG.png');">
+  <!-- <div class="circleImg" style="background-image: url('assets/images/oval_2.svg');">
+    <p class="line1">WELCOME</p>    
+    <form [formGroup]="authForm">
+      <ion-item>
+        <ion-input autocomplete="on" autocorrect="on" type="email" [(ngModel)]="userEmail" formControlName="email" placeholder="enter your email id" [class.invalid]="!authForm.controls.email.valid && 
+          (authForm.controls.email.dirty && submitAttempt)">
+        </ion-input>
+        <button clear item-right style="background-color: transparent;" (click)="next()">
+          <img src="assets/images/arrowForward.svg">
+        </button>
+      </ion-item>
+      <div>
+        <p *ngIf="(!authForm.controls.email.valid  && (authForm.controls.email.dirty && submitAttempt)) || (!userEmail && submitAttempt)" style="color:red;margin-top:10px;text-align:center">* Please enter a valid email id.</p>
+      </div>
+    </form>
+  </div> -->
+  <ion-row style="margin:0px;">
+    <ion-col col-12 style="width:365px;height:330px;" >
+      <div style=" background-image: url('assets/images/oval_2.svg'); background-repeat: no-repeat;background-size: 100% 100%;height: 100%;width: 100%;
+      position: absolute; top:0;left:0;"></div>
+        <p class="line1"> WELCOME</p>
+        <form [formGroup]="authForm">
+          <ion-item>
+            <ion-input autocomplete="on" autocorrect="on" type="email" [(ngModel)]="userEmail" formControlName="email" placeholder="enter your email id" [class.invalid]="!authForm.controls.email.valid && 
+              (authForm.controls.email.dirty && submitAttempt)">
+            </ion-input>
+            <button clear item-right style="background-color: transparent;" (click)="next()">
+              <img src="assets/images/arrowForward.svg">
+            </button>
+          </ion-item>
+          <div>
+            <p *ngIf="(!authForm.controls.email.valid  && (authForm.controls.email.dirty && submitAttempt)) || (!userEmail && submitAttempt)" style="color:red;margin-top:10px;text-align:center"> Please enter a valid email id.</p>
+          </div>
+        </form>
+    </ion-col>
+  </ion-row>
+</ion-content>

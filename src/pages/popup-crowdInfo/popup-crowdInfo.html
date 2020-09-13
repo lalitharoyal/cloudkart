@@ -1,0 +1,49 @@
+<!-- <ion-content >      
+  <ion-item no-lines style="background-color: transparent;margin-top: -10px;margin-left: 10px;">
+    <img style="width:22px;margin-top:0px;" item-left src="assets/images/ic_people.png">
+    <p item-left style="font-size:1.4rem;font-weight:500;margin-right: 0px;">Who’s seeing this card?</p>
+  </ion-item>
+  <p style="color:#4a4a4a;font-size:2.1rem;text-align: center;margin: 14px 0px 0px 0px;font-weight: 500;">32</p>
+  <p style="color:#4a4a4a;font-size:1.0rem;text-align: center;margin: -1px 0px -1px 0px;">members who are</p>
+  <p style="color:#4a4a4a;font-size:13px;text-align: center;
+  margin: 0px 0px 20px 0px;font-weight: 500;">Men</p>      
+  
+  <p style="color:#4a90e2;font-size:1.0rem;text-align: center;margin-bottom:20%">Show similar cards</p>
+</ion-content>
+ -->
+
+ <!--CrowdPopUp starts-->
+  <!-- <div id="crowdLabelOverlay" (click)="closeCrowdReach('crowdLabelOverlay')">
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content"> 
+          <div class="modal-body" style="padding:10px 0px;">  -->
+            <ion-item no-lines style="background-color: transparent;margin-top: -10px;margin-left: 10px;">
+              <img style="width:22px;margin-top:3px;" item-left src="assets/images/ic_people.png">
+              <p item-left style="font-size:1.4rem;font-weight:500;margin-right: 0px;">Who’s seeing this card?</p>
+            </ion-item>
+              <p style="color:#4a4a4a;font-size:3.0rem;text-align: center;margin: 0px 0px 0px 0px;font-weight: 500;">{{crowd_count}}</p>
+              <p style="color:#4a4a4a;font-size:1.2rem;text-align: center;margin: -4px 0px 4px 0px;">Matched members</p>
+              <!-- <p *ngIf="story_target_method == 'age_range'" style="color:#4a4a4a;font-size:1.3rem;text-align: center;margin: -4px 0px 4px 0px;">members aged</p>
+              <p *ngIf="story_target_method == 'gender'" style="color:#4a4a4a;font-size:1.3rem;text-align: center;margin: -4px 0px 4px 0px;">members who are</p>
+              <p *ngIf="story_target_method == 'location'" style="color:#4a4a4a;font-size:1.3rem;text-align: center;margin: -4px 0px 4px 0px;">members from</p>
+              <p *ngIf="story_target_method == 'everyone'" style="color:#4a4a4a;font-size:1.3rem;text-align: center;margin: -4px 0px 4px 0px;">members who match the hashtags</p> -->
+            
+              <!-- <p *ngIf="story_target_method == 'age_range'" style="color:#4a4a4a;font-size:1.8rem;text-align: center;margin: 0px 0px 20px 0px;font-weight: 500;">{{min_age}} - {{max_age}}
+                <span >years</span>
+              </p>
+              <p *ngIf="story_target_method == 'age_range'" style="color:#4a4a4a;font-size:1.8rem;text-align: center;margin: 0px 0px 20px 0px;font-weight: 500;">{{userProfile.age_range}}
+                <span >years</span>
+              </p>                       -->
+              <p style="color:#4a4a4a;font-size:1.4rem;text-align: center;margin: auto auto 6px auto;font-weight: normal;width:80%;">({{target_values}})</p>
+              <!-- <p *ngIf="story_target_method != 'everyone'" style="color:#4a4a4a;font-size:1.3rem;text-align: center;margin: -4px 0px 10px 0px;">and who match the hashtags</p> -->
+              <!-- <div class="crowdLabelFloater">
+                <p class="crowdLabelFloater1">map with locations of matching users pulsing</p>
+              </div>  -->
+              <p (click)="showSimilarCards()" style="color:#4a90e2;font-size:1.4rem;text-align: center;margin:18px 0 8px 0;">Show similar cards</p>                  
+            <!-- </div>               
+          </div>
+        </div>
+    </div>
+  </div> -->
+<!--ending-->

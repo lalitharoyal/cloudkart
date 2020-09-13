@@ -1,0 +1,66 @@
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+
+<ion-menu [content]="mycontent" id="menu1"> 
+  <ion-content style="margin-top:0px;">
+    <ion-item no-lines style="padding:10px 0px 10px 12px ;background: linear-gradient(to right,#D42453,#C92462,#B82575,#A32590,#9025A5);">
+      <img item-left *ngIf="this.sg['myProfileData'] && this.sg['myProfileData'].profile_image && this.sg['myProfileData'].profile_image.url && !this.sg['myProfileData'].avatar_toggle" [src]="this.sg['myProfileData'].profile_image.url" onError="this.src='assets/images/placeholder_user1.png'" 
+      style="width:95px;height: 95px;border-radius: 10px;margin:0px; object-fit: cover;">
+      <img item-left *ngIf="this.sg['myProfileData'] && this.sg['myProfileData'].avatar_image && this.sg['myProfileData'].avatar_image.url && this.sg['myProfileData'].avatar_toggle" [src]="this.sg['myProfileData'].avatar_image.url" onError="this.src='assets/images/placeholder_user1.png'"
+      style="width:95px;height:95px;border-radius: 10px;margin:0px;object-fit: cover;">
+      <img item-left  *ngIf="!this.sg['myProfileData'] || (!this.sg['myProfileData'].profile_image && !this.sg['myProfileData'].avatar_toggle) || (!this.sg['myProfileData'].avatar_image && this.sg['myProfileData'].avatar_toggle)" src="assets/images/placeholder_user1.png" 
+      style="position:relative;width:95px;height:95px;border-radius: 10px;margin:0px; object-fit: cover;">
+      <ion-label style="margin-top:0px;">
+        <div *ngIf="this.sg['myProfileData']">          
+          <p style="color:#fff;text-overflow: ellipsis;overflow: hidden;font-size:1.7rem;font-weight: bold;" *ngIf="(!this.sg['myProfileData'].avatar_toggle || !this.sg['myProfileData'].avatar_name)" >{{this.sg['myProfileData'].name}}</p>
+          <p style="color:#fff;text-overflow: ellipsis;overflow: hidden;font-size:1.7rem;font-weight: bold;" *ngIf="this.sg['myProfileData'].avatar_toggle && this.sg['myProfileData'].avatar_name">{{this.sg['myProfileData'].avatar_name}}</p>				
+          <p style="color:#fff;margin-left: 0px;text-overflow: ellipsis;overflow: hidden;font-size:1.2rem;"><span *ngIf="this.sg['myProfileData'].age">{{this.sg['myProfileData'].age}}&nbsp; </span>&nbsp;{{this.sg['myProfileData'].gender}}</p>
+          <p *ngIf="!this.sg['myProfileData'].avatar_toggle" style="color:#fff;text-overflow: ellipsis;overflow: hidden;font-size:0.9rem;">{{(this.sg['myProfileData'].display_location)}}</p>
+          <p style="color:#fff;text-overflow: ellipsis;overflow: hidden;font-size:0.9rem;" *ngIf="this.sg['myProfileData'].avatar_toggle">{{this.sg['myProfileData'].country}}</p>
+          <p style="color:#fff;text-overflow: ellipsis;overflow: hidden;font-size:0.9rem;">member since&nbsp;<b>{{getMemberSince(this.sg['myProfileData'].member_since)}}</b></p>
+          <p style="color:#fff;text-overflow: ellipsis;overflow: hidden;font-size:0.9rem;"><b>{{this.sg['myProfileData'].profile_views}}</b> profile views</p>
+        </div>
+      </ion-label>  
+    </ion-item>
+    <ion-list no-lines style="padding-left:20px;margin: 3px 0 16px;">      
+          <button ion-item menuClose (click)="openPage(myprofilePage)" style="height:50px;background-color: transparent;font-family: 'Lato', sans-serif;">
+            <img src="assets/images/contact.svg" >
+                My Profile
+          </button>
+           <button ion-item menuClose (click)="openPage(searchMessagesPage)" style="height:50px;background-color: transparent;font-family: 'Lato', sans-serif;">
+            <img src="assets/images/notifications.svg" >
+                My Messages
+            <!-- <ion-badge  class="card-badge1" style="top: 25%;position:absolute;background-color:#FF0000;height: 18px;border-radius: 12px;padding: 4px 4px 0px 4px;font-size: 1.0rem;font-weight: bold;">
+                <span style="font-weight:bold;">10</span>
+            </ion-badge> -->
+          </button>         
+          <button ion-item menuClose (click)="openPage(invitePage)" style="height:50px;background-color: transparent;font-family: 'Lato', sans-serif;">
+            <img src="assets/images/personadd.svg" >
+              Send Invites
+          </button>
+          <button ion-item menuClose (click)="openPage(feedbackPage)" style="height:50px;background-color: transparent;font-family: 'Lato', sans-serif;">
+            <img src="assets/images/feedback.svg" >
+              Share feedback
+          </button>
+          <button ion-item menuClose (click)="openPage(aboutPage)" style="height:50px;background-color: transparent;font-family: 'Lato', sans-serif;">
+            <img style="width: 21px;height: 21px;" src="assets/images/grey_for_eva_icon.svg" >
+              About forEva
+          </button>          
+          <button ion-item menuClose (click)="openPage(privacyPage)" style="height:50px;background-color: transparent;font-family: 'Lato', sans-serif;">
+            <img src="assets/images/info.svg" >
+              Privacy Policy
+          </button>
+          <button ion-item menuClose (click)="openPage(termsPage)" style="height:50px;border-bottom: 1px solid rgba(158, 158, 158, 0.31);background-color: transparent;font-family: 'Lato', sans-serif;">
+            <img src="assets/images/info.svg" >
+              Terms of Use
+          </button>          
+          <button ion-item menuClose (click)="logout()" style="height:50px;background-color: transparent;font-family: 'Lato', sans-serif;">
+            <img src="assets/images/exit.svg" >
+              Logout
+          </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+ <ion-nav #mycontent [root]="rootPage"></ion-nav> 
+
+<!-- <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>  -->
+

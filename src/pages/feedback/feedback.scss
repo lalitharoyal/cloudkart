@@ -1,0 +1,92 @@
+page-feedback {
+
+.input-cover {
+    height :0%;
+}
+[ion-fixed]{ 
+     height: 100%;
+     width: 100%;
+}
+ion-navbar.toolbar {
+    min-height: 5px;
+    height:35px;
+}
+ion-title img{ 
+    max-width: 60%;
+    margin-left:25px;
+}
+.label{
+    font-size:1.5rem;
+    text-align:left;
+    padding-left:0px;
+}
+.item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+    font-size:1.8rem;
+}
+.item-block {
+    width:90%;
+    margin-left:10%;
+    min-height:0px;
+    height:38px;
+}
+ion-select {
+    max-width: 100%;
+    //background: #f1f1f1;
+}
+.select-text{
+    color:#9f9f9f;
+    font-size:1.4rem;
+}
+.select {
+    padding: 10px 8px 13px 8px;
+}
+.select-md .select-placeholder{
+    font-size: 1.4rem;
+    color: #646464; 
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.5px;
+}
+.select .select-icon {
+    margin-top:2px;
+    width: 20px;
+    color:#646464;
+    position: absolute;
+    margin-left: 80%;
+}
+.text-input {
+    margin:0px;
+    width: 100%;
+}
+ion-textarea {
+    overflow:auto;
+}
+.text-input.text-input::-ms-input-placeholder { /* Internet Explorer 10+ */
+    font-size: 1.5rem;
+    color: #646464; 
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.5px;
+  }
+  .text-input.text-input::-webkit-input-placeholder { /* WebKit browsers */
+    font-size: 1.5rem;
+    color: #646464; 
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.5px;
+  }
+  .text-input.text-input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-size: 1.5rem;
+    color: #646464; 
+   font-family: 'Lato', sans-serif;
+    letter-spacing: 0.5px;
+  }
+  .text-input.text-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-size: 1.5rem;
+    color: #646464;
+   font-family: 'Lato', sans-serif;
+    letter-spacing: 0.5px;
+  }
+  .card {
+    box-shadow:rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+  }
+}

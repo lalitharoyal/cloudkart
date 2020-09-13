@@ -1,0 +1,30 @@
+
+
+<ion-content style="background-color:#fff">
+    <ion-list style="margin:0px;border-bottom:none;" >
+        <p style="margin: 6px 0px 0px 10px;font-size: 1.6rem;font-weight: 500;"> More zone options</p>
+        <p style="font-size: 1.2rem; margin:0px 0px 0px 10px;">What would you like to do?</p>
+        <ion-item *ngIf ="!muteStatus" (click)="muteZone()"  style="height: 0px;padding-left:0px;" >
+        <p>Mute</p>
+        </ion-item>
+        <ion-item  *ngIf ="muteStatus" (click)="unmuteZone()" style="height: 0px;padding-left:0px;" >
+            <p>Unmute</p>
+        </ion-item>
+        <ion-item  *ngIf="isAdmin() || isLeader()" (click)="editZone()" style="height: 0px;padding-left:0px;">
+            <p>Edit Zone</p>
+        </ion-item>
+        <!-- <ion-item (click) ="addMentors()" style="height: 0px;padding-left:0px;">
+            <p>Add Leader</p>
+        </ion-item> -->
+        <!-- <ion-item (click) ="addAdmin()" style="height: 0px;padding-left:0px;">
+            <p>Add Admin</p>
+        </ion-item>    -->
+        <!-- <ion-item (click)="exitZone()" style="height: 0px;padding-left:0px;"> -->
+            <button ion-button class="exit" (click)="exitZone()" [disabled]="zoneInfo && userProfile && isAdmin(zoneInfo.admins)">
+                <ion-label style="color: #65A0E6;">
+                    Exit zone
+                </ion-label>
+            </button>
+        <!-- </ion-item> -->
+    </ion-list>      
+</ion-content>

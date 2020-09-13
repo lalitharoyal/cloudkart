@@ -1,0 +1,25 @@
+page-viewfollowers-list {
+
+    .cssText{
+        color:#010101;
+        font-size:1.6rem;
+        text-transform: capitalize; 
+        font-family: 'Roboto', sans-serif;
+    }
+    .cssText_1{
+        color:#a5a5a5;
+        font-size:1.1rem;
+        text-transform: capitalize; 
+        font-family: 'Roboto', sans-serif;
+    }
+    .item.itemHt {
+        min-height: 40px;
+        height: 44px;
+        margin-top:6px;
+      }
+      .cssImage{
+        width:40px;
+        height:40px;
+        border-radius:50%
+      }
+}

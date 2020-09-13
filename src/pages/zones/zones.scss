@@ -1,0 +1,212 @@
+page-zones {
+[col-4]{
+    text-align:center;
+}
+.searchbar-ios {
+    background-color:transparent;
+    border-bottom: none;
+    padding: 8px 0px 8px 8px;
+}
+ion-searchbar {
+  width: 52%;
+  padding:8px 0px 8px 10px;
+}
+.searchbar-ios{
+    width: 52% !important;
+}
+.searchbar-ios{
+    padding-left: 0px;
+}
+.item ion-thumbnail[item-left], .item ion-avatar[item-start], .item ion-thumbnail[item-start] {
+    margin:0px;     
+}
+.item [item-left], .item [item-right], .item [item-start], .item [item-end] {
+    margin:0px;
+} 
+.loader{
+        margin: 0 0 2em;
+        height: 100px;
+        width: 20%;
+        text-align: center;
+        padding: 1em;
+        margin: 0 auto 1em;
+        display: inline-block;
+        vertical-align: top;
+} 
+.item.item-block.item {
+      height:30px;
+      margin:0px;
+}
+.item {
+      
+      background-color:transparent;
+      margin:0px;
+      padding-left:0px;
+} 
+.selected-item {
+      border : 1px solid #f5a623;
+}  
+.toolbar-title {     
+    padding:0px;
+    margin-left: -10px; font-weight:400;
+}
+.searchbar .searchbar-input {
+    border-radius: 4px;
+    height:3.2rem;
+    box-shadow : none;
+    background: #f1f1f1;
+    padding: 6px 35px 6px 42px;
+}
+
+.item ion-thumbnail {
+    min-width: 0px; 
+    min-height: 0px; 
+    border-radius:10px;
+}
+.toggle.toggle-checked .toggle-icon {
+    background-color: #4990e2;
+}
+.searchbar .searchbar-input::-moz-placeholder {
+    color: #878787;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+.searchbar .searchbar-input:-ms-input-placeholder {
+    color: #878787;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+.searchbar .searchbar-input::-webkit-input-placeholder {
+    text-indent: 0;
+    color: #878787;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.searchbar .searchbar-clear-icon {
+    background-image: url('/assets/images/clear.svg');
+    right: 5px;
+}
+.searchbar-ios .searchbar-search-icon {
+    top:10px !important ;
+  } 
+  .searchbar-md .searchbar-search-icon {
+   top:6px !important ;
+ }
+.toolbar .searchbar-ios .searchbar-input{
+    background-color: #FFF;
+    //padding-left: 8px;
+    width: 84%;
+}
+
+.searchbar-ios {
+    background-color:transparent;
+    border-bottom: none;
+    padding: 8px 0px 8px 8px;
+}
+ion-scroll{
+    white-space: nowrap;
+    position: relative;
+}
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+}
+.horizontal_scroll{
+    display: inline-block;       
+} 
+ion-scroll{
+    white-space: nowrap;
+    position: relative;
+}  
+.card-badge1 {
+    position: absolute;
+    top: 0;
+    vertical-align: middle;
+    font-size: 9px;
+    z-index:1;
+    border-radius:20px;
+    background-color:#FF0000;
+    left: 34%;
+  }  
+.card-badge6 {
+  position: absolute;
+  vertical-align: middle;
+  font-size: 9px;
+  z-index:1;
+  border-radius:20px;
+  background-color:#ffbf00;
+  top: 0;
+  right: 10px;
+}
+.image_text{
+  color:#4a4a4a;
+  text-align: center;
+  margin-top: 7px;
+  line-height: 1;
+  font-size: 13px;
+  font-weight: 500;
+  word-break: break-word;
+  width: 90x;
+  font-family: 'Roboto', sans-serif;
+}
+.item.item-block .item-inner{
+  border-bottom: none !important;
+}
+.bdg1{
+  position: relative;
+  margin-top: -19px;
+  right: 12%;
+  border-radius: 10px;
+  background-color: #F9A51B;
+}
+.bdg{
+  position: absolute;
+  top: 3px;
+  left: 80%;
+  border-radius: 10px;
+  background-color: #F9A51B;
+}
+.back-button-md {
+  margin: 0px;
+  padding: 0px;
+  min-width: 30px;
+}
+.button{
+  height: 3.0rem;
+}
+.row {
+  padding-top:0px;
+  padding-right:0px;
+  padding-left:0px;
+  margin:0px;
+}
+ion-grid .row:before {
+width: 0px; 
+}
+.row:before {
+width: 0px; 
+} 
+
+.bar-button-menutoggle-md{
+    margin-left: 0px;
+  }
+  .button.joinBtn {
+    border-radius: 15px;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    padding: 15px 8px;
+    margin-right: 5px;
+    background: #bd2472;
+    width:80px;
+  }
+  .button.createBtn {
+    border-radius: 15px;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    padding: 15px 8px;
+    background: #bd2472;
+    width:80px;
+  }
+}

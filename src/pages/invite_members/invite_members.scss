@@ -1,0 +1,146 @@
+page-invite_members{
+
+.item.item-input.input-has-focus .item-inner {
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+.searchbar{
+  padding:0px;
+}
+ion-scroll{
+  white-space: nowrap;
+  position: relative;
+}
+ion-scroll .scroll-content {
+  padding: 0 10px;
+}  
+ion-card {
+    
+    overflow: auto;
+}
+
+.cssDiv{
+  //background-color:#FAEBC5;  
+  margin: 5px 10px 10px 10px;
+  border-radius: 10px;
+  padding-top: 8px;
+}
+
+.selected {
+
+  display: none;
+}
+.footer-md::before{
+  background-image:none !important;
+ }
+.selected-item {
+  border : 1px solid #f5a623;
+  }
+
+.card {
+  
+    padding:10px;
+    background-color:#dbdbdb;
+    margin-top:5px;
+    height:100%;
+ }
+.item {
+  
+  background-color:transparent;
+}  
+
+
+.item .item-button {
+
+	color:#fff;
+	background-color:#f5a623;
+	height:40px;
+	border-radius:10px;
+	font-size:1.8rem;
+	width:50%;
+	
+}
+
+.toast .toast-wrapper {
+  left:30px !important;
+}
+.toast-container{
+  text-align: center;
+  } 
+
+
+.toolbar-title {
+    font-size:1.8rem;
+	margin-left:-20px;
+	 font-weight:400;
+}
+
+.card {
+	    box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.10),
+	     			0 0px 1px -2px rgba(0, 0, 0, 0.2), 
+	     			0 0px 1px 0 rgba(0, 0, 0, 0.10);
+}
+
+
+
+
+.text-input::-moz-placeholder {
+  color: #909090;
+}
+
+.text-input:-ms-input-placeholder {
+  color: #909090;
+}
+
+.text-input::-webkit-input-placeholder {
+  text-indent: 0;
+  color: #909090;
+}
+
+.searchbar-search-icon {
+display:none;
+width:0;
+height:0;
+}
+
+.searchbar .searchbar-input {
+   
+    border-radius: 4px;
+    padding:7px 7px 7px 16px;
+    background: #f1f1f1;
+    }
+
+    .searchbar-md .searchbar-input{
+      box-shadow: none;
+    }
+    
+        .searchbar-ios {
+          background-color:transparent;
+          border-bottom: none;
+          padding:8px;
+      }
+      .searchbar searchbar-ios searchbar-left-aligned searchbar-active {
+          margin: 15px 8px 8px 8px;
+      }
+      .searchbar-ios .searchbar-input {
+          margin-bottom: 0px;
+          height: 4rem;
+      }
+  .button.inviteBtn {
+    position: relative;    
+    padding: 8px 14px;      
+    height: 30px;
+    margin:9px;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 1.3rem;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: #bd2472;
+    color:#fff;
+  }
+  .item.itemHt {
+    min-height: 40px;
+    height: 44px;
+  }
+}
